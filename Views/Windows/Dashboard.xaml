@@ -1,0 +1,36 @@
+﻿<Window x:Class="Capybook.Views.Windows.Dashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Capybook.Views.Windows"
+        mc:Ignorable="d"
+        Title="Dashboard" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="DeepSkyBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Style="{StaticResource title}" Grid.Row="0" FontSize="20" VerticalAlignment="Center">Capybook Dashboard</TextBlock>
+            <Button Grid.Row="1" Style="{StaticResource btnMain}" Name="btnAccount">Account Management</Button>
+            <Button Grid.Row="2" Style="{StaticResource btnMain}" Name="btnBook">Book Management</Button>
+            <Button Grid.Row="3" Style="{StaticResource btnMain}" Name="btnCategory">Category Management</Button>
+            <Button Grid.Row="4" Style="{StaticResource btnMain}" Name="btnVoucher">Voucher Management</Button>
+            <Button Grid.Row="5" Style="{StaticResource btnMain}" Name="btnSupplier">Supplier Management</Button>
+            <Button Grid.Row="6" Style="{StaticResource btnMain}" Name="btnOrder">Order Management</Button>
+            <Button Grid.Row="7" Style="{StaticResource btnMain}" Name="btnLogout" Click="btnLogout_Click">Logout</Button>
+        </Grid>
+        <Frame Grid.Column="1" x:Name="dashboardFrame"></Frame>
+    </Grid>
+</Window>
