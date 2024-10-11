@@ -30,5 +30,19 @@ namespace Capybook.Views.Windows
             dashboard.Show();
             this.Close();
         }
+
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            Window register = new Register();
+            register.Show();
+            this.Close();
+        }
+
+        private void btnHomepage_Click(object sender, RoutedEventArgs e)
+        {
+            Window homepage = new Homepage();
+            homepage.Show();
+            this.Close();
+        }
     }
 }

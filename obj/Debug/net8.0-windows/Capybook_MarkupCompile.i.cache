@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\1. FPT\PRN212\Capybook Project\Capybook\App.xaml
-9-122481129
+101973545432
 
-14166598920
+15552885165
 198-556154604
-Views\Pages\Dashboard\AccountManagement.xaml;Views\Pages\Dashboard\BookManagement.xaml;Views\Pages\Dashboard\CategoryManagement.xaml;Views\Pages\Dashboard\OrderManagement.xaml;Views\Pages\Dashboard\SupplierManagement.xaml;Views\Pages\Dashboard\VoucherManagement.xaml;Views\Windows\Dashboard.xaml;Views\Windows\Homepage.xaml;Views\Windows\Login.xaml;
+Views\Pages\Dashboard\AccountManagement.xaml;Views\Pages\Dashboard\BookManagement.xaml;Views\Pages\Dashboard\CategoryManagement.xaml;Views\Pages\Dashboard\OrderManagement.xaml;Views\Pages\Dashboard\SupplierManagement.xaml;Views\Pages\Dashboard\VoucherManagement.xaml;Views\Windows\Dashboard.xaml;Views\Windows\Homepage.xaml;Views\Windows\Login.xaml;Views\Windows\Register.xaml;
 
 True
 

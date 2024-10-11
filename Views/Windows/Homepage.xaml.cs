@@ -23,5 +23,19 @@ namespace Capybook.Views.Windows
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            Window login = new Login();
+            login.Show();
+            this.Close();
+        }
+
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            Window register = new Register();
+            register.Show();
+            this.Close();
+        }
     }
 }

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Capybook"
              xmlns:windows="clr-namespace:Capybook.Views.Windows"
-             StartupUri="Views/Windows/Dashboard.xaml">
+             StartupUri="Views/Windows/Homepage.xaml">
     <Application.Resources>
         <Style x:Key="page" TargetType="Page">
             <Setter Property="Background" Value="White"></Setter>
@@ -21,11 +21,10 @@
         </Style>
         <Style x:Key="lable" TargetType="Label">
             <Setter Property="Foreground" Value="Black"></Setter>
-            <Setter Property="HorizontalAlignment" Value="Right"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
             <Setter Property="Margin" Value="0,10,0,0"></Setter>
         </Style>
         <Style x:Key="textbox" TargetType="TextBox">
-            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
             <Setter Property="FontSize" Value="20"></Setter>
         </Style>

@@ -1,0 +1,58 @@
+﻿<Window x:Class="Capybook.Views.Windows.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Capybook.Views.Windows"
+        mc:Ignorable="d"
+        Title="Register" Height="450" Width="800" Background="DeepSkyBlue">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label Style="{StaticResource lable}">Username</Label>
+            <TextBox Style="{StaticResource textbox}" Width="140" HorizontalAlignment="Left"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <Label Style="{StaticResource lable}" >Password</Label>
+            <PasswordBox Width="140" HorizontalAlignment="Left" Height="30"></PasswordBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="3">
+            <Label Style="{StaticResource lable}">Email</Label>
+            <TextBox Style="{StaticResource textbox}" Width="140" HorizontalAlignment="Left"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <Label Style="{StaticResource lable}">First Name</Label>
+            <TextBox Style="{StaticResource textbox}" Width="140" HorizontalAlignment="Left"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2">
+            <Label Style="{StaticResource lable}">Last Name</Label>
+            <TextBox Style="{StaticResource textbox}" Width="140" HorizontalAlignment="Left"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="3">
+            <Label Style="{StaticResource lable}">Phone Number</Label>
+            <TextBox Style="{StaticResource textbox}" Width="140" HorizontalAlignment="Left"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="2">
+            <Label Style="{StaticResource lable}">Date Of Birth</Label>
+            <DatePicker  Height="30" Width="140" HorizontalAlignment="Left"></DatePicker>
+        </StackPanel>
+        <TextBlock Style="{StaticResource title}" Grid.Column="2" VerticalAlignment="Center">Register</TextBlock>
+        <Button x:Name="btnLogin" Style="{StaticResource btn}" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Right" Content="Login" Click="btnLogin_Click" />
+        <Button x:Name="btnRegister" Style="{StaticResource btn}" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Content="Register"/>
+        <Button x:Name="btnReset" Style="{StaticResource btn}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Reset"/>
+        <Button x:Name="btnHomepage" Style="{StaticResource btn}" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Content="Homepage" Click="btnHomepage_Click"/>
+    </Grid>
+</Window>

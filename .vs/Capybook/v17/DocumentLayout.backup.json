@@ -3,20 +3,60 @@
   "WorkspaceRootPath": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project\\capybook\\views\\windows\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:views\\windows\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project\\capybook\\views\\windows\\register.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:views\\windows\\register.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project\\capybook\\views\\windows\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:views\\windows\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project\\capybook\\views\\windows\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:views\\windows\\homepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project\\capybook\\views\\windows\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:views\\windows\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project\\capybook\\views\\windows\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:views\\windows\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project\\capybook\\views\\windows\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:views\\windows\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project\\capybook\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project\\capybook\\views\\windows\\register.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:views\\windows\\register.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project\\capybook\\views\\windows\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:views\\windows\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project\\capybook\\views\\pages\\dashboard\\categorymanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:views\\pages\\dashboard\\categorymanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project\\capybook\\views\\pages\\dashboard\\vouchermanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:views\\pages\\dashboard\\vouchermanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project\\capybook\\views\\pages\\dashboard\\ordermanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:views\\pages\\dashboard\\ordermanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project\\capybook\\views\\pages\\dashboard\\suppliermanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:views\\pages\\dashboard\\suppliermanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project\\capybook\\views\\pages\\dashboard\\bookmanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:views\\pages\\dashboard\\bookmanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project\\capybook\\views\\pages\\dashboard\\accountmanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:views\\pages\\dashboard\\accountmanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Lenovo Y7000P IRX9\\AppData\\Local\\Temp\\.vsdbgsrc\\b49ace08f4cd26a4f275d628999a0f91ccb8a1892704530d9e6f5bd1284082f1\\ResourcePart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -37,7 +77,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -49,20 +89,136 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Register.xaml.cs",
+              "DocumentMoniker": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Windows\\Register.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\Windows\\Register.xaml.cs",
+              "ToolTip": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Windows\\Register.xaml.cs",
+              "RelativeToolTip": "Views\\Windows\\Register.xaml.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAwBQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T15:47:19.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Register.xaml",
+              "DocumentMoniker": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Windows\\Register.xaml",
+              "RelativeDocumentMoniker": "Views\\Windows\\Register.xaml",
+              "ToolTip": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Windows\\Register.xaml",
+              "RelativeToolTip": "Views\\Windows\\Register.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-11T15:29:47.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Homepage.xaml.cs",
+              "DocumentMoniker": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Windows\\Homepage.xaml.cs",
+              "RelativeDocumentMoniker": "Views\\Windows\\Homepage.xaml.cs",
+              "ToolTip": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Windows\\Homepage.xaml.cs",
+              "RelativeToolTip": "Views\\Windows\\Homepage.xaml.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAwCQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T15:27:20.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Homepage.xaml",
+              "DocumentMoniker": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Windows\\Homepage.xaml",
+              "RelativeDocumentMoniker": "Views\\Windows\\Homepage.xaml",
+              "ToolTip": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Windows\\Homepage.xaml",
+              "RelativeToolTip": "Views\\Windows\\Homepage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-11T12:35:02.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CategoryManagement.xaml",
+              "DocumentMoniker": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Pages\\Dashboard\\CategoryManagement.xaml",
+              "RelativeDocumentMoniker": "Views\\Pages\\Dashboard\\CategoryManagement.xaml",
+              "ToolTip": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Pages\\Dashboard\\CategoryManagement.xaml",
+              "RelativeToolTip": "Views\\Pages\\Dashboard\\CategoryManagement.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-11T12:33:15.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "VoucherManagement.xaml",
+              "DocumentMoniker": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Pages\\Dashboard\\VoucherManagement.xaml",
+              "RelativeDocumentMoniker": "Views\\Pages\\Dashboard\\VoucherManagement.xaml",
+              "ToolTip": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Pages\\Dashboard\\VoucherManagement.xaml",
+              "RelativeToolTip": "Views\\Pages\\Dashboard\\VoucherManagement.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-11T12:32:50.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OrderManagement.xaml",
+              "DocumentMoniker": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Pages\\Dashboard\\OrderManagement.xaml",
+              "RelativeDocumentMoniker": "Views\\Pages\\Dashboard\\OrderManagement.xaml",
+              "ToolTip": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Pages\\Dashboard\\OrderManagement.xaml",
+              "RelativeToolTip": "Views\\Pages\\Dashboard\\OrderManagement.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-11T12:32:15.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SupplierManagement.xaml",
+              "DocumentMoniker": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Pages\\Dashboard\\SupplierManagement.xaml",
+              "RelativeDocumentMoniker": "Views\\Pages\\Dashboard\\SupplierManagement.xaml",
+              "ToolTip": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Pages\\Dashboard\\SupplierManagement.xaml",
+              "RelativeToolTip": "Views\\Pages\\Dashboard\\SupplierManagement.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-11T12:32:05.021Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BookManagement.xaml",
+              "DocumentMoniker": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Pages\\Dashboard\\BookManagement.xaml",
+              "RelativeDocumentMoniker": "Views\\Pages\\Dashboard\\BookManagement.xaml",
+              "ToolTip": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Pages\\Dashboard\\BookManagement.xaml",
+              "RelativeToolTip": "Views\\Pages\\Dashboard\\BookManagement.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-11T12:31:53.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AccountManagement.xaml",
+              "DocumentMoniker": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Pages\\Dashboard\\AccountManagement.xaml",
+              "RelativeDocumentMoniker": "Views\\Pages\\Dashboard\\AccountManagement.xaml",
+              "ToolTip": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Pages\\Dashboard\\AccountManagement.xaml",
+              "RelativeToolTip": "Views\\Pages\\Dashboard\\AccountManagement.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-11T12:31:42.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Login.xaml.cs",
               "DocumentMoniker": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Windows\\Login.xaml.cs",
               "RelativeDocumentMoniker": "Views\\Windows\\Login.xaml.cs",
               "ToolTip": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Windows\\Login.xaml.cs",
               "RelativeToolTip": "Views\\Windows\\Login.xaml.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAswB4AAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwCQAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-11T12:21:53.908Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 14,
               "Title": "ResourcePart.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo Y7000P IRX9\\AppData\\Local\\Temp\\.vsdbgsrc\\b49ace08f4cd26a4f275d628999a0f91ccb8a1892704530d9e6f5bd1284082f1\\ResourcePart.cs",
               "ToolTip": "C:\\Users\\Lenovo Y7000P IRX9\\AppData\\Local\\Temp\\.vsdbgsrc\\b49ace08f4cd26a4f275d628999a0f91ccb8a1892704530d9e6f5bd1284082f1\\ResourcePart.cs [Read Only]",
@@ -73,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 15,
               "Title": "Dashboard.xaml.cs",
               "DocumentMoniker": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Windows\\Dashboard.xaml.cs",
               "RelativeDocumentMoniker": "Views\\Windows\\Dashboard.xaml.cs",
@@ -81,12 +237,11 @@
               "RelativeToolTip": "Views\\Windows\\Dashboard.xaml.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAswA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T12:13:07.774Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-11T12:13:07.774Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "Dashboard.xaml",
               "DocumentMoniker": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Windows\\Dashboard.xaml",
               "RelativeDocumentMoniker": "Views\\Windows\\Dashboard.xaml",
@@ -98,19 +253,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Login.xaml",
               "DocumentMoniker": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Windows\\Login.xaml",
               "RelativeDocumentMoniker": "Views\\Windows\\Login.xaml",
-              "ToolTip": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Windows\\Login.xaml*",
-              "RelativeToolTip": "Views\\Windows\\Login.xaml*",
+              "ToolTip": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Views\\Windows\\Login.xaml",
+              "RelativeToolTip": "Views\\Windows\\Login.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-10-11T11:41:03.413Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "App.xaml",
               "DocumentMoniker": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
@@ -122,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 16,
               "Title": "Capybook.csproj",
               "DocumentMoniker": "D:\\1. FPT\\PRN212\\Capybook Project\\Capybook\\Capybook.csproj",
               "RelativeDocumentMoniker": "Capybook.csproj",
@@ -130,8 +285,7 @@
               "RelativeToolTip": "Capybook.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-11T11:01:00.485Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-11T11:01:00.485Z"
             }
           ]
         }
