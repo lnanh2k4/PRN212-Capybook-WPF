@@ -6,9 +6,45 @@
       xmlns:local="clr-namespace:Capybook.Views.Pages.Dashboard"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="BookManagement">
+      Title="BookManagement" Background="White">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource title}" VerticalAlignment="Center">Book Management</TextBlock>
+        <ListView Grid.Row="1" HorizontalAlignment="Stretch">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID"></GridViewColumn>
+                    <GridViewColumn Header="Title"></GridViewColumn>
+                    <GridViewColumn Header="Stranlator"></GridViewColumn>
+                    <GridViewColumn Header="Author"></GridViewColumn>
+                    <GridViewColumn Header="Publisher"></GridViewColumn>
+                    <GridViewColumn Header="Publication Year"></GridViewColumn>
+                    <GridViewColumn Header="isbn"></GridViewColumn>
+                    <GridViewColumn Header="Description"></GridViewColumn>
+                    <GridViewColumn Header="Dimension"></GridViewColumn>
+                    <GridViewColumn Header="HardCover"></GridViewColumn>
+                    <GridViewColumn Header="Weight"></GridViewColumn>
+                    <GridViewColumn Header="Status"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid Grid.Row="2" Background="DeepSkyBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                
+            </Grid>
+            <Grid Grid.Column="1">
+                
+            </Grid>
+        </Grid>
     </Grid>
+    
 </Page>

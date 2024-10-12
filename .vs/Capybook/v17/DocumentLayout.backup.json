@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\1. FPT\\PRN212\\Capybook Project PRN212\\Capybook\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project prn212\\capybook\\views\\windows\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:views\\windows\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project prn212\\capybook\\views\\pages\\dashboard\\accountmanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:views\\pages\\dashboard\\accountmanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project prn212\\capybook\\views\\windows\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|solutionrelative:views\\windows\\dashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6D832DAA-9F29-4209-BD92-3A59D197F444}|Capybook.csproj|d:\\1. fpt\\prn212\\capybook project prn212\\capybook\\views\\pages\\homepage\\register.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -50,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -111,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Dashboard.xaml",
               "DocumentMoniker": "D:\\1. FPT\\PRN212\\Capybook Project PRN212\\Capybook\\Views\\Windows\\Dashboard.xaml",
               "RelativeDocumentMoniker": "Views\\Windows\\Dashboard.xaml",
@@ -167,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "AccountManagement.xaml",
               "DocumentMoniker": "D:\\1. FPT\\PRN212\\Capybook Project PRN212\\Capybook\\Views\\Pages\\Dashboard\\AccountManagement.xaml",
               "RelativeDocumentMoniker": "Views\\Pages\\Dashboard\\AccountManagement.xaml",
