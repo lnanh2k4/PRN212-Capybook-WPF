@@ -79,7 +79,7 @@
                     <Label Style="{StaticResource lable}">ISBN</Label>
                     <TextBox Style="{StaticResource textbox}" ></TextBox>
                 </StackPanel>
-                <StackPanel Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="2">
+                <StackPanel Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="3" >
                     <Label Style="{StaticResource lable}">Description</Label>
                     <TextBox Style="{StaticResource textbox}" ></TextBox>
                 </StackPanel>
@@ -113,6 +113,7 @@
                 <Button Style="{StaticResource btn}" Background="Red" Grid.Row="3" >Delete</Button> 
             </Grid>
         </Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="-25,122,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
     </Grid>
     
 </Page>

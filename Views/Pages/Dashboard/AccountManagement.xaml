@@ -32,7 +32,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Grid Grid.Row="2" Background="DeepSkyBlue">
+        <Grid Grid.Row="2" Background="DodgerBlue">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="8.5*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>
@@ -87,9 +87,9 @@
                 <StackPanel Grid.Row="1" Grid.Column="7" Grid.ColumnSpan="2">
                     <Label Style="{StaticResource lable}">Sex</Label>
                     <StackPanel Orientation="Horizontal">
-                        <RadioButton>Male</RadioButton>
+                        <RadioButton Foreground="White">Male</RadioButton>
                         <Label></Label>
-                        <RadioButton>Female</RadioButton>
+                        <RadioButton Foreground="White">Female</RadioButton>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="2" Grid.Column="1">
@@ -112,9 +112,9 @@
                     <RowDefinition Height="1*"></RowDefinition>
                     <RowDefinition Height="1*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Button Style="{StaticResource btn}" Grid.Row="0" >Add</Button>
-                <Button Style="{StaticResource btn}" Grid.Row="1" >Modify</Button>
-                <Button Style="{StaticResource btn}" Grid.Row="2" >Delete</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="0" Background="GreenYellow" >Add</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="1" Background="GhostWhite">Modify</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="2" Background="red" Foreground="White">Delete</Button>
             </Grid>
         </Grid>
     </Grid>
