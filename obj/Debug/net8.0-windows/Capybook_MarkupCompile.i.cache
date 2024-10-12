@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\App.xaml
-101520578056
+11-207913409
 
-15286815527
+16-1393198840
 198-556154604
-Views\Pages\Dashboard\AccountManagement.xaml;Views\Pages\Dashboard\BookManagement.xaml;Views\Pages\Dashboard\CategoryManagement.xaml;Views\Pages\Dashboard\OrderManagement.xaml;Views\Pages\Dashboard\SupplierManagement.xaml;Views\Pages\Dashboard\VoucherManagement.xaml;Views\Pages\Homepage\Login.xaml;Views\Pages\Homepage\Register.xaml;Views\Windows\Dashboard.xaml;Views\Windows\Homepage.xaml;
+Views\Pages\Dashboard\AccountManagement.xaml;Views\Pages\Dashboard\BookManagement.xaml;Views\Pages\Dashboard\CategoryManagement.xaml;Views\Pages\Dashboard\OrderManagement.xaml;Views\Pages\Dashboard\SupplierManagement.xaml;Views\Pages\Dashboard\VoucherManagement.xaml;Views\Pages\Homepage\BooklistPage.xaml;Views\Pages\Homepage\Login.xaml;Views\Pages\Homepage\Register.xaml;Views\Windows\Dashboard.xaml;Views\Windows\Homepage.xaml;
 
-False
+True
 

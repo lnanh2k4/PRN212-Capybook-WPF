@@ -25,6 +25,9 @@
     <Compile Update="Views\Pages\Dashboard\VoucherManagement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\Homepage\BooklistPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\Homepage\Login.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +58,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Dashboard\VoucherManagement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Homepage\BooklistPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Homepage\Login.xaml">

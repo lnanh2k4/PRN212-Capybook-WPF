@@ -68,6 +68,10 @@
                     <Label Style="{StaticResource lable}">Email</Label>
                     <TextBox Style="{StaticResource textbox}"></TextBox>
                 </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="7">
+                    <Label Style="{StaticResource lable}">Role</Label>
+                    <ComboBox></ComboBox>
+                </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="1">
                     <Label Style="{StaticResource lable}">First Name</Label>
                     <TextBox Style="{StaticResource textbox}" ></TextBox>
@@ -80,9 +84,25 @@
                     <Label Style="{StaticResource lable}">Phone Number</Label>
                     <TextBox Style="{StaticResource textbox}" ></TextBox>
                 </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="7" Grid.ColumnSpan="2">
+                    <Label Style="{StaticResource lable}">Sex</Label>
+                    <StackPanel Orientation="Horizontal">
+                        <RadioButton>Male</RadioButton>
+                        <Label></Label>
+                        <RadioButton>Female</RadioButton>
+                    </StackPanel>
+                </StackPanel>
                 <StackPanel Grid.Row="2" Grid.Column="1">
                     <Label Style="{StaticResource lable}">Date Of Birth</Label>
                     <DatePicker></DatePicker>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3">
+                    <Label Style="{StaticResource lable}">Address</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="7">
+                    <Label Style="{StaticResource lable}">Status</Label>
+                    <ComboBox></ComboBox>
                 </StackPanel>
             </Grid>
             <!--Button CRUD-->

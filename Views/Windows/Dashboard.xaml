@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Capybook.Views.Windows"
         mc:Ignorable="d"
-        Title="Dashboard" Height="700" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Dashboard" Height="750" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -31,9 +31,13 @@
             <Button Grid.Row="5" Style="{StaticResource btnMain}" Name="btnSupplier">Supplier Management</Button>
             <Button Grid.Row="6" Style="{StaticResource btnMain}" Name="btnOrder">Order Management</Button>
             <Button Grid.Row="7" Style="{StaticResource btnMain}" Name="btnLogout" Click="btnLogout_Click">Logout</Button>
-            <TextBlock Grid.Row="8" TextAlignment="Center" VerticalAlignment="Center"  Foreground="Black" FontWeight="Bold" FontSize="13">©2024 Capybook. All Right Reserved!</TextBlock>
+            <StackPanel Grid.Row="8" VerticalAlignment="Center">
+                <TextBlock TextAlignment="Center" VerticalAlignment="Center"  Foreground="Black" FontWeight="Bold" FontSize="13">©2024 Capybook</TextBlock>
+                <TextBlock TextAlignment="Center" VerticalAlignment="Center"  Foreground="Black" FontWeight="Bold" FontSize="13">All Right Reserved!</TextBlock>
+            </StackPanel>
+            
         </Grid>
         
-        <Frame Grid.Column="1" x:Name="dashboardFrame"></Frame>
+        <Frame Grid.Column="1" x:Name="dashboardFrame" NavigationUIVisibility="Hidden"></Frame>
     </Grid>
 </Window>
