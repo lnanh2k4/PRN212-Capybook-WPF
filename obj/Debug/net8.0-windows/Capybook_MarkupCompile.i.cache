@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\
+D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\
 Capybook
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\App.xaml
+D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\App.xaml
 11-157296097
 
 161774415467
 198-556154604
 Views\Pages\Dashboard\AccountManagement.xaml;Views\Pages\Dashboard\BookManagement.xaml;Views\Pages\Dashboard\CategoryManagement.xaml;Views\Pages\Dashboard\OrderManagement.xaml;Views\Pages\Dashboard\SupplierManagement.xaml;Views\Pages\Dashboard\VoucherManagement.xaml;Views\Pages\Homepage\Booklist.xaml;Views\Pages\Homepage\Login.xaml;Views\Pages\Homepage\Register.xaml;Views\Windows\Dashboard.xaml;Views\Windows\Homepage.xaml;
 
-True
+False
 
