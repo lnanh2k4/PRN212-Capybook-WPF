@@ -112,9 +112,9 @@
                     <RowDefinition Height="1*"></RowDefinition>
                     <RowDefinition Height="1*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Button Style="{StaticResource btn}" Grid.Row="0" >Add</Button>
-                <Button Style="{StaticResource btn}" Grid.Row="1" >Modify</Button>
-                <Button Style="{StaticResource btn}" Grid.Row="2" >Delete</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="0" Background="GreenYellow" >Add</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="1" Background="GhostWhite">Modify</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="2" Background="red" Foreground="White">Delete</Button>
             </Grid>
         </Grid>
     </Grid>
