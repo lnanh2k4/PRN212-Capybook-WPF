@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Capybook.Views.Pages.Homepage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,18 +25,24 @@ namespace Capybook.Views.Windows
             InitializeComponent();
         }
 
+       
+
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            Window login = new Login();
-            login.Show();
-            this.Close();
+            homepageFrame.Content = new Login();
+            
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            Window register = new Register();
-            register.Show();
-            this.Close();
+            homepageFrame.Content = new Register();
+            
+        }
+
+        private void btnHomepage_Click(object sender, RoutedEventArgs e)
+        {
+            
+            homepageFrame.Content = "";
         }
     }
 }

@@ -26,9 +26,9 @@ namespace Capybook.Views.Windows
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-            Window login = new Login();
+            Window homepage = new Views.Windows.Homepage();
+            homepage.Show();
             this.Close();
-            login.Show();
         }
     }
 }
