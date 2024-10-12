@@ -24,12 +24,35 @@ namespace Capybook.Views.Windows
             InitializeComponent();
         }
 
-        private void stytleBtn(Button parameter)
+        // Biến để lưu giữ tham chiếu đến nút đã thay đổi màu
+        private Button lastStyledButton = null;
+
+        // Hàm để thay đổi màu nút
+        private void styleBtn(Button parameter)
         {
+            // Nếu có nút trước đó đã được đổi màu, khôi phục trạng thái ban đầu
+            if (lastStyledButton != null)
+            {
+                ResetButtonStyle(lastStyledButton);
+            }
+
+            // Thay đổi màu nút hiện tại
             parameter.Background = new SolidColorBrush(Colors.DodgerBlue);
             parameter.HorizontalContentAlignment = HorizontalAlignment.Right;
             parameter.FontWeight = FontWeights.Bold;
-            parameter.Foreground = new SolidColorBrush((Color)Colors.White);
+            parameter.Foreground = new SolidColorBrush(Colors.White);
+
+            // Lưu lại tham chiếu đến nút đã đổi màu
+            lastStyledButton = parameter;
+        }
+
+        // Hàm để khôi phục trạng thái ban đầu của nút
+        private void ResetButtonStyle(Button parameter)
+        {
+            parameter.Background = new SolidColorBrush(Colors.DeepSkyBlue); // Ví dụ màu nền ban đầu
+            parameter.HorizontalContentAlignment = HorizontalAlignment.Center; // Căn lề ban đầu
+            parameter.FontWeight = FontWeights.Normal; // FontWeight ban đầu
+            parameter.Foreground = new SolidColorBrush(Colors.Black); // Màu chữ ban đầu
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
@@ -42,7 +65,24 @@ namespace Capybook.Views.Windows
         private void btnAccount_Click(object sender, RoutedEventArgs e)
         {
             dashboardFrame.Content = new Views.Pages.Dashboard.AccountManagement();
-            stytleBtn(btnAccount);
+            styleBtn(btnAccount);
+        }
+
+        private void btnBook_Click(object sender, RoutedEventArgs e)
+        {
+            dashboardFrame.Content = new Views.Pages.Dashboard.BookManagement();
+            styleBtn(btnBook);
+        }
+
+        private void btnSupplier_Click(object sender, RoutedEventArgs e)
+        {
+            dashboardFrame.Content = new Views.Pages.Dashboard.SupplierManagement();
+            styleBtn(btnSupplier);
+        }
+
+        private void btnOrder_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

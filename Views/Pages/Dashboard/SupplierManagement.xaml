@@ -45,25 +45,25 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Grid.Column="0">
                     <Label Style="{StaticResource lable}">supName</Label>
-                    <TextBox Style="{StaticResource textbox}" TextChanged="TextBox_TextChanged"></TextBox>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="2">
                     <Label Style="{StaticResource lable}">supEmail</Label>
-                    <TextBox Style="{StaticResource textbox}" TextChanged="TextBox_TextChanged"></TextBox>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="0">
                     <Label Style="{StaticResource lable}">supPhone</Label>
-                    <TextBox Style="{StaticResource textbox}" TextChanged="TextBox_TextChanged"></TextBox>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
                 </StackPanel>
                 <StackPanel Grid.Row="0" Grid.Column="2">
                     <Label Style="{StaticResource lable}">supStatus</Label>
-                    <TextBox Style="{StaticResource textbox}" TextChanged="TextBox_TextChanged"></TextBox>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
                 </StackPanel>
                 <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
                     <Label Style="{StaticResource lable}">supAddress</Label>
-                    <TextBox Style="{StaticResource textbox}" TextChanged="TextBox_TextChanged"></TextBox>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
                 </StackPanel>
 
             </Grid>
