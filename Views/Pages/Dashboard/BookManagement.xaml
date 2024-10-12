@@ -9,6 +9,109 @@
       Title="BookManagement">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource title}" VerticalAlignment="Center">Book Management</TextBlock>
+        <ListView Grid.Row="1" HorizontalAlignment="Stretch">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID"></GridViewColumn>
+                    <GridViewColumn Header="Title"></GridViewColumn>
+                    <GridViewColumn Header="Stranlator"></GridViewColumn>
+                    <GridViewColumn Header="Author"></GridViewColumn>
+                    <GridViewColumn Header="Publisher"></GridViewColumn>
+                    <GridViewColumn Header="Publication Year"></GridViewColumn>
+                    <GridViewColumn Header="isbn"></GridViewColumn>
+                    <GridViewColumn Header="Description"></GridViewColumn>
+                    <GridViewColumn Header="Dimension"></GridViewColumn>
+                    <GridViewColumn Header="HardCover"></GridViewColumn>
+                    <GridViewColumn Header="Weight"></GridViewColumn>
+                    <GridViewColumn Header="Status"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid Grid.Row="2" Background="DeepSkyBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Grid.Column="0">
+                    <Label Style="{StaticResource lable}">Title Book</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="2">
+                    <Label Style="{StaticResource lable}">Stranlator</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="4">
+                    <Label Style="{StaticResource lable}">Author</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="6">
+                    <Label Style="{StaticResource lable}">Publisher</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="0">
+                    <Label Style="{StaticResource lable}">Publication Year</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="2">
+                    <Label Style="{StaticResource lable}">ISBN</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="2">
+                    <Label Style="{StaticResource lable}">Description</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="4">
+                    <Label Style="{StaticResource lable}">Dimension</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="6">
+                    <Label Style="{StaticResource lable}">HardCover</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="0">
+                    <Label Style="{StaticResource lable}">Weight</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="2">
+                    <Label Style="{StaticResource lable}">Status</Label>
+                    <ComboBox></ComboBox>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button Style="{StaticResource btn}" Grid.Row="0" >Detail</Button>
+                <Button Style="{StaticResource btn}" Background="GreenYellow" Grid.Row="1" >Add</Button>
+                <Button Style="{StaticResource btn}" Background="GhostWhite" Grid.Row="2" >Modify</Button>
+                <Button Style="{StaticResource btn}" Background="Red" Grid.Row="3" >Delete</Button>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>
