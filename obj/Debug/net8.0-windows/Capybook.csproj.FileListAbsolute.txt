@@ -118,3 +118,47 @@ D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-wi
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.pdb
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.genruntimeconfig.cache
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\ref\Capybook.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Capybook.exe
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Capybook.deps.json
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Capybook.runtimeconfig.json
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Capybook.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Capybook.pdb
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\AccountManagement.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\BookManagement.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\CategoryManagement.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\OrderDetailManagement.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\OrderManagement.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\SupplierManagement.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\VoucherManagement.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Booklist.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Login.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Register.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Dashboard.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Homepage.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\App.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook_MarkupCompile.cache
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook_MarkupCompile.lref
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\App.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\AccountManagement.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\BookManagement.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\CategoryManagement.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\OrderDetailManagement.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\OrderManagement.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\SupplierManagement.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\VoucherManagement.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Booklist.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Login.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Register.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Dashboard.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Homepage.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.g.resources
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.AssemblyInfoInputs.cache
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.AssemblyInfo.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.csproj.CoreCompileInputs.cache
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.sourcelink.json
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\refint\Capybook.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.pdb
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.genruntimeconfig.cache
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\ref\Capybook.dll

@@ -6,9 +6,29 @@
       xmlns:local="clr-namespace:Capybook.Views.Pages.Dashboard"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="OrderManagement">
-
+      Title="OrderManagement"
+      Background="White">
+   
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource title}" VerticalAlignment="Center">Order Management</TextBlock>
+
+        <ListView Grid.Row="1" HorizontalAlignment="Stretch">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="No."          Width="100"></GridViewColumn>
+                    <GridViewColumn Header="UserName"     Width="150"></GridViewColumn>
+                    <GridViewColumn Header="Address"      Width="200"></GridViewColumn>
+                    <GridViewColumn Header="Phone number" Width="150"></GridViewColumn>
+                    <GridViewColumn Header="Order date"   Width="100"></GridViewColumn>
+                    <GridViewColumn Header=" Status"      Width="100"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+
     </Grid>
 </Page>
