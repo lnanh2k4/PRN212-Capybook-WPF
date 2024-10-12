@@ -6,9 +6,78 @@
       xmlns:local="clr-namespace:Capybook.Views.Pages.Dashboard"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="SupplierManagement">
+      Title="SupplierManagement" Background="White">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource title}" VerticalAlignment="Center">Supplier Management</TextBlock>
+        <ListView  Grid.Row="1" HorizontalAlignment="Stretch">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="supName"></GridViewColumn>
+                    <GridViewColumn Header="supEmail"></GridViewColumn>
+                    <GridViewColumn Header="supPhone"></GridViewColumn>
+                    <GridViewColumn Header="supAddress"></GridViewColumn>
+                    <GridViewColumn Header="supStatus"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid Grid.Row="2" Background="DodgerBlue" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8.5*"></ColumnDefinition>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Grid.Column="0">
+                    <Label Style="{StaticResource lable}">supName</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="2">
+                    <Label Style="{StaticResource lable}">supEmail</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="0">
+                    <Label Style="{StaticResource lable}">supPhone</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="2">
+                    <Label Style="{StaticResource lable}">supStatus</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Label Style="{StaticResource lable}">supAddress</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button Style="{StaticResource btn}" Grid.Row="0" Background="GreenYellow">Add</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="1" Background="GhostWhite">Modify</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="2" Background="red" Foreground="White">Delete</Button>
+            </Grid>
+
+        </Grid>
     </Grid>
 </Page>
