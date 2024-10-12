@@ -24,6 +24,14 @@ namespace Capybook.Views.Windows
             InitializeComponent();
         }
 
+        private void stytleBtn(Button parameter)
+        {
+            parameter.Background = new SolidColorBrush(Colors.DodgerBlue);
+            parameter.HorizontalContentAlignment = HorizontalAlignment.Right;
+            parameter.FontWeight = FontWeights.Bold;
+            parameter.Foreground = new SolidColorBrush((Color)Colors.White);
+        }
+
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
             Window homepage = new Views.Windows.Homepage();
@@ -34,10 +42,7 @@ namespace Capybook.Views.Windows
         private void btnAccount_Click(object sender, RoutedEventArgs e)
         {
             dashboardFrame.Content = new Views.Pages.Dashboard.AccountManagement();
-            btnAccount.Background = new SolidColorBrush(Colors.DodgerBlue);
-            btnAccount.HorizontalContentAlignment = HorizontalAlignment.Right;
-            btnAccount.FontWeight = FontWeights.Bold;
-            btnAccount.Foreground = new SolidColorBrush((Color)Colors.White);
+            stytleBtn(btnAccount);
         }
     }
 }
