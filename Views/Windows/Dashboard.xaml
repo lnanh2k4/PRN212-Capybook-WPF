@@ -29,7 +29,7 @@
             <Button Grid.Row="3" Style="{StaticResource btnMain}" Name="btnCategory">Category Management</Button>
             <Button Grid.Row="4" Style="{StaticResource btnMain}" Name="btnVoucher">Voucher Management</Button>
             <Button Grid.Row="5" Style="{StaticResource btnMain}" Name="btnSupplier">Supplier Management</Button>
-            <Button Grid.Row="6" Style="{StaticResource btnMain}" Name="btnOrder">Order Management</Button>
+            <Button Grid.Row="6" Style="{StaticResource btnMain}" Name="btnOrder" Click="btnOrder_Click">Order Management</Button>
             <Button Grid.Row="7" Style="{StaticResource btnMain}" Name="btnLogout" Click="btnLogout_Click">Logout</Button>
             <StackPanel Grid.Row="8" VerticalAlignment="Center">
                 <TextBlock TextAlignment="Center" VerticalAlignment="Center"  Foreground="Black" FontWeight="Bold" FontSize="13">©2024 Capybook</TextBlock>

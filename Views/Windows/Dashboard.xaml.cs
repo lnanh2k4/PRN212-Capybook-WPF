@@ -44,5 +44,11 @@ namespace Capybook.Views.Windows
             dashboardFrame.Content = new Views.Pages.Dashboard.AccountManagement();
             stytleBtn(btnAccount);
         }
+
+        private void btnOrder_Click(object sender, RoutedEventArgs e)
+        {
+            dashboardFrame.Content = new Views.Pages.Dashboard.OrderManagement();
+            stytleBtn(btnOrder);
+        }
     }
 }
