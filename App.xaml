@@ -20,7 +20,7 @@
             <Setter Property="FontSize" Value="20"></Setter>
         </Style>
         <Style x:Key="lable" TargetType="Label">
-            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="Foreground" Value="white"></Setter>
             <Setter Property="HorizontalAlignment" Value="Left"></Setter>
             <Setter Property="Margin" Value="0,10,0,0"></Setter>
         </Style>
@@ -36,8 +36,8 @@
         </Style>
         <Style x:Key="btnMain" TargetType="Button">
             <Setter Property="FontSize" Value="15"></Setter>
-            <Setter Property="Background" Value="DodgerBlue"></Setter>
-            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="Background" Value="DeepSkyBlue"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
         </Style>
     </Application.Resources>
 </Application>

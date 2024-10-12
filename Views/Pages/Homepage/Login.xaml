@@ -6,14 +6,14 @@
       xmlns:local="clr-namespace:Capybook.Views.Pages.Homepage"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Login" Background="WhiteSmoke">
+      Title="Login" Background="DodgerBlue">
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="250">
-            <TextBlock Style="{StaticResource title}">Login</TextBlock>
-            <Label Style="{StaticResource lable}" HorizontalAlignment="Left">Username</Label>
-            <TextBox></TextBox>
-            <Label Style="{StaticResource lable}" HorizontalAlignment="Left">Password</Label>
+            <TextBlock Style="{StaticResource title}" Foreground="White">Login</TextBlock>
+            <Label Style="{StaticResource lable}" HorizontalAlignment="Left" >Username</Label>
+            <TextBox/>
+            <Label Style="{StaticResource lable}" HorizontalAlignment="Left" >Password</Label>
             <TextBox></TextBox>
             <Grid>
                 <Grid.ColumnDefinitions>

@@ -34,6 +34,10 @@ namespace Capybook.Views.Windows
         private void btnAccount_Click(object sender, RoutedEventArgs e)
         {
             dashboardFrame.Content = new Views.Pages.Dashboard.AccountManagement();
+            btnAccount.Background = new SolidColorBrush(Colors.DodgerBlue);
+            btnAccount.HorizontalContentAlignment = HorizontalAlignment.Right;
+            btnAccount.FontWeight = FontWeights.Bold;
+            btnAccount.Foreground = new SolidColorBrush((Color)Colors.White);
         }
     }
 }
