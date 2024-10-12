@@ -6,9 +6,96 @@
       xmlns:local="clr-namespace:Capybook.Views.Pages.Dashboard"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AccountManagement">
+      Title="AccountManagement" Background="White">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{StaticResource title}" VerticalAlignment="Center">Account Management</TextBlock>
+        <!--List View Data-->
+        <ListView Grid.Row="1" HorizontalAlignment="Stretch">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="No."></GridViewColumn>
+                    <GridViewColumn Header="Username"></GridViewColumn>
+                    <GridViewColumn Header="Full Name"></GridViewColumn>
+                    <GridViewColumn Header="Date Of Birth"></GridViewColumn>
+                    <GridViewColumn Header="Sex"></GridViewColumn>
+                    <GridViewColumn Header="Email"></GridViewColumn>
+                    <GridViewColumn Header="Phone"></GridViewColumn>
+                    <GridViewColumn Header="Address"></GridViewColumn>
+                    <GridViewColumn Header="Role"></GridViewColumn>
+                    <GridViewColumn Header="Status"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid Grid.Row="2" Background="DeepSkyBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8.5*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" Grid.Column="1">
+                    <Label Style="{StaticResource lable}">Username</Label>
+                    <TextBox Style="{StaticResource textbox}"></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="3">
+                    <Label Style="{StaticResource lable}" >Password</Label>
+                    <PasswordBox Height="30"></PasswordBox>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="5">
+                    <Label Style="{StaticResource lable}">Email</Label>
+                    <TextBox Style="{StaticResource textbox}"></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="1">
+                    <Label Style="{StaticResource lable}">First Name</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="3">
+                    <Label Style="{StaticResource lable}">Last Name</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="5">
+                    <Label Style="{StaticResource lable}">Phone Number</Label>
+                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="1">
+                    <Label Style="{StaticResource lable}">Date Of Birth</Label>
+                    <DatePicker></DatePicker>
+                </StackPanel>
+            </Grid>
+            <!--Button CRUD-->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button Style="{StaticResource btn}" Grid.Row="0" >Add</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="1" >Modify</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="2" >Delete</Button>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

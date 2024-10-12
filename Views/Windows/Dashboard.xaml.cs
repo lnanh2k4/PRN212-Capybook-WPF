@@ -30,5 +30,10 @@ namespace Capybook.Views.Windows
             homepage.Show();
             this.Close();
         }
+
+        private void btnAccount_Click(object sender, RoutedEventArgs e)
+        {
+            dashboardFrame.Content = new Views.Pages.Dashboard.AccountManagement();
+        }
     }
 }

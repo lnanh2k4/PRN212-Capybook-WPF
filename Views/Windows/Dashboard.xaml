@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Capybook.Views.Windows"
         mc:Ignorable="d"
-        Title="Dashboard" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="Dashboard" Height="700" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"></ColumnDefinition>
-            <ColumnDefinition Width="7*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="8*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" Background="DeepSkyBlue">
             <Grid.RowDefinitions>
@@ -23,15 +23,15 @@
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Style="{StaticResource title}" Grid.Row="0" FontSize="20" VerticalAlignment="Center">Capybook Dashboard</TextBlock>
-            <Button Grid.Row="1" Style="{StaticResource btnMain}" Name="btnAccount">Account Management</Button>
+            <TextBlock Style="{StaticResource title}" Grid.Row="0" FontSize="15" VerticalAlignment="Center">Capybook Dashboard</TextBlock>
+            <Button Grid.Row="1" Style="{StaticResource btnMain}" Name="btnAccount" Click="btnAccount_Click">Account Management</Button>
             <Button Grid.Row="2" Style="{StaticResource btnMain}" Name="btnBook">Book Management</Button>
             <Button Grid.Row="3" Style="{StaticResource btnMain}" Name="btnCategory">Category Management</Button>
             <Button Grid.Row="4" Style="{StaticResource btnMain}" Name="btnVoucher">Voucher Management</Button>
             <Button Grid.Row="5" Style="{StaticResource btnMain}" Name="btnSupplier">Supplier Management</Button>
             <Button Grid.Row="6" Style="{StaticResource btnMain}" Name="btnOrder">Order Management</Button>
             <Button Grid.Row="7" Style="{StaticResource btnMain}" Name="btnLogout" Click="btnLogout_Click">Logout</Button>
-            <TextBlock Grid.Row="8" TextAlignment="Center" VerticalAlignment="Center"  Foreground="Black" FontWeight="Bold">©2024 Capybook. All Right Reserved!</TextBlock>
+            <TextBlock Grid.Row="8" TextAlignment="Center" VerticalAlignment="Center"  Foreground="Black" FontWeight="Bold" FontSize="13">©2024 Capybook. All Right Reserved!</TextBlock>
         </Grid>
         
         <Frame Grid.Column="1" x:Name="dashboardFrame"></Frame>
