@@ -16,6 +16,9 @@
     <Compile Update="Views\Pages\Dashboard\CategoryManagement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\Dashboard\OrderdetailMangement.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\Dashboard\OrderManagement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -46,6 +49,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Dashboard\CategoryManagement.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\Dashboard\OrderdetailMangement.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Pages\Dashboard\OrderManagement.xaml">

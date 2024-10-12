@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\1. FPT\PRN212\Capybook Project PRN212\Capybook\obj\Debug\net8.0-windows\
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\
 Capybook
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-D:\1. FPT\PRN212\Capybook Project PRN212\Capybook\App.xaml
-101520578056
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\App.xaml
+11-980237152
 
-15286815527
+16680364901
 198-556154604
-Views\Pages\Dashboard\AccountManagement.xaml;Views\Pages\Dashboard\BookManagement.xaml;Views\Pages\Dashboard\CategoryManagement.xaml;Views\Pages\Dashboard\OrderManagement.xaml;Views\Pages\Dashboard\SupplierManagement.xaml;Views\Pages\Dashboard\VoucherManagement.xaml;Views\Pages\Homepage\Login.xaml;Views\Pages\Homepage\Register.xaml;Views\Windows\Dashboard.xaml;Views\Windows\Homepage.xaml;
+Views\Pages\Dashboard\AccountManagement.xaml;Views\Pages\Dashboard\BookManagement.xaml;Views\Pages\Dashboard\CategoryManagement.xaml;Views\Pages\Dashboard\OrderdetailMangement.xaml;Views\Pages\Dashboard\OrderManagement.xaml;Views\Pages\Dashboard\SupplierManagement.xaml;Views\Pages\Dashboard\VoucherManagement.xaml;Views\Pages\Homepage\Login.xaml;Views\Pages\Homepage\Register.xaml;Views\Windows\Dashboard.xaml;Views\Windows\Homepage.xaml;
 
 True
 
