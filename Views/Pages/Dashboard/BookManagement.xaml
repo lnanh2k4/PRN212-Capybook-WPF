@@ -4,114 +4,153 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Capybook.Views.Pages.Dashboard"
+      xmlns:vm="clr-namespace:Capybook.ViewModels"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="BookManagement">
+      Title="BookManagement" Background="AliceBlue">
+
+    <Page.DataContext>
+        <vm:BookVM />
+    </Page.DataContext>
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="5*"></RowDefinition>
-            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="5*" />
         </Grid.RowDefinitions>
-        <TextBlock Style="{StaticResource title}" VerticalAlignment="Center">Book Management</TextBlock>
-        <ListView Grid.Row="1" HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="0.5*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource title}" VerticalAlignment="Center">Book Management</TextBlock>
+
+        <!-- ListView for displaying books -->
+        <ListView Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"
+                  ItemsSource="{Binding Books}" 
+                  SelectedItem="{Binding SelectedBook, Mode=TwoWay}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ID"></GridViewColumn>
-                    <GridViewColumn Header="Title"></GridViewColumn>
-                    <GridViewColumn Header="Stranlator"></GridViewColumn>
-                    <GridViewColumn Header="Author"></GridViewColumn>
-                    <GridViewColumn Header="Publisher"></GridViewColumn>
-                    <GridViewColumn Header="Publication Year"></GridViewColumn>
-                    <GridViewColumn Header="isbn"></GridViewColumn>
-                    <GridViewColumn Header="Description"></GridViewColumn>
-                    <GridViewColumn Header="Dimension"></GridViewColumn>
-                    <GridViewColumn Header="HardCover"></GridViewColumn>
-                    <GridViewColumn Header="Weight"></GridViewColumn>
-                    <GridViewColumn Header="Status"></GridViewColumn>
+                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding BookId}" />
+                    <GridViewColumn Header="Title" Width="100" DisplayMemberBinding="{Binding BookTitle}" />
+                    <GridViewColumn Header="Translator" Width="100" DisplayMemberBinding="{Binding Translator}" />
+                    <GridViewColumn Header="Author" Width="100" DisplayMemberBinding="{Binding Author}" />
+                    <GridViewColumn Header="Publisher" Width="100" DisplayMemberBinding="{Binding Publisher}" />
+                    <GridViewColumn Header="Publication Year" Width="100" DisplayMemberBinding="{Binding PublicationYear}" />
+                    <GridViewColumn Header="ISBN" Width="100" DisplayMemberBinding="{Binding Isbn}" />
+                    <GridViewColumn Header="Description" Width="200" DisplayMemberBinding="{Binding BookDescription}" />
+                    <GridViewColumn Header="Dimension" Width="100" DisplayMemberBinding="{Binding Dimension}" />
+                    <GridViewColumn Header="HardCover" Width="100" DisplayMemberBinding="{Binding Hardcover}" />
+                    <GridViewColumn Header="Weight" Width="100" DisplayMemberBinding="{Binding Weight}" />
+                    <GridViewColumn Header="Status" Width="100" DisplayMemberBinding="{Binding BookStatus}" />
                 </GridView>
             </ListView.View>
         </ListView>
-        <Grid Grid.Row="2" Background="DeepSkyBlue">
+
+        <!-- Form for book details and actions -->
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Background="DeepSkyBlue">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="4*"></ColumnDefinition>
-                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
+
+            <Grid Grid.Column="0" VerticalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
+
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0" Grid.Column="0">
-                    <Label Style="{StaticResource lable}">Title Book</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+
+                <!-- TextBoxes to bind selected book details -->
+                <StackPanel Grid.Row="0" Grid.Column="1">
+                    <Label Style="{StaticResource lable}">Title</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.BookTitle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
-                <StackPanel Grid.Row="0" Grid.Column="2">
-                    <Label Style="{StaticResource lable}">Stranlator</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+
+                <StackPanel Grid.Row="0" Grid.Column="3">
+                    <Label Style="{StaticResource lable}">Translator</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.Translator, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
-                <StackPanel Grid.Row="0" Grid.Column="4">
+
+                <StackPanel Grid.Row="0" Grid.Column="5">
                     <Label Style="{StaticResource lable}">Author</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.Author, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
-                <StackPanel Grid.Row="0" Grid.Column="6">
+
+                <StackPanel Grid.Row="0" Grid.Column="7">
                     <Label Style="{StaticResource lable}">Publisher</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.Publisher, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
-                <StackPanel Grid.Row="1" Grid.Column="0">
+
+                <StackPanel Grid.Row="1" Grid.Column="1">
                     <Label Style="{StaticResource lable}">Publication Year</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.PublicationYear, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
-                <StackPanel Grid.Row="1" Grid.Column="2">
+
+                <StackPanel Grid.Row="1" Grid.Column="3">
                     <Label Style="{StaticResource lable}">ISBN</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.Isbn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
-                <StackPanel Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="2">
-                    <Label Style="{StaticResource lable}">Description</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
-                </StackPanel>
-                <StackPanel Grid.Row="1" Grid.Column="4">
+
+                <StackPanel Grid.Row="1" Grid.Column="5">
                     <Label Style="{StaticResource lable}">Dimension</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.Dimension, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
-                <StackPanel Grid.Row="1" Grid.Column="6">
-                    <Label Style="{StaticResource lable}">HardCover</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+
+                <StackPanel Grid.Row="1" Grid.Column="7">
+                    <Label Style="{StaticResource lable}">Hardcover</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.Hardcover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
-                <StackPanel Grid.Row="2" Grid.Column="0">
+
+                <StackPanel Grid.Row="2" Grid.Column="1">
                     <Label Style="{StaticResource lable}">Weight</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.Weight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
-                <StackPanel Grid.Row="2" Grid.Column="2">
+
+                <StackPanel Grid.Row="2" Grid.Column="3">
                     <Label Style="{StaticResource lable}">Status</Label>
-                    <ComboBox></ComboBox>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.BookStatus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
+
+                <StackPanel Grid.Row="2" Grid.Column="5" Grid.ColumnSpan="7">
+                    <Label Style="{StaticResource lable}">Description</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.BookDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" />
+                </StackPanel>
+
             </Grid>
+
+            <!-- Action buttons for CRUD -->
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
-                <Button Style="{StaticResource btn}" Grid.Row="0" >Detail</Button>
-                <Button Style="{StaticResource btn}" Background="GreenYellow" Grid.Row="1" >Add</Button>
-                <Button Style="{StaticResource btn}" Background="GhostWhite" Grid.Row="2" >Modify</Button>
-                <Button Style="{StaticResource btn}" Background="Red" Grid.Row="3" >Delete</Button>
+
+                <Button Style="{StaticResource btn}" Grid.Row="0" Command="{Binding AddCommand}" Background="GreenYellow">Add</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="1" Command="{Binding ModifyCommand}" Background="GhostWhite">Modify</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="2" Command="{Binding DeleteCommand}" Background="Red">Delete</Button>
             </Grid>
         </Grid>
+
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <Button Style="{StaticResource btn}" Content="Attach Image" Click="AttachImage_Click" />
+            <Image Name="CoverImage" Width="140" Height="150" Stretch="Uniform" Margin="10" />
+        </StackPanel>
     </Grid>
 </Page>

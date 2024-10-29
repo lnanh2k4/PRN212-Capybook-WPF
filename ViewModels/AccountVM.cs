@@ -29,7 +29,7 @@ namespace Capybook.ViewModels
 
         private void DELETE(object obj)
         {
-            using (var context = new Prn212ProjectCapybookContext)
+            using (var context = new Prn212ProjectCapybookContext())
             {
                 if (_selectedItem != null) {
                     context.Accounts.Remove(_selectedItem);
