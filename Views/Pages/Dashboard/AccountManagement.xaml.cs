@@ -23,6 +23,7 @@ namespace Capybook.Views.Pages.Dashboard
         public AccountManagement()
         {
             InitializeComponent();
+            DataContext = new Models.Account();
         }
     }
 }

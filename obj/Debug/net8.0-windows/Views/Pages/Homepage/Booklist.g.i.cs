@@ -53,7 +53,7 @@ namespace Capybook.Views.Pages.Homepage {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Capybook;V1.0.0.0;component/views/pages/homepage/booklist.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Capybook;component/views/pages/homepage/booklist.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\Views\Pages\Homepage\Booklist.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

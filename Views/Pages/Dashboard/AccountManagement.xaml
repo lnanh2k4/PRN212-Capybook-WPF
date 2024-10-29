@@ -15,23 +15,20 @@
             <RowDefinition Height="5*"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Style="{StaticResource title}" VerticalAlignment="Center">Account Management</TextBlock>
-        <!--List View Data-->
-        <ListView Grid.Row="1" HorizontalAlignment="Stretch">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="No."></GridViewColumn>
-                    <GridViewColumn Header="Username"></GridViewColumn>
-                    <GridViewColumn Header="Full Name"></GridViewColumn>
-                    <GridViewColumn Header="Date Of Birth"></GridViewColumn>
-                    <GridViewColumn Header="Sex"></GridViewColumn>
-                    <GridViewColumn Header="Email"></GridViewColumn>
-                    <GridViewColumn Header="Phone"></GridViewColumn>
-                    <GridViewColumn Header="Address"></GridViewColumn>
-                    <GridViewColumn Header="Role"></GridViewColumn>
-                    <GridViewColumn Header="Status"></GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <DataGrid ItemsSource="{Binding accounts}" SelectedItem="{Binding SelectedItem}" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="No." Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Username" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Full Name" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Date Of Birth" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Sex" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Email" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Phone" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Address" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Role" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Status" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
         <Grid Grid.Row="2" Background="DodgerBlue">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="8.5*"></ColumnDefinition>
