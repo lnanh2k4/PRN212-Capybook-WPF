@@ -90,5 +90,10 @@ namespace Capybook.Views.Windows
             dashboardFrame.Content = new Views.Pages.Dashboard.BookManagement();
             styleBtn(btnBook);
         }
+
+        private void btnProfile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

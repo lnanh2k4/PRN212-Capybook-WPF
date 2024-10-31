@@ -12,19 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Capybook.ViewModels;
 
 namespace Capybook.Views.Pages.Dashboard
 {
     /// <summary>
-    /// Interaction logic for AccountManagement.xaml
+    /// Interaction logic for Profile.xaml
     /// </summary>
-    public partial class AccountManagement : Page
+    public partial class Profile : Page
     {
-        public AccountManagement()
+        public Profile()
         {
             InitializeComponent();
-            DataContext = new AccountVM();
         }
     }
 }
