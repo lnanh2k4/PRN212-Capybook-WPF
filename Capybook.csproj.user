@@ -22,6 +22,9 @@
     <Compile Update="Views\Pages\Dashboard\OrderManagement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\Dashboard\Profile.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Pages\Dashboard\SupplierManagement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

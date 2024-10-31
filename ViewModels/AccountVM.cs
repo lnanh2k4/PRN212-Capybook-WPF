@@ -16,6 +16,7 @@ namespace Capybook.ViewModels
         public ICommand AddCommand { get; }
         public ICommand DeleteCommand { get; }
         public ICommand UpdateCommand { get; }
+        public ICommand ClearCommand { get; }
 
         public AccountVM()
         {
@@ -25,6 +26,12 @@ namespace Capybook.ViewModels
             AddCommand = new RelayCommand(ADD);
             //UpdateCommand = new RelayCommand(UPDATE);
             DeleteCommand = new RelayCommand(DELETE);
+            ClearCommand = new RelayCommand(CLEAR);
+        }
+
+        private void CLEAR(object obj)
+        {
+            NewItem = new Account();
         }
 
         private void DELETE(object obj)
@@ -68,7 +75,10 @@ namespace Capybook.ViewModels
                 Accounts.Clear();
                 foreach (var item in items)
                 {
-                    Accounts.Add(item);
+                    if (item.AccStatus != 0)
+                    {
+                        Accounts.Add(item);
+                    }
                 }
             }
         }
@@ -91,9 +101,8 @@ namespace Capybook.ViewModels
                         Phone = _selectedItem.Phone,
                         Role = _selectedItem.Role,
                         Sex = _selectedItem.Sex,
-                        
                     };
-                    OnPropertyChanged(nameof(SelectedItem));
+                    OnPropertyChanged(nameof(NewItem));
                 }
             }
         }
