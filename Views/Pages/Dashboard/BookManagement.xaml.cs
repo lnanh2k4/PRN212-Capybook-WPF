@@ -1,4 +1,4 @@
-﻿using Microsoft.Win32; // Thêm thư viện này để mở file dialog
+﻿using Microsoft.Win32;
 using System;
 using System.IO;
 using System.Windows;
@@ -13,55 +13,89 @@ namespace Capybook.Views.Pages.Dashboard
         public BookManagement()
         {
             InitializeComponent();
+            DataContext = new BookVM();
+
+            // Load image for the selected book when the page is loaded
+            if (DataContext is BookVM viewModel && viewModel.TemporaryBook != null)
+            {
+                LoadImage(viewModel.TemporaryBook.Image);
+            }
+
+            // Subscribe to property changes to update the image
+            if (DataContext is BookVM vm)
+            {
+                vm.PropertyChanged += (s, e) =>
+                {
+                    if (e.PropertyName == nameof(vm.TemporaryBook))
+                    {
+                        LoadImage(vm.TemporaryBook?.Image);
+                    }
+                };
+            }
         }
 
         private void AttachImage_Click(object sender, RoutedEventArgs e)
         {
-            // Mở hộp thoại để chọn file hình ảnh
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png";
-
-            if (openFileDialog.ShowDialog() == true)
+            try
             {
-                // Lấy đường dẫn file đã chọn
-                string sourceFilePath = openFileDialog.FileName;
-
-                // Tạo đường dẫn đến thư mục ImagesUpload
-                string folderPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ImagesUpload");
-
-                // Kiểm tra và tạo thư mục nếu chưa tồn tại
-                if (!Directory.Exists(folderPath))
+                OpenFileDialog openFileDialog = new OpenFileDialog
                 {
-                    Directory.CreateDirectory(folderPath);
+                    Filter = "Image files (*.jpg, *.jpeg, *.png) | *.jpg; *.jpeg; *.png"
+                };
+
+                if (openFileDialog.ShowDialog() == true)
+                {
+                    string sourceFilePath = openFileDialog.FileName;
+                    string folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ImagesUpload");
+
+                    if (!Directory.Exists(folderPath))
+                    {
+                        Directory.CreateDirectory(folderPath);
+                    }
+
+                    string fileName = Path.GetFileName(sourceFilePath);
+                    string uniqueFileName = Guid.NewGuid() + "_" + fileName;
+                    string destinationFilePath = Path.Combine(folderPath, uniqueFileName);
+
+                    File.Copy(sourceFilePath, destinationFilePath, true);
+
+                    // Update the TemporaryBook image path
+                    if (DataContext is BookVM viewModel)
+                    {
+                        viewModel.TemporaryBook.Image = "ImagesUpload/" + uniqueFileName;
+                        LoadImage(viewModel.TemporaryBook.Image);
+                    }
                 }
-
-                // Tạo tên file mới duy nhất để tránh trùng lặp
-                string fileName = System.IO.Path.GetFileName(sourceFilePath);
-                string destinationFilePath = System.IO.Path.Combine(folderPath, fileName);
-
-                // Copy file đến thư mục ImagesUpload
-                File.Copy(sourceFilePath, destinationFilePath, true);
-
-                // Hiển thị hình ảnh đã tải lên trong Image control
-                BitmapImage bitmap = new BitmapImage();
-                bitmap.BeginInit();
-                bitmap.UriSource = new Uri(destinationFilePath);
-                bitmap.EndInit();
-                CoverImage.Source = bitmap;
-
-                // Lưu chuỗi đường dẫn hình ảnh vào cơ sở dữ liệu
-                string imagePathInDb = "ImagesUpload/" + fileName;
-                SaveImagePathToDatabase(imagePathInDb);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error attaching image: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-        // Hàm lưu đường dẫn hình ảnh vào database
-        private void SaveImagePathToDatabase(string imagePath)
+        private void LoadImage(string imagePath)
         {
-            if (DataContext is BookVM viewModel && viewModel.SelectedBook != null)
+            if (!string.IsNullOrWhiteSpace(imagePath))
             {
-                viewModel.SelectedBook.Image = imagePath; // Lưu đường dẫn hình ảnh vào thuộc tính Image của sách
-                viewModel.SaveChanges(); // Lưu thông tin vào cơ sở dữ liệu
+                string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, imagePath);
+
+                if (File.Exists(fullPath))
+                {
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(fullPath, UriKind.Absolute);
+                    bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                    bitmap.EndInit();
+                    CoverImage.Source = bitmap;
+                }
+                else
+                {
+                    CoverImage.Source = null; // Clear the image if the file doesn't exist
+                }
+            }
+            else
+            {
+                CoverImage.Source = null; // Clear the image if the path is empty
             }
         }
     }

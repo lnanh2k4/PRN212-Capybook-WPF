@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Capybook.Views.Pages.Dashboard"
       xmlns:vm="clr-namespace:Capybook.ViewModels"
+      xmlns:utils="clr-namespace:Capybook.Utilities"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="BookManagement" Background="AliceBlue">
@@ -25,7 +26,9 @@
             <ColumnDefinition Width="0.5*" />
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource title}" VerticalAlignment="Center">Book Management</TextBlock>
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource title}" VerticalAlignment="Center">
+            Book Management
+        </TextBlock>
 
         <!-- ListView for displaying books -->
         <ListView Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"
@@ -75,60 +78,61 @@
                     <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
 
-                <!-- TextBoxes to bind selected book details -->
+                <!-- TextBoxes to display and edit selected book details -->
+                <!-- TextBoxes to display and edit temporary book details -->
                 <StackPanel Grid.Row="0" Grid.Column="1">
-                    <Label Style="{StaticResource lable}">Title</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.BookTitle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <Label>Title</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookTitle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="0" Grid.Column="3">
-                    <Label Style="{StaticResource lable}">Translator</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.Translator, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <Label>Translator</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.Translator, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="0" Grid.Column="5">
-                    <Label Style="{StaticResource lable}">Author</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.Author, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <Label>Author</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.Author, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="0" Grid.Column="7">
-                    <Label Style="{StaticResource lable}">Publisher</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.Publisher, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <Label>Publisher</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.Publisher, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="1">
-                    <Label Style="{StaticResource lable}">Publication Year</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.PublicationYear, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <Label>Publication Year</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.PublicationYear, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="3">
-                    <Label Style="{StaticResource lable}">ISBN</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.Isbn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <Label>ISBN</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.Isbn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="5">
-                    <Label Style="{StaticResource lable}">Dimension</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.Dimension, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <Label>Dimension</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.Dimension, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="7">
-                    <Label Style="{StaticResource lable}">Hardcover</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.Hardcover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <Label>Hardcover</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.Hardcover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Grid.Column="1">
-                    <Label Style="{StaticResource lable}">Weight</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.Weight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <Label>Weight</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.Weight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Grid.Column="3">
-                    <Label Style="{StaticResource lable}">Status</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.BookStatus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <Label>Status</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookStatus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Grid.Column="5" Grid.ColumnSpan="7">
-                    <Label Style="{StaticResource lable}">Description</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding SelectedBook.BookDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" />
+                    <Label>Description</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" />
                 </StackPanel>
 
             </Grid>
@@ -143,14 +147,15 @@
                 </Grid.RowDefinitions>
 
                 <Button Style="{StaticResource btn}" Grid.Row="0" Command="{Binding AddCommand}" Background="GreenYellow">Add</Button>
-                <Button Style="{StaticResource btn}" Grid.Row="1" Command="{Binding ModifyCommand}" Background="GhostWhite">Modify</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="1" Command="{Binding ModifyCommand}" Background="GhostWhite" >Modify</Button>
                 <Button Style="{StaticResource btn}" Grid.Row="2" Command="{Binding DeleteCommand}" Background="Red">Delete</Button>
             </Grid>
         </Grid>
 
         <StackPanel Grid.Row="1" Grid.Column="2">
             <Button Style="{StaticResource btn}" Content="Attach Image" Click="AttachImage_Click" />
-            <Image Name="CoverImage" Width="140" Height="150" Stretch="Uniform" Margin="10" />
+            <Image Name="CoverImage" Width="150" Height="170" Stretch="Uniform" Margin="2"
+                Source="{Binding TemporaryBook.Image}" />
         </StackPanel>
     </Grid>
 </Page>
