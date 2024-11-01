@@ -13,7 +13,9 @@
     <Page.DataContext>
         <vm:BookVM />
     </Page.DataContext>
-
+    <Page.Resources>
+        <utils:StatusConverter x:Key="statusConverter"/>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
@@ -47,7 +49,9 @@
                     <GridViewColumn Header="Dimension" Width="100" DisplayMemberBinding="{Binding Dimension}" />
                     <GridViewColumn Header="HardCover" Width="100" DisplayMemberBinding="{Binding Hardcover}" />
                     <GridViewColumn Header="Weight" Width="100" DisplayMemberBinding="{Binding Weight}" />
-                    <GridViewColumn Header="Status" Width="100" DisplayMemberBinding="{Binding BookStatus}" />
+                    <GridViewColumn Header="Status" Width="100" DisplayMemberBinding="{Binding BookStatus, Converter={StaticResource statusConverter}}" />
+                    <GridViewColumn Header="Price" Width="100" DisplayMemberBinding="{Binding BookPrice}" />
+                    <GridViewColumn Header="Quantity" Width="100" DisplayMemberBinding="{Binding BookQuantity}" />
                 </GridView>
             </ListView.View>
         </ListView>
@@ -127,7 +131,7 @@
 
                 <StackPanel Grid.Row="2" Grid.Column="3">
                     <Label>Status</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookStatus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookStatus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Grid.Column="5" Grid.ColumnSpan="7">
@@ -135,6 +139,15 @@
                     <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" />
                 </StackPanel>
 
+                <StackPanel Grid.Row="3" Grid.Column="1">
+                    <Label>Price</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" />
+                </StackPanel>
+                
+                <StackPanel Grid.Row="3" Grid.Column="3">
+                    <Label>Quantity</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookQuantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" />
+                </StackPanel>
             </Grid>
 
             <!-- Action buttons for CRUD -->
