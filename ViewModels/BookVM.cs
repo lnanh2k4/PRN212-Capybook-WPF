@@ -81,7 +81,9 @@ namespace Capybook.ViewModels
                 Weight = selectedBook.Weight,
                 BookStatus = selectedBook.BookStatus,
                 BookDescription = selectedBook.BookDescription,
-                Image = selectedBook.Image
+                Image = selectedBook.Image,
+                BookPrice = selectedBook.BookPrice,
+                BookQuantity = selectedBook.BookQuantity
             };
             OnPropertyChanged(nameof(TemporaryBook));
         }
@@ -103,7 +105,9 @@ namespace Capybook.ViewModels
                     Weight = TemporaryBook.Weight,
                     BookStatus = 1, // Active status
                     BookDescription = TemporaryBook.BookDescription,
-                    Image = TemporaryBook.Image
+                    Image = TemporaryBook.Image,
+                    BookPrice= TemporaryBook.BookPrice,
+                    BookQuantity = TemporaryBook.BookQuantity
                 };
 
                 context.Books.Add(newBook);
@@ -134,7 +138,8 @@ namespace Capybook.ViewModels
                         bookToUpdate.BookStatus = TemporaryBook.BookStatus;
                         bookToUpdate.BookDescription = TemporaryBook.BookDescription;
                         bookToUpdate.Image = TemporaryBook.Image;
-
+                        bookToUpdate.BookPrice = TemporaryBook.BookPrice; 
+                        bookToUpdate.BookQuantity = TemporaryBook.BookQuantity;
                         context.Entry(bookToUpdate).State = EntityState.Modified;
                         context.SaveChanges();
                     }
