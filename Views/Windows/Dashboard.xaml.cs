@@ -95,5 +95,11 @@ namespace Capybook.Views.Windows
         {
 
         }
+
+        private void btnCategory_Click(object sender, RoutedEventArgs e)
+        {
+            dashboardFrame.Content = new Views.Pages.Dashboard.CategoryManagement();
+            styleBtn(btnCategory);
+        }
     }
 }
