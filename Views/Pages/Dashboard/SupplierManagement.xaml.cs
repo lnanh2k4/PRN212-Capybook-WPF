@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using Capybook.ViewModels;
 namespace Capybook.Views.Pages.Dashboard
 {
     /// <summary>
@@ -23,6 +23,7 @@ namespace Capybook.Views.Pages.Dashboard
         public SupplierManagement()
         {
             InitializeComponent();
+            DataContext = new SupplierVM();
         }
     }
 }
