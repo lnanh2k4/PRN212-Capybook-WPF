@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Capybook.ViewModels;
 
 namespace Capybook.Views.Pages.Dashboard
 {
@@ -23,6 +24,7 @@ namespace Capybook.Views.Pages.Dashboard
         public AccountManagement()
         {
             InitializeComponent();
+            DataContext = new AccountVM();
         }
     }
 }

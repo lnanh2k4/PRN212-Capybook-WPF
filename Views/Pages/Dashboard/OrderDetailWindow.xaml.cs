@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Capybook.Models;
+using Capybook.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,19 +12,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Capybook.Views.Pages.Dashboard
 {
     /// <summary>
-    /// Interaction logic for OrderDetailManagement.xaml
+    /// Interaction logic for OrderDetailWindow.xaml
     /// </summary>
-    public partial class OrderDetailManagement : Page
+    public partial class OrderDetailWindow : Window
     {
-        public OrderDetailManagement()
+        public OrderDetailWindow(int orderId)
         {
             InitializeComponent();
+            DataContext = new OrderDetailVM(orderId);
         }
     }
 }

@@ -4,10 +4,16 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Capybook.Views.Pages.Dashboard"
+      xmlns:utilities="clr-namespace:Capybook.Utilities"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AccountManagement" Background="White">
-
+    <Page.Resources>
+        <utilities:FullNameConverter x:Key="fullNameConverter"/>
+        <utilities:RoleConverter x:Key="roleConverter"/>
+        <utilities:SexConverter x:Key="sexConverter"/>
+        <utilities:StatusConverter x:Key="statusConverter"/>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"></RowDefinition>
@@ -15,23 +21,33 @@
             <RowDefinition Height="5*"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Style="{StaticResource title}" VerticalAlignment="Center">Account Management</TextBlock>
-        <!--List View Data-->
-        <ListView Grid.Row="1" HorizontalAlignment="Stretch">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="No."></GridViewColumn>
-                    <GridViewColumn Header="Username"></GridViewColumn>
-                    <GridViewColumn Header="Full Name"></GridViewColumn>
-                    <GridViewColumn Header="Date Of Birth"></GridViewColumn>
-                    <GridViewColumn Header="Sex"></GridViewColumn>
-                    <GridViewColumn Header="Email"></GridViewColumn>
-                    <GridViewColumn Header="Phone"></GridViewColumn>
-                    <GridViewColumn Header="Address"></GridViewColumn>
-                    <GridViewColumn Header="Role"></GridViewColumn>
-                    <GridViewColumn Header="Status"></GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <DataGrid ItemsSource="{Binding Accounts}" SelectedItem="{Binding SelectedItem}"
+                  Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible"
+                  IsReadOnly="True" >
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Username" Width="*" Binding="{Binding Username}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Full Name" Width="*">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding Converter="{StaticResource fullNameConverter}">
+                            <Binding Path="FirstName"/>
+                            <Binding Path="LastName"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Date Of Birth" Width="*" Binding="{Binding Dob}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Sex" Width="*" Binding="{Binding Sex, Converter={StaticResource sexConverter}}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Email" Width="*" Binding="{Binding Email}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Phone" Width="*" Binding="{Binding Phone}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Address" Width="*" Binding="{Binding Address}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Role" Width="*" Binding="{Binding Role,Converter={StaticResource roleConverter}}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Status" Width="*" Binding="{Binding AccStatus,Converter={StaticResource statusConverter}}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
         <Grid Grid.Row="2" Background="DodgerBlue">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="8.5*"></ColumnDefinition>
@@ -58,7 +74,7 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Grid.Column="1">
                     <Label Style="{StaticResource lable}">Username</Label>
-                    <TextBox Style="{StaticResource textbox}"></TextBox>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding NewItem.Username}"></TextBox>
                 </StackPanel>
                 <StackPanel Grid.Row="0" Grid.Column="3">
                     <Label Style="{StaticResource lable}" >Password</Label>
@@ -66,23 +82,28 @@
                 </StackPanel>
                 <StackPanel Grid.Row="0" Grid.Column="5">
                     <Label Style="{StaticResource lable}">Email</Label>
-                    <TextBox Style="{StaticResource textbox}"></TextBox>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding NewItem.Email}"></TextBox>
                 </StackPanel>
                 <StackPanel Grid.Row="0" Grid.Column="7">
                     <Label Style="{StaticResource lable}">Role</Label>
-                    <ComboBox></ComboBox>
+                    <ComboBox>
+                        <ComboBoxItem Content="Admin" Tag="0"/>
+                        <ComboBoxItem Content="Customer" Tag="1"/>
+                        <ComboBoxItem Content="Seller staff" Tag="2"/>
+                        <ComboBoxItem Content="Warehouse staff" Tag="2"/>
+                    </ComboBox>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="1">
                     <Label Style="{StaticResource lable}">First Name</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding NewItem.FirstName}"></TextBox>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="3">
                     <Label Style="{StaticResource lable}">Last Name</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding NewItem.LastName}"></TextBox>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="5">
                     <Label Style="{StaticResource lable}">Phone Number</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                    <TextBox Style="{StaticResource textbox}"  Text="{Binding NewItem.Phone}"></TextBox>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="7" Grid.ColumnSpan="2">
                     <Label Style="{StaticResource lable}">Sex</Label>
@@ -94,16 +115,24 @@
                 </StackPanel>
                 <StackPanel Grid.Row="2" Grid.Column="1">
                     <Label Style="{StaticResource lable}">Date Of Birth</Label>
-                    <DatePicker></DatePicker>
+                    <DatePicker Text="{Binding NewItem.Dob}"></DatePicker>
                 </StackPanel>
-                <StackPanel Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3">
-                    <Label Style="{StaticResource lable}">Address</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
-                </StackPanel>
-                <StackPanel Grid.Row="2" Grid.Column="7">
+                <StackPanel Grid.Row="3" Grid.Column="1">
                     <Label Style="{StaticResource lable}">Status</Label>
-                    <ComboBox></ComboBox>
+                    <ComboBox>
+                        <ComboBoxItem Content="Active" Tag="1"/>
+                        <ComboBoxItem Content="Inactive" Tag="0"/>
+                    </ComboBox>
                 </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="5" Grid.RowSpan="2">
+                    <Label Style="{StaticResource lable}">Address</Label>
+                    <TextBox Style="{StaticResource textbox}" TextWrapping="Wrap"
+                             VerticalScrollBarVisibility="Visible" 
+                             Text="{Binding NewItem.Address}" Height="100"
+                             AcceptsReturn="True"
+                             ></TextBox>
+                </StackPanel>
+                
             </Grid>
             <!--Button CRUD-->
             <Grid Grid.Column="1">
@@ -111,10 +140,12 @@
                     <RowDefinition Height="1*"></RowDefinition>
                     <RowDefinition Height="1*"></RowDefinition>
                     <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Button Style="{StaticResource btn}" Grid.Row="0" Background="GreenYellow" >Add</Button>
-                <Button Style="{StaticResource btn}" Grid.Row="1" Background="GhostWhite">Modify</Button>
-                <Button Style="{StaticResource btn}" Grid.Row="2" Background="red" Foreground="White">Delete</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="0" Background="GreenYellow" Command="{Binding AddCommand}">Add</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="1" Background="GhostWhite" Command="{Binding UpdateCommand}">Modify</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="2" Background="red" Foreground="White" Command="{Binding DeleteCommand}">Delete</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="3" Background="Azure" Command="{Binding ClearCommand}">Clear</Button>
             </Grid>
         </Grid>
     </Grid>

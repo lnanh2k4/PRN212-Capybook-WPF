@@ -1,0 +1,41 @@
+﻿<Window x:Class="Capybook.Views.Pages.Dashboard.OrderDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Capybook.Utilities"
+        mc:Ignorable="d"
+        Title="OrderDetailWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="Auto"/>
+            <!-- Hàng cho Voucher Discount và Total Price -->
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Order Detail" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" FontSize="24" FontWeight="Bold"/>
+
+        <!-- ListView hiển thị OrderDetails -->
+        <ListView Grid.Row="1" HorizontalAlignment="Stretch" ItemsSource="{Binding OrderDetails}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="No." Width="50" DisplayMemberBinding="{Binding Odid}"/>
+                    <GridViewColumn Header="Book" Width="300" DisplayMemberBinding="{Binding Book.BookTitle}"/>
+                    <GridViewColumn Header="Quantity" Width="70" DisplayMemberBinding="{Binding Quantity}"/>
+                    <GridViewColumn Header="Book Price" Width="130" DisplayMemberBinding="{Binding Book.BookPrice}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!-- Voucher Discount và Total Price Display -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+            <TextBlock Text="Voucher Discount: " FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBlock Text="{Binding TotalDiscount, StringFormat=C}" VerticalAlignment="Center" Margin="0,0,20,0"/>
+
+            <TextBlock Text="Total Price: " FontWeight="Bold" VerticalAlignment="Center"/>
+            <TextBlock Text="{Binding TotalPrice, StringFormat=C}" VerticalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>
