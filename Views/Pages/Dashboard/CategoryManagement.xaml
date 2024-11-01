@@ -12,7 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
             <RowDefinition Height="5*" />
-            <RowDefinition Height="5*" />
+            <RowDefinition Height="3*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -33,6 +33,7 @@
                     <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding CatId}" />
                     <GridViewColumn Header="Category Name" Width="200" DisplayMemberBinding="{Binding CatName}" />
                     <GridViewColumn Header="Parent Category ID" Width="150" DisplayMemberBinding="{Binding ParentCatId}" />
+                    <GridViewColumn Header="Parent Category Name" Width="150" DisplayMemberBinding="{Binding ParentCategoryName}" />
                     <GridViewColumn Header="Category Status" Width="200" DisplayMemberBinding="{Binding CatStatus}" />
                 </GridView>
             </ListView.View>
@@ -61,32 +62,38 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="0" Grid.Column="1">
                     <Label>ID</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryCategory.CatId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <TextBox Style="{StaticResource textbox}" 
+                     Text="{Binding TemporaryCategory.CatId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                     Background="Gray" 
+                     IsReadOnly="True"/>
                 </StackPanel>
 
-                <StackPanel Grid.Row="0" Grid.Column="3">
+                <StackPanel Grid.Row="0" Grid.Column="5">
                     <Label>Category name</Label>
                     <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryCategory.CatName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
 
-                <StackPanel Grid.Row="0" Grid.Column="5">
-                    <Label>Parent Category ID</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryCategory.ParentCatId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                </StackPanel>
                 <StackPanel Grid.Row="0" Grid.Column="7">
+                    <Label>Parent Category</Label>
+                    <ComboBox
+                        ItemsSource="{Binding Categories}"
+                        DisplayMemberPath="CatName"
+                        SelectedValuePath="CatId"
+                        SelectedValue="{Binding TemporaryCategory.ParentCatId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="3">
                     <Label>Category status</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryCategory.CatStatus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryCategory.CatStatus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="Gray"  IsReadOnly="True"/>
                 </StackPanel>
             </Grid>
 
             <!-- Action buttons for CRUD -->
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="1*" />

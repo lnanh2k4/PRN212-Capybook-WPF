@@ -18,4 +18,16 @@ public partial class Category
     public virtual ICollection<Category> InverseParentCat { get; set; } = new List<Category>();
 
     public virtual Category? ParentCat { get; set; }
+
+    public string ParentCategoryName
+    {
+        get
+        {
+            using (var context = new Prn212ProjectCapybookContext())
+            {
+                var parentCategory = context.Categories.FirstOrDefault(c => c.CatId == ParentCatId);
+                return parentCategory != null ? parentCategory.CatName : "N/A";
+            }
+        }
+    }
 }

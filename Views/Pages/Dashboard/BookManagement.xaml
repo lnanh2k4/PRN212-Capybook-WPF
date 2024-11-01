@@ -131,7 +131,7 @@
 
                 <StackPanel Grid.Row="2" Grid.Column="3">
                     <Label>Status</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookStatus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookStatus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="Gray"  IsReadOnly="True"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Grid.Column="5" Grid.ColumnSpan="7">
