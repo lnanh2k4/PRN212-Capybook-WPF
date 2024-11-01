@@ -57,8 +57,8 @@ namespace Capybook.Views.Windows
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-            Window homepage = new Views.Windows.Homepage();
-            homepage.Show();
+            Window login = new Views.Windows.Login();
+            login.Show();
             this.Close();
         }
 
@@ -94,6 +94,12 @@ namespace Capybook.Views.Windows
         private void btnProfile_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnCategory_Click(object sender, RoutedEventArgs e)
+        {
+            dashboardFrame.Content = new Views.Pages.Dashboard.CategoryManagement();
+            styleBtn(btnCategory);
         }
     }
 }
