@@ -288,6 +288,8 @@ D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capyb
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.genruntimeconfig.cache
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\ref\Capybook.dll
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\Profile.g.cs
+D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\Profile.baml
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Capybook.exe
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\appsettings.json
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Capybook.deps.json
@@ -421,11 +423,7 @@ D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-wi
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\Profile.g.cs
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\SupplierManagement.g.cs
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\VoucherManagement.g.cs
-D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Booklist.g.cs
-D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Login.g.cs
-D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Register.g.cs
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Dashboard.g.cs
-D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Homepage.g.cs
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\App.g.cs
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook_MarkupCompile.cache
@@ -439,11 +437,7 @@ D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-wi
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\Profile.baml
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\SupplierManagement.baml
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\VoucherManagement.baml
-D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Booklist.baml
-D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Login.baml
-D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Register.baml
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Dashboard.baml
-D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Homepage.baml
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.g.resources
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.GeneratedMSBuildEditorConfig.editorconfig
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.AssemblyInfoInputs.cache
@@ -456,5 +450,7 @@ D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-wi
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.pdb
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.genruntimeconfig.cache
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\ref\Capybook.dll
-D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\Profile.g.cs
-D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\Profile.baml
+D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Login.g.cs
+D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Register.g.cs
+D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Login.baml
+D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Register.baml

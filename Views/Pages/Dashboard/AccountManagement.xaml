@@ -13,6 +13,7 @@
         <utilities:RoleConverter x:Key="roleConverter"/>
         <utilities:SexConverter x:Key="sexConverter"/>
         <utilities:StatusConverter x:Key="statusConverter"/>
+        <utilities:SexRadioButtonConverter x:Key="sexRadioBtnConverter"/>
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -78,7 +79,7 @@
                 </StackPanel>
                 <StackPanel Grid.Row="0" Grid.Column="3">
                     <Label Style="{StaticResource lable}" >Password</Label>
-                    <PasswordBox Height="30"></PasswordBox>
+                    <PasswordBox utilities:PasswordBoxHelper.BoundPassword="{Binding NewItem.Password, Mode=TwoWay}"></PasswordBox>
                 </StackPanel>
                 <StackPanel Grid.Row="0" Grid.Column="5">
                     <Label Style="{StaticResource lable}">Email</Label>
@@ -86,11 +87,11 @@
                 </StackPanel>
                 <StackPanel Grid.Row="0" Grid.Column="7">
                     <Label Style="{StaticResource lable}">Role</Label>
-                    <ComboBox>
+                    <ComboBox SelectedValue="{Binding NewItem.Role, Mode=TwoWay}" SelectedValuePath="Tag">
                         <ComboBoxItem Content="Admin" Tag="0"/>
                         <ComboBoxItem Content="Customer" Tag="1"/>
                         <ComboBoxItem Content="Seller staff" Tag="2"/>
-                        <ComboBoxItem Content="Warehouse staff" Tag="2"/>
+                        <ComboBoxItem Content="Warehouse staff" Tag="3"/>
                     </ComboBox>
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="1">
@@ -108,9 +109,9 @@
                 <StackPanel Grid.Row="1" Grid.Column="7" Grid.ColumnSpan="2">
                     <Label Style="{StaticResource lable}">Sex</Label>
                     <StackPanel Orientation="Horizontal">
-                        <RadioButton Foreground="White">Male</RadioButton>
+                        <RadioButton GroupName="SexGroup" Foreground="White" IsChecked="{Binding Path=NewItem.Sex, Converter={StaticResource sexRadioBtnConverter}, ConverterParameter=1}">Male</RadioButton>
                         <Label></Label>
-                        <RadioButton Foreground="White">Female</RadioButton>
+                        <RadioButton Foreground="White" GroupName="SexGroup" IsChecked="{Binding Path=NewItem.Sex, Converter={StaticResource sexRadioBtnConverter}, ConverterParameter=0}">Female</RadioButton>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="2" Grid.Column="1">
@@ -119,7 +120,7 @@
                 </StackPanel>
                 <StackPanel Grid.Row="3" Grid.Column="1">
                     <Label Style="{StaticResource lable}">Status</Label>
-                    <ComboBox>
+                    <ComboBox SelectedValue="{Binding NewItem.AccStatus}" SelectedValuePath="Tag">
                         <ComboBoxItem Content="Active" Tag="1"/>
                         <ComboBoxItem Content="Inactive" Tag="0"/>
                     </ComboBox>
