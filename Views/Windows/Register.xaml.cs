@@ -10,30 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Capybook.Views.Pages.Homepage
+namespace Capybook.Views.Windows
 {
     /// <summary>
     /// Interaction logic for Register.xaml
     /// </summary>
-    public partial class Register : Page
+    public partial class Register : Window
     {
         public Register()
         {
             InitializeComponent();
-        }
-        private void btnHomepage_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-            
-            
-            
         }
     }
 }

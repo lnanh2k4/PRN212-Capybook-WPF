@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Capybook.ViewModels
@@ -17,14 +18,14 @@ namespace Capybook.ViewModels
         public ICommand DeleteCommand { get; }
         public ICommand UpdateCommand { get; }
         public ICommand ClearCommand { get; }
-
+        private string _username;
         public AccountVM()
         {
             Accounts = new ObservableCollection<Account>();
             Load();
             NewItem = new Account();
             AddCommand = new RelayCommand(ADD);
-            //UpdateCommand = new RelayCommand(UPDATE);
+            UpdateCommand = new RelayCommand(UPDATE);
             DeleteCommand = new RelayCommand(DELETE);
             ClearCommand = new RelayCommand(CLEAR);
         }
@@ -38,7 +39,8 @@ namespace Capybook.ViewModels
         {
             using (var context = new Prn212ProjectCapybookContext())
             {
-                if (_selectedItem != null) {
+                if (_selectedItem != null)
+                {
                     context.Accounts.Remove(_selectedItem);
                     context.SaveChanges();
                     Accounts.Remove(_selectedItem);
@@ -48,10 +50,30 @@ namespace Capybook.ViewModels
             }
         }
 
-        //private void UPDATE(object obj)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        private void UPDATE(object obj)
+        {
+            using (var context = new Prn212ProjectCapybookContext())
+            {
+                if (SelectedItem != null) {
+                    var item = context.Accounts.Where(x => x.Username == _username).FirstOrDefault();
+                    if (item != null)
+                    {
+                        item.Address = NewItem.Address;
+                        item.Password = NewItem.Password;
+                        item.AccStatus = NewItem.AccStatus;
+                        item.Email = NewItem.Email;
+                        item.FirstName = NewItem.FirstName;
+                        item.LastName = NewItem.LastName;
+                        item.Address = NewItem.Address;
+                        item.Dob = NewItem.Dob;
+                        item.Phone = NewItem.Phone;
+                        item.Role = NewItem.Role;
+                        context.SaveChanges();
+                        Load();
+                    }
+                }
+            }
+        }
 
         private void ADD(object obj)
         {
@@ -84,12 +106,18 @@ namespace Capybook.ViewModels
         }
 
         private Account _selectedItem;
-        public Account SelectedItem {
+        public Account SelectedItem
+        {
             get { return _selectedItem; }
-            set { _selectedItem = value;
+            set
+            {
+                _selectedItem = value;
                 OnPropertyChanged(nameof(SelectedItem));
-                if (_selectedItem != null) {
-                    NewItem = new Account {
+                if (_selectedItem != null)
+                {
+                    _username = _selectedItem.Username;
+                    NewItem = new Account
+                    {
                         AccStatus = _selectedItem.AccStatus,
                         Address = _selectedItem.Address,
                         Dob = _selectedItem.Dob,
@@ -101,6 +129,7 @@ namespace Capybook.ViewModels
                         Phone = _selectedItem.Phone,
                         Role = _selectedItem.Role,
                         Sex = _selectedItem.Sex,
+                        Username = _selectedItem.Username,
                     };
                     OnPropertyChanged(nameof(NewItem));
                 }

@@ -10,34 +10,31 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Capybook.Views.Windows;
 
-namespace Capybook.Views.Pages.Homepage
+namespace Capybook.Views.Windows
 {
     /// <summary>
     /// Interaction logic for Login.xaml
     /// </summary>
-    public partial class Login : Page
+    public partial class Login : Window
     {
         public Login()
         {
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-            Window dashboard = new Views.Windows.Dashboard();
-            dashboard.Show();
-            Window.GetWindow(this).Close();
-        }
-
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            Page register = new Register();
-            this.NavigationService.Navigate(register);
-            
+            Window register = new Register();
+            register.ShowDialog();
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            Window dashboard = new Dashboard();
+            dashboard.Show();
+            this.Close();
         }
     }
 }

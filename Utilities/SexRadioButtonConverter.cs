@@ -4,33 +4,29 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Data;
 
 namespace Capybook.Utilities
 {
-    public class SexConverter : IValueConverter
+    class SexRadioButtonConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value != null)
+            if (value == null || parameter == null)
             {
-                int sex = (int)value;
-                if (sex == 0)
-                {
-                    return "Female";
-                }
-                else
-                {
-                    return "Male";
-                }
+                return false;
+
             }
-            return "Unknown";
+            return value.ToString() == parameter.ToString();
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            if (value is bool isChecked && isChecked)
+            {
+                return int.Parse(parameter.ToString());
+            }
+            return Binding.DoNothing;
         }
     }
 }
