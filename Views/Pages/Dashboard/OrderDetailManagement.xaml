@@ -30,7 +30,7 @@
             </ListView.View>
         </ListView>
 
-        <Grid Grid.Row="2" Background="DeepSkyBlue">
+        <Grid Grid.Row="2" Background="DodgerBlue">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="8.5*"></ColumnDefinition>
                 <ColumnDefinition Width="1*"></ColumnDefinition>

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Season 5\\PRN212\\Project\\PRN212-Capybook-WPF\\Capybook.csproj": {}
+    "D:\\FPT University\\PROJECT-Cabybook\\PRN212-Capybook-WPF\\Capybook.csproj": {}
   },
   "projects": {
-    "D:\\Season 5\\PRN212\\Project\\PRN212-Capybook-WPF\\Capybook.csproj": {
+    "D:\\FPT University\\PROJECT-Cabybook\\PRN212-Capybook-WPF\\Capybook.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Season 5\\PRN212\\Project\\PRN212-Capybook-WPF\\Capybook.csproj",
+        "projectUniqueName": "D:\\FPT University\\PROJECT-Cabybook\\PRN212-Capybook-WPF\\Capybook.csproj",
         "projectName": "Capybook",
-        "projectPath": "D:\\Season 5\\PRN212\\Project\\PRN212-Capybook-WPF\\Capybook.csproj",
-        "packagesPath": "C:\\Users\\KhacVu\\.nuget\\packages\\",
-        "outputPath": "D:\\Season 5\\PRN212\\Project\\PRN212-Capybook-WPF\\obj\\",
+        "projectPath": "D:\\FPT University\\PROJECT-Cabybook\\PRN212-Capybook-WPF\\Capybook.csproj",
+        "packagesPath": "C:\\Users\\Khanh\\.nuget\\packages\\",
+        "outputPath": "D:\\FPT University\\PROJECT-Cabybook\\PRN212-Capybook-WPF\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\KhacVu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Khanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

@@ -162,3 +162,5 @@ D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\
 D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.pdb
 D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.genruntimeconfig.cache
 D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\ref\Capybook.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Cart.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Cart.baml
