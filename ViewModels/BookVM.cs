@@ -253,6 +253,7 @@ namespace Capybook.ViewModels
                         Books.Add(book);
                     }
                 }
+//final
             }
 
             
