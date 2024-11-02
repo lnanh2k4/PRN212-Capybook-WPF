@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Capybook.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,8 @@ namespace Capybook.Views.Windows
         public Register()
         {
             InitializeComponent();
+            DataContext = new AccountVM();
+            
         }
     }
 }

@@ -11,7 +11,7 @@
         <Style x:Key="title" TargetType="TextBlock">
             <Setter Property="Foreground" Value="Black"></Setter>
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="30"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
             <Setter Property="FontWeight" Value="Bold"></Setter>
         </Style>
         <Style x:Key="content" TargetType="TextBlock">
