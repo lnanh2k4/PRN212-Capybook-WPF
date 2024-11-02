@@ -1,19 +1,18 @@
 ﻿using System.Collections.ObjectModel;
-using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using Capybook.Models;
-using Capybook.Utilities; // Assuming you have a RelayCommand or similar utility
-using Microsoft.EntityFrameworkCore;
+using Capybook.Utilities;
+using Microsoft.EntityFrameworkCore; // Assuming you have a RelayCommand or similar utility
 
 namespace Capybook.ViewModels
 {
     public class BookVM : BaseVM
     {
         public ObservableCollection<Book> Books { get; set; }
+        public ObservableCollection<Category> Categories { get; set; } // Collection for categories
+        private ObservableCollection<Book> _allBooks;
         private Book _selectedBook;
-
-        // SelectedBook is used for the ListView selection
         public Book SelectedBook
         {
             get => _selectedBook;
@@ -28,7 +27,6 @@ namespace Capybook.ViewModels
             }
         }
 
-        // TemporaryBook is used for editing details in the UI
         public Book TemporaryBook { get; set; }
 
         // Commands for Add, Edit, and Delete
@@ -36,17 +34,20 @@ namespace Capybook.ViewModels
         public ICommand ModifyCommand { get; set; }
         public ICommand DeleteCommand { get; set; }
 
+        public ICommand SearchCommand { get; set; }
         public BookVM()
         {
             Books = new ObservableCollection<Book>();
+            Categories = new ObservableCollection<Category>(); // Initialize categories
             TemporaryBook = new Book();
-
+            _allBooks = new ObservableCollection<Book>();
             // Initialize commands
             AddCommand = new RelayCommand(AddBook);
             ModifyCommand = new RelayCommand(ModifyBook);
             DeleteCommand = new RelayCommand(DeleteBook);
-
-            LoadBooks(); // Load books from the database
+            SearchCommand = new RelayCommand(SearchBooks);
+            LoadBooks();
+            LoadCategories(); // Load categories from the database
         }
 
         private void LoadBooks()
@@ -55,11 +56,27 @@ namespace Capybook.ViewModels
             using (var context = new Prn212ProjectCapybookContext())
             {
                 var booksFromDb = context.Books
-                    .Where(book => book.BookStatus != 0) // Only include books with BookStatus != 0
+                    .Include(b => b.Cat) // Include category details
+                    .Where(book => book.BookStatus != 0)
                     .ToList();
                 foreach (var book in booksFromDb)
                 {
                     Books.Add(book);
+                }
+            }
+        }
+
+        private void LoadCategories()
+        {
+            Categories.Clear();
+            using (var context = new Prn212ProjectCapybookContext())
+            {
+                var categoriesFromDb = context.Categories
+                    .Where(cat => cat.CatStatus != 0) // Only active categories
+                    .ToList();
+                foreach (var category in categoriesFromDb)
+                {
+                    Categories.Add(category);
                 }
             }
         }
@@ -83,7 +100,8 @@ namespace Capybook.ViewModels
                 BookDescription = selectedBook.BookDescription,
                 Image = selectedBook.Image,
                 BookPrice = selectedBook.BookPrice,
-                BookQuantity = selectedBook.BookQuantity
+                BookQuantity = selectedBook.BookQuantity,
+                Cat = Categories.FirstOrDefault(cat => cat.CatId == selectedBook.CatId)
             };
             OnPropertyChanged(nameof(TemporaryBook));
         }
@@ -106,8 +124,9 @@ namespace Capybook.ViewModels
                     BookStatus = 1, // Active status
                     BookDescription = TemporaryBook.BookDescription,
                     Image = TemporaryBook.Image,
-                    BookPrice= TemporaryBook.BookPrice,
-                    BookQuantity = TemporaryBook.BookQuantity
+                    BookPrice = TemporaryBook.BookPrice,
+                    BookQuantity = TemporaryBook.BookQuantity,
+                    CatId = TemporaryBook.Cat?.CatId // Save the category ID
                 };
 
                 context.Books.Add(newBook);
@@ -138,14 +157,18 @@ namespace Capybook.ViewModels
                         bookToUpdate.BookStatus = TemporaryBook.BookStatus;
                         bookToUpdate.BookDescription = TemporaryBook.BookDescription;
                         bookToUpdate.Image = TemporaryBook.Image;
-                        bookToUpdate.BookPrice = TemporaryBook.BookPrice; 
+                        bookToUpdate.BookPrice = TemporaryBook.BookPrice;
                         bookToUpdate.BookQuantity = TemporaryBook.BookQuantity;
+                        bookToUpdate.CatId = TemporaryBook.Cat.CatId; // Update the category ID
                         context.Entry(bookToUpdate).State = EntityState.Modified;
                         context.SaveChanges();
                     }
                 }
                 LoadBooks();
                 MessageBox.Show("Book modified successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else {
+                MessageBox.Show("Please select any data row before doing this function!", "Fail", MessageBoxButton.OK, MessageBoxImage.Stop);
             }
         }
 
@@ -167,5 +190,73 @@ namespace Capybook.ViewModels
                 MessageBox.Show("Book deleted successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
+        private void SearchBooks(object obj)
+        {
+            int cnt = 0;
+            using (var context = new Prn212ProjectCapybookContext())
+            {
+                var query = context.Books
+                    .Include(b => b.Cat) // Include category details
+                    .Where(book => book.BookStatus != 0) // Only active books
+                    .AsQueryable();
+
+                // Apply filters based on filled-in fields
+                if (!string.IsNullOrEmpty(TemporaryBook.BookTitle))
+                {
+                    query = query.Where(b => b.BookTitle.Contains(TemporaryBook.BookTitle));
+                    cnt++;
+                }
+                if (!string.IsNullOrEmpty(TemporaryBook.Author))
+                {
+                    query = query.Where(b => b.Author.Contains(TemporaryBook.Author));
+                    cnt++;
+                }
+                if (!string.IsNullOrEmpty(TemporaryBook.Translator))
+                {
+                    query = query.Where(b => b.Translator.Contains(TemporaryBook.Translator));
+                    cnt++;
+                }
+                if (!string.IsNullOrEmpty(TemporaryBook.Publisher))
+                {
+                    query = query.Where(b => b.Publisher.Contains(TemporaryBook.Publisher));
+                    cnt++;
+                }
+                if (TemporaryBook.PublicationYear != null)
+                {
+                    query = query.Where(b => b.PublicationYear == TemporaryBook.PublicationYear);
+                    cnt++;
+                }
+                if (!string.IsNullOrEmpty(TemporaryBook.Isbn))
+                {
+                    query = query.Where(b => b.Isbn.Contains(TemporaryBook.Isbn));
+                    cnt++;
+                }
+                if (TemporaryBook.Cat != null)
+                {
+                    query = query.Where(b => b.CatId == TemporaryBook.Cat.CatId);
+                    cnt++;
+                }
+
+                // If no filters were applied, reload all books
+                if (cnt == 0)
+                {
+                    LoadBooks();
+                }
+                else
+                {
+                    // Get filtered results and update the Books collection
+                    var results = query.ToList();
+                    Books.Clear();
+                    foreach (var book in results)
+                    {
+                        Books.Add(book);
+                    }
+                }
+            }
+
+            
+        }
+
     }
 }
