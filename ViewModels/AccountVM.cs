@@ -44,7 +44,8 @@ namespace Capybook.ViewModels
         {
             using (var context = new Prn212ProjectCapybookContext())
             {
-                if (string.IsNullOrEmpty(NewItem.Username)) {
+                if (string.IsNullOrEmpty(NewItem.Username))
+                {
                     MessageBox.Show("Please enter username!", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
@@ -67,16 +68,18 @@ namespace Capybook.ViewModels
                         MessageBox.Show("Username or password is incorrect!", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
-                
+
             }
         }
 
         private void SEARCH(object obj)
         {
-            int cnt=0;
-            using (var context = new Prn212ProjectCapybookContext()) {
+            int cnt = 0;
+            using (var context = new Prn212ProjectCapybookContext())
+            {
                 var query = context.Accounts.AsQueryable();
-                if (!string.IsNullOrEmpty(NewItem.Username)) { 
+                if (!string.IsNullOrEmpty(NewItem.Username))
+                {
                     query = query.Where(x => x.Username.Contains(NewItem.Username));
                     cnt++;
                 }
@@ -105,7 +108,7 @@ namespace Capybook.ViewModels
                     query = query.Where(x => x.Phone.Contains(NewItem.Phone));
                     cnt++;
                 }
-                if(cnt == 0)
+                if (cnt == 0)
                 {
                     Load();
                 }
@@ -118,7 +121,7 @@ namespace Capybook.ViewModels
                         Accounts.Add(item);
                     }
                 }
-                
+
             }
         }
 
@@ -170,7 +173,8 @@ namespace Capybook.ViewModels
         {
             using (var context = new Prn212ProjectCapybookContext())
             {
-                if (SelectedItem != null) {
+                if (SelectedItem != null)
+                {
                     var item = context.Accounts.Where(x => x.Username == _username).FirstOrDefault();
                     if (item != null && isValidate())
                     {
@@ -280,8 +284,9 @@ namespace Capybook.ViewModels
             using (var context = new Prn212ProjectCapybookContext())
             {
                 var item = context.Accounts.Where(x => x.Username == NewItem.Username).FirstOrDefault();
-                if (item != null) {
-                    MessageBox.Show("Username is existed! Please change other username!","Validate Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                if (item != null)
+                {
+                    MessageBox.Show("Username is existed! Please change other username!", "Validate Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     return false;
                 }
             }
@@ -315,6 +320,19 @@ namespace Capybook.ViewModels
                 return false;
             }
             return true;
+        }
+
+        public Account GetAccount(string username)
+        {
+            using (var context = new Prn212ProjectCapybookContext())
+            {
+                if (username != null)
+                {
+                    return context.Accounts.Where(x => x.Username == username).FirstOrDefault();
+
+                }
+            }
+            return null;
         }
     }
 }

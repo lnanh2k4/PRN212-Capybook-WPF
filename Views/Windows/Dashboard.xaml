@@ -4,8 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Capybook.Views.Windows"
+        xmlns:utilities="clr-namespace:Capybook.Utilities"
         mc:Ignorable="d"
         Title="Dashboard" Height="500" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <utilities:RoleConverter x:Key="roleConverter"/>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -23,10 +27,17 @@
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0">
+            <StackPanel Grid.Row="0" VerticalAlignment="Center">
                 <TextBlock Style="{StaticResource title}"  FontSize="15" VerticalAlignment="Center">Capybook Dashboard</TextBlock>
-                <TextBlock Style="{StaticResource title}"  FontSize="15" VerticalAlignment="Center" Text="{Binding NewItem.Username}"></TextBlock>
-                <TextBlock Style="{StaticResource title}"  FontSize="15" VerticalAlignment="Center" Text="{Binding NewItem.Role}"></TextBlock>
+                <TextBlock Style="{StaticResource title}"  FontSize="10" VerticalAlignment="Center">
+                    <TextBlock.Text>
+                        <MultiBinding StringFormat=" {0} {1} - {2} ">
+                            <Binding Path="NewItem.FirstName"/>
+                            <Binding Path="NewItem.LastName"/>
+                            <Binding Path="NewItem.Role" Converter="{StaticResource roleConverter}"/>
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
             </StackPanel>
             <Button Grid.Row="1" Style="{StaticResource btnMain}" Name="btnAccount" Click="btnAccount_Click">Account Management</Button>
             <Button Grid.Row="2" Style="{StaticResource btnMain}" Name="btnBook" Click="btnBook_Click">Book Management</Button>

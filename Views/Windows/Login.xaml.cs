@@ -26,16 +26,18 @@ namespace Capybook.Views.Windows
             InitializeComponent();
             DataContext = vm;
             var item = DataContext as AccountVM;
-            if (item != null) {
+            if (item != null)
+            {
                 vm.RequestLogin += DoLogin;
             }
         }
 
         private void DoLogin()
         {
-                Window dashboard = new Dashboard(vm.NewItem);
-                dashboard.Show();
-                this.Close();
+            string username = usernameTxt.Text;
+            Window dashboard = new Dashboard(username);
+            dashboard.Show();
+            this.Close();
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)

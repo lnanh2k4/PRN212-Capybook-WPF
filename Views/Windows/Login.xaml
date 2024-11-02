@@ -11,9 +11,9 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="250">
             <TextBlock Style="{StaticResource title}" Foreground="White">Login</TextBlock>
             <Label Style="{StaticResource lable}" HorizontalAlignment="Left" >Username</Label>
-            <TextBox Text="{Binding NewItem.Username, Mode=TwoWay}"/>
+            <TextBox x:Name="usernameTxt" Text="{Binding NewItem.Username, Mode=TwoWay}"/>
             <Label Style="{StaticResource lable}" HorizontalAlignment="Left" >Password</Label>
-            <PasswordBox utilities:PasswordBoxHelper.BoundPassword="{Binding NewItem.Password, Mode=TwoWay}"/>
+            <PasswordBox x:Name="passwordTxt" utilities:PasswordBoxHelper.BoundPassword="{Binding NewItem.Password, Mode=TwoWay}"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"></ColumnDefinition>

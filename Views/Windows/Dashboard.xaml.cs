@@ -21,12 +21,18 @@ namespace Capybook.Views.Windows
     /// </summary>
     public partial class Dashboard : Window
     {
+        public const int ADMIN_ROLE = 0;
+        public const int CUSTOMER_ROLE = 1;
+        public const int SELLER_STAFF_ROLE = 2;
+        public const int WAREHOUSE_STAFF_ROLE = 3;
         AccountVM accountVM;
-        public Dashboard(Account account)
+        public Dashboard(string username)
         {
             InitializeComponent();
-            if (account != null) {
-                accountVM.NewItem = account;
+            accountVM = new AccountVM();
+            if (username != null)
+            {
+                accountVM.NewItem = accountVM.GetAccount(username);
             }
             DataContext = accountVM;
         }
@@ -71,42 +77,83 @@ namespace Capybook.Views.Windows
 
         private void btnAccount_Click(object sender, RoutedEventArgs e)
         {
-            dashboardFrame.Content = new Views.Pages.Dashboard.AccountManagement();
-            styleBtn(btnAccount);
+            if (accountVM.NewItem.Role == ADMIN_ROLE)
+            {
+                dashboardFrame.Content = new Views.Pages.Dashboard.AccountManagement();
+                styleBtn(btnAccount);
+            }
+            else
+            {
+                MessageBox.Show("Your account is not permission to use this function!", "Not Authorized Alert", MessageBoxButton.OK, MessageBoxImage.Stop);
+            }
+
         }
 
         private void btnOrder_Click(object sender, RoutedEventArgs e)
         {
-            dashboardFrame.Content = new Views.Pages.Dashboard.OrderManagement();
-            styleBtn(btnOrder);
+            if (accountVM.NewItem.Role == ADMIN_ROLE || accountVM.NewItem.Role == SELLER_STAFF_ROLE)
+            {
+                dashboardFrame.Content = new Views.Pages.Dashboard.OrderManagement();
+                styleBtn(btnOrder);
+            }
+            else
+            {
+                MessageBox.Show("Your account is not permission to use this function!", "Not Authorized Alert", MessageBoxButton.OK, MessageBoxImage.Stop);
+            }
+
         }
 
         private void btnVoucher_Click(object sender, RoutedEventArgs e)
         {
-
+            if (accountVM.NewItem.Role == ADMIN_ROLE || accountVM.NewItem.Role == SELLER_STAFF_ROLE)
+            {
+                dashboardFrame.Content = new Views.Pages.Dashboard.VoucherManagement();
+            }
+            else
+            {
+                MessageBox.Show("Your account is not permission to use this function!", "Not Authorized Alert", MessageBoxButton.OK, MessageBoxImage.Stop);
+            }
         }
 
         private void btnSupplier_Click(object sender, RoutedEventArgs e)
         {
-            dashboardFrame.Content = new Views.Pages.Dashboard.SupplierManagement();
-            styleBtn(btnSupplier);
+            if (accountVM.NewItem.Role == ADMIN_ROLE || accountVM.NewItem.Role == WAREHOUSE_STAFF_ROLE)
+            {
+                dashboardFrame.Content = new Views.Pages.Dashboard.SupplierManagement();
+                styleBtn(btnSupplier);
+            }
+            else
+            {
+                MessageBox.Show("Your account is not permission to use this function!", "Not Authorized Alert", MessageBoxButton.OK, MessageBoxImage.Stop);
+            }
+
         }
 
         private void btnBook_Click(object sender, RoutedEventArgs e)
         {
-            dashboardFrame.Content = new Views.Pages.Dashboard.BookManagement();
-            styleBtn(btnBook);
-        }
-
-        private void btnProfile_Click(object sender, RoutedEventArgs e)
-        {
-
+            if (accountVM.NewItem.Role == ADMIN_ROLE || accountVM.NewItem.Role == WAREHOUSE_STAFF_ROLE)
+            {
+                dashboardFrame.Content = new Views.Pages.Dashboard.BookManagement();
+                styleBtn(btnBook);
+            }
+            else
+            {
+                MessageBox.Show("Your account is not permission to use this function!", "Not Authorized Alert", MessageBoxButton.OK, MessageBoxImage.Stop);
+            }
         }
 
         private void btnCategory_Click(object sender, RoutedEventArgs e)
         {
-            dashboardFrame.Content = new Views.Pages.Dashboard.CategoryManagement();
-            styleBtn(btnCategory);
+            if (accountVM.NewItem.Role == ADMIN_ROLE || accountVM.NewItem.Role == SELLER_STAFF_ROLE)
+            {
+                dashboardFrame.Content = new Views.Pages.Dashboard.CategoryManagement();
+                styleBtn(btnCategory);
+            }
+            else
+            {
+                MessageBox.Show("Your account is not permission to use this function!", "Not Authorized Alert", MessageBoxButton.OK, MessageBoxImage.Stop);
+            }
+
         }
     }
 }
