@@ -591,11 +591,7 @@ D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pa
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\Profile.g.cs
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\SupplierManagement.g.cs
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\VoucherManagement.g.cs
-D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Booklist.g.cs
-D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Login.g.cs
-D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Register.g.cs
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Dashboard.g.cs
-D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Homepage.g.cs
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\App.g.cs
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook_MarkupCompile.cache
@@ -609,11 +605,7 @@ D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pa
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\Profile.baml
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\SupplierManagement.baml
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\VoucherManagement.baml
-D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Booklist.baml
-D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Login.baml
-D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Register.baml
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Dashboard.baml
-D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Homepage.baml
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.g.resources
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.GeneratedMSBuildEditorConfig.editorconfig
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.AssemblyInfoInputs.cache
@@ -626,3 +618,7 @@ D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\refint\C
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.pdb
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.genruntimeconfig.cache
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\ref\Capybook.dll
+D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Login.g.cs
+D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Register.g.cs
+D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Login.baml
+D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Register.baml

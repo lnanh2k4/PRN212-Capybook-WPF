@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Capybook"
              xmlns:windows="clr-namespace:Capybook.Views.Windows"
-             StartupUri="Views/Windows/Homepage.xaml">
+             StartupUri="Views/Windows/Login.xaml">
     <Application.Resources>
         <Style x:Key="page" TargetType="Page">
             <Setter Property="Background" Value="White"></Setter>
@@ -11,7 +11,7 @@
         <Style x:Key="title" TargetType="TextBlock">
             <Setter Property="Foreground" Value="Black"></Setter>
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="30"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
             <Setter Property="FontWeight" Value="Bold"></Setter>
         </Style>
         <Style x:Key="content" TargetType="TextBlock">
@@ -26,7 +26,7 @@
         </Style>
         <Style x:Key="textbox" TargetType="TextBox">
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
-            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="FontSize" Value="12"></Setter>
         </Style>
         <Style x:Key="btn" TargetType="Button">
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>

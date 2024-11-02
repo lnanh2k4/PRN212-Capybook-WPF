@@ -31,19 +31,13 @@
     <Compile Update="Views\Pages\Dashboard\VoucherManagement.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Pages\Homepage\Booklist.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\Pages\Homepage\Login.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\Pages\Homepage\Register.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\Windows\Dashboard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Windows\Homepage.xaml.cs">
+    <Compile Update="Views\Windows\Login.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Windows\Register.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -69,19 +63,13 @@
     <Page Update="Views\Pages\Dashboard\VoucherManagement.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Pages\Homepage\Booklist.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\Pages\Homepage\Login.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\Pages\Homepage\Register.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Views\Windows\Dashboard.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Windows\Homepage.xaml">
+    <Page Update="Views\Windows\Login.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Windows\Register.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

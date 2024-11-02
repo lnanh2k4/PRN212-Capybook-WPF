@@ -23,6 +23,7 @@ namespace Capybook.ViewModels
              UpdateCommand = new RelayCommand(UPDATE);
             DeleteCommand = new RelayCommand(DELETE);
             ClearCommand = new RelayCommand(CLEAR);
+            SearchCommand = new RelayCommand(SEARCH);
         }
 
         private void CLEAR(object obj)
@@ -70,7 +71,38 @@ namespace Capybook.ViewModels
                 }
             }
         }
+        public ICommand SearchCommand { get; }
+        private string _searchText;
+        public string SearchText
+        {
+            get { return _searchText; }
+            set
+            {
+                _searchText = value;
+                OnPropertyChanged(nameof(SearchText));
+            }
+        }
 
+        private void SEARCH(object obj)
+        {
+            using (var context = new Prn212ProjectCapybookContext())
+            {
+                var filteredSuppliers = context.Suppliers
+                    .Where(s => s.SupStatus != 0 &&
+                                (string.IsNullOrEmpty(SearchText) ||
+                                 s.SupName.Contains(SearchText) ||
+                                 s.SupEmail.Contains(SearchText) ||
+                                 s.SupPhone.Contains(SearchText) ||
+                                 s.SupAddress.Contains(SearchText)))
+                    .ToList();
+
+                Suppliers.Clear();
+                foreach (var supplier in filteredSuppliers)
+                {
+                    Suppliers.Add(supplier);
+                }
+            }
+        }
         private void UPDATE(object obj)
         {
             ClearErrorMessages();

@@ -11,14 +11,28 @@
     <Page.Resources>
         <utilities:StatusConverter x:Key="statusConverter"/>
     </Page.Resources>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="5*"></RowDefinition>
-            <RowDefinition Height="5*"></RowDefinition>
-        </Grid.RowDefinitions>
-        
+   <Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="1*"></RowDefinition>
+        <RowDefinition Height="5*"></RowDefinition>
+        <RowDefinition Height="5*"></RowDefinition>
+    </Grid.RowDefinitions>
+    <Grid Grid.Column="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
         <TextBlock Style="{StaticResource title}" VerticalAlignment="Center">Supplier Management</TextBlock>
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="9*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Grid.Column="0" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" />
+            <Button   Grid.Column="1" Content="Search" Command="{Binding SearchCommand}" VerticalAlignment="Center" />
+        </Grid>
+    </Grid>
        
         <DataGrid ItemsSource="{Binding Suppliers}" SelectedItem="{Binding SelectedItem}"
                   Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible"

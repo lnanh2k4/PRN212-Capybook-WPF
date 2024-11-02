@@ -11,20 +11,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Capybook.Views.Pages.Dashboard
+namespace Capybook.Views.Windows
 {
     /// <summary>
-    /// Interaction logic for CategoryManagement.xaml
+    /// Interaction logic for Register.xaml
     /// </summary>
-    public partial class CategoryManagement : Page
+    public partial class Register : Window
     {
-        public CategoryManagement()
+        public Register()
         {
             InitializeComponent();
-            DataContext = new CategoryVM();
+            DataContext = new AccountVM();
+            
         }
     }
 }

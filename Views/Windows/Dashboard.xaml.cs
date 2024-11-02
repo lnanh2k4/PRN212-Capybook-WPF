@@ -49,7 +49,7 @@ namespace Capybook.Views.Windows
         // Hàm để khôi phục trạng thái ban đầu của nút
         private void ResetButtonStyle(Button parameter)
         {
-            parameter.Background = new SolidColorBrush(Colors.LightGray); // Ví dụ màu nền ban đầu
+            parameter.Background = new SolidColorBrush(Colors.DeepSkyBlue); // Ví dụ màu nền ban đầu
             parameter.HorizontalContentAlignment = HorizontalAlignment.Center; // Căn lề ban đầu
             parameter.FontWeight = FontWeights.Normal; // FontWeight ban đầu
             parameter.Foreground = new SolidColorBrush(Colors.Black); // Màu chữ ban đầu
@@ -57,8 +57,8 @@ namespace Capybook.Views.Windows
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
-            Window homepage = new Views.Windows.Homepage();
-            homepage.Show();
+            Window login = new Views.Windows.Login();
+            login.Show();
             this.Close();
         }
 
@@ -94,6 +94,12 @@ namespace Capybook.Views.Windows
         private void btnProfile_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnCategory_Click(object sender, RoutedEventArgs e)
+        {
+            dashboardFrame.Content = new Views.Pages.Dashboard.CategoryManagement();
+            styleBtn(btnCategory);
         }
     }
 }

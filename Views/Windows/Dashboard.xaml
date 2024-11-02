@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Capybook.Views.Windows"
         mc:Ignorable="d"
-        Title="Dashboard" Height="750" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Dashboard" Height="500" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -25,10 +25,10 @@
             </Grid.RowDefinitions>
             <TextBlock Style="{StaticResource title}" Grid.Row="0" FontSize="15" VerticalAlignment="Center">Capybook Dashboard</TextBlock>
             <Button Grid.Row="1" Style="{StaticResource btnMain}" Name="btnAccount" Click="btnAccount_Click">Account Management</Button>
-            <Button Grid.Row="1" Style="{StaticResource btnMain}" Name="btnBook" Height="82" Margin="0,81,0,0" Grid.RowSpan="3" VerticalAlignment="Top" Click="btnBook_Click">Book Management</Button>
-            <Button Grid.Row="3" Style="{StaticResource btnMain}" Name="btnCategory">Category Management</Button>
+            <Button Grid.Row="2" Style="{StaticResource btnMain}" Name="btnBook" Click="btnBook_Click">Book Management</Button>
+            <Button Grid.Row="3" Style="{StaticResource btnMain}" Name="btnCategory" Click="btnCategory_Click">Category Management</Button>
             <Button Grid.Row="4" Style="{StaticResource btnMain}" Name="btnVoucher" Click="btnVoucher_Click">Voucher Management</Button>
-            <Button Grid.Row="5" Style="{StaticResource btnMain}" Name="btnSupplier" Click="btnSupplier_Click" Height="81" VerticalAlignment="Top">Supplier Management</Button>
+            <Button Grid.Row="5" Style="{StaticResource btnMain}" Name="btnSupplier" Click="btnSupplier_Click" >Supplier Management</Button>
             <Button Grid.Row="6" Style="{StaticResource btnMain}" Name="btnOrder" Click="btnOrder_Click">Order Management</Button>
             <Button Grid.Row="7" Style="{StaticResource btnMain}" Name="btnLogout" Click="btnLogout_Click">Logout</Button>
             <StackPanel Grid.Row="8" VerticalAlignment="Center">
