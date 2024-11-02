@@ -20,7 +20,11 @@ namespace Capybook.ViewModels
         public ICommand UpdateCommand { get; }
         public ICommand ClearCommand { get; }
         public ICommand RegisterCommand { get; }
-        public ICommand ResetCommand { get; }
+        public ICommand SearchCommand { get; }
+        public ICommand LoginCommand { get; }
+        public event Action RequestClose;
+        public event Action RequestLogin;
+
         private string _username;
         public AccountVM()
         {
@@ -32,10 +36,91 @@ namespace Capybook.ViewModels
             DeleteCommand = new RelayCommand(DELETE);
             ClearCommand = new RelayCommand(CLEAR);
             RegisterCommand = new RelayCommand(REGISTER);
-            ResetCommand = new RelayCommand(CLEAR);
+            SearchCommand = new RelayCommand(SEARCH);
+            LoginCommand = new RelayCommand(LOGIN);
         }
 
+        private void LOGIN(object obj)
+        {
+            using (var context = new Prn212ProjectCapybookContext())
+            {
+                if (string.IsNullOrEmpty(NewItem.Username)) {
+                    MessageBox.Show("Please enter username!", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                else if (string.IsNullOrEmpty(NewItem.Password))
+                {
+                    MessageBox.Show("Please enter password!", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+                else
+                {
+                    var item = context.Accounts.Where(x => x.Username == NewItem.Username && x.Password == NewItem.Password).FirstOrDefault();
+                    if (item != null)
+                    {
+                        NewItem = item;
+                        MessageBox.Show("Login successfully!", "Successful", MessageBoxButton.OK, MessageBoxImage.Information);
+                        RequestLogin?.Invoke();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username or password is incorrect!", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+                
+            }
+        }
 
+        private void SEARCH(object obj)
+        {
+            int cnt=0;
+            using (var context = new Prn212ProjectCapybookContext()) {
+                var query = context.Accounts.AsQueryable();
+                if (!string.IsNullOrEmpty(NewItem.Username)) { 
+                    query = query.Where(x => x.Username.Contains(NewItem.Username));
+                    cnt++;
+                }
+                if (!string.IsNullOrEmpty(NewItem.FirstName))
+                {
+                    query = query.Where(x => x.FirstName.Contains(NewItem.FirstName));
+                    cnt++;
+                }
+                if (!string.IsNullOrEmpty(NewItem.LastName))
+                {
+                    query = query.Where(x => x.LastName.Contains(NewItem.LastName));
+                    cnt++;
+                }
+                if (!string.IsNullOrEmpty(NewItem.Address))
+                {
+                    query = query.Where(x => x.Address.Contains(NewItem.Address));
+                    cnt++;
+                }
+                if (!string.IsNullOrEmpty(NewItem.Email))
+                {
+                    query = query.Where(x => x.Email.Contains(NewItem.Email));
+                    cnt++;
+                }
+                if (!string.IsNullOrEmpty(NewItem.Phone))
+                {
+                    query = query.Where(x => x.Phone.Contains(NewItem.Phone));
+                    cnt++;
+                }
+                if(cnt == 0)
+                {
+                    Load();
+                }
+                else
+                {
+                    var results = query.ToList();
+                    Accounts.Clear();
+                    foreach (var item in results)
+                    {
+                        Accounts.Add(item);
+                    }
+                }
+                
+            }
+        }
 
         private void REGISTER(object obj)
         {
@@ -50,10 +135,7 @@ namespace Capybook.ViewModels
                     Accounts.Add(NewItem);
                     NewItem = new Account();
                     MessageBox.Show("Register successfully!", "Successful", MessageBoxButton.OK, MessageBoxImage.Information);
-                    if(obj is Window currentWindow)
-                    {
-                        currentWindow.Close();
-                    }
+                    RequestClose?.Invoke();
                 }
             }
         }
@@ -70,7 +152,7 @@ namespace Capybook.ViewModels
                 if (_selectedItem != null)
                 {
                     var item = context.Accounts.Where(x => x.Username == _selectedItem.Username).FirstOrDefault();
-                    item.AccStatus = 1;
+                    item.AccStatus = 0;
                     context.SaveChanges();
                     Accounts.Remove(_selectedItem);
                     SelectedItem = null;
@@ -212,14 +294,14 @@ namespace Capybook.ViewModels
                 MessageBox.Show("Username must be not empty! Please enter username!", "Validate Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
-            if (string.IsNullOrWhiteSpace(NewItem.Password))
-            {
-                MessageBox.Show("Password must be not empty! Please enter password!", "Validate Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return false;
-            }
             if (string.IsNullOrWhiteSpace(NewItem.Email))
             {
                 MessageBox.Show("Email must be not empty! Please enter email!", "Validate Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(NewItem.Password))
+            {
+                MessageBox.Show("Password must be not empty! Please enter password!", "Validate Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
             if (string.IsNullOrWhiteSpace(NewItem.Address))

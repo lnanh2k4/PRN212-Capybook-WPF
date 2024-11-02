@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Capybook.Models;
+using Capybook.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,14 @@ namespace Capybook.Views.Windows
     /// </summary>
     public partial class Dashboard : Window
     {
-        public Dashboard()
+        AccountVM accountVM;
+        public Dashboard(Account account)
         {
             InitializeComponent();
+            if (account != null) {
+                accountVM.NewItem = account;
+            }
+            DataContext = accountVM;
         }
 
         // Biến để lưu giữ tham chiếu đến nút đã thay đổi màu

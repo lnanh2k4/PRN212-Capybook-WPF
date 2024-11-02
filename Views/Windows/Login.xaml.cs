@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Capybook.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,22 +20,28 @@ namespace Capybook.Views.Windows
     /// </summary>
     public partial class Login : Window
     {
+        AccountVM vm = new AccountVM();
         public Login()
         {
             InitializeComponent();
+            DataContext = vm;
+            var item = DataContext as AccountVM;
+            if (item != null) {
+                vm.RequestLogin += DoLogin;
+            }
+        }
+
+        private void DoLogin()
+        {
+                Window dashboard = new Dashboard(vm.NewItem);
+                dashboard.Show();
+                this.Close();
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             Window register = new Register();
             register.ShowDialog();
-        }
-
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-            Window dashboard = new Dashboard();
-            dashboard.Show();
-            this.Close();
         }
     }
 }

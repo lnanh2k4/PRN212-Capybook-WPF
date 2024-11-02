@@ -32,7 +32,7 @@
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center">
             <Label Style="{StaticResource lable}" >Password</Label>
-            <PasswordBox Width="140" HorizontalAlignment="Left" utilities:PasswordBoxHelper.BoundPassword="{Binding NewItem.Password}" ></PasswordBox>
+            <PasswordBox Width="140" HorizontalAlignment="Left" utilities:PasswordBoxHelper.BoundPassword="{Binding NewItem.Password, Mode=TwoWay}" ></PasswordBox>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center">
             <Label Style="{StaticResource lable}">Email</Label>
@@ -56,7 +56,7 @@
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center">
             <Label Style="{StaticResource lable}">Date Of Birth</Label>
-            <DatePicker  Height="30" Width="140" HorizontalAlignment="Left" Text="{Binding NewItem.Dob}"></DatePicker>
+            <DatePicker  Height="30" Width="140" HorizontalAlignment="Left" Text="{Binding NewItem.Dob, Mode=TwoWay}"></DatePicker>
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="3" HorizontalAlignment="Center">
             <Label Style="{StaticResource lable}">Sex</Label>
@@ -68,6 +68,6 @@
         </StackPanel>
 
         <Button x:Name="btnRegister" Style="{StaticResource btn}" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Right" Content="Register" VerticalAlignment="Top" Command="{Binding RegisterCommand}" />
-        <Button x:Name="btnReset" Style="{StaticResource btn}" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Left" Content="Reset" VerticalAlignment="Top" Command="{Binding ResetCommand}"/>
+        <Button x:Name="btnReset" Style="{StaticResource btn}" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Left" Content="Reset" VerticalAlignment="Top" Command="{Binding ClearCommand}"/>
     </Grid>
 </Window>
