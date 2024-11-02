@@ -23,7 +23,11 @@
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Style="{StaticResource title}" Grid.Row="0" FontSize="15" VerticalAlignment="Center">Capybook Dashboard</TextBlock>
+            <StackPanel Grid.Row="0">
+                <TextBlock Style="{StaticResource title}"  FontSize="15" VerticalAlignment="Center">Capybook Dashboard</TextBlock>
+                <TextBlock Style="{StaticResource title}"  FontSize="15" VerticalAlignment="Center" Text="{Binding NewItem.Username}"></TextBlock>
+                <TextBlock Style="{StaticResource title}"  FontSize="15" VerticalAlignment="Center" Text="{Binding NewItem.Role}"></TextBlock>
+            </StackPanel>
             <Button Grid.Row="1" Style="{StaticResource btnMain}" Name="btnAccount" Click="btnAccount_Click">Account Management</Button>
             <Button Grid.Row="2" Style="{StaticResource btnMain}" Name="btnBook" Click="btnBook_Click">Book Management</Button>
             <Button Grid.Row="3" Style="{StaticResource btnMain}" Name="btnCategory" Click="btnCategory_Click">Category Management</Button>

@@ -24,6 +24,10 @@ namespace Capybook.Views.Windows
         {
             InitializeComponent();
             DataContext = new AccountVM();
+            var vm = DataContext as AccountVM;
+            if (vm != null) {
+                vm.RequestClose += () => this.Close();
+            }
             
         }
     }

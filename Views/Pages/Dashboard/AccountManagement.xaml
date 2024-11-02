@@ -38,7 +38,7 @@
                         </MultiBinding>
                     </DataGridTextColumn.Binding>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Date Of Birth" Width="*" Binding="{Binding Dob}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Date Of Birth" Width="0.9*" Binding="{Binding Dob}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Sex" Width="0.5*" Binding="{Binding Sex, Converter={StaticResource sexConverter}}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Email" Width="1.5*" Binding="{Binding Email}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Phone" Width="0.75*" Binding="{Binding Phone}"></DataGridTextColumn>
@@ -136,11 +136,13 @@
                     <RowDefinition Height="1*"></RowDefinition>
                     <RowDefinition Height="1*"></RowDefinition>
                     <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Button Style="{StaticResource btn}" Grid.Row="0" Background="GreenYellow" Command="{Binding AddCommand}">Add</Button>
                 <Button Style="{StaticResource btn}" Grid.Row="1" Background="GhostWhite" Command="{Binding UpdateCommand}">Modify</Button>
                 <Button Style="{StaticResource btn}" Grid.Row="2" Background="red" Foreground="White" Command="{Binding DeleteCommand}">Delete</Button>
-                <Button Style="{StaticResource btn}" Grid.Row="3" Background="Azure" Command="{Binding ClearCommand}">Clear</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="3" Background="Azure" Command="{Binding SearchCommand}">Search</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="4" Background="Azure" Command="{Binding ClearCommand}">Clear</Button>
             </Grid>
         </Grid>
     </Grid>
