@@ -129,11 +129,7 @@ D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\OrderManagement.g.cs
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\SupplierManagement.g.cs
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\VoucherManagement.g.cs
-D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Booklist.g.cs
-D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Login.g.cs
-D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Register.g.cs
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Dashboard.g.cs
-D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Homepage.g.cs
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\App.g.cs
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook_MarkupCompile.cache
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook_MarkupCompile.lref
@@ -273,11 +269,7 @@ D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\OrderManagement.baml
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\SupplierManagement.baml
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\VoucherManagement.baml
-D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Booklist.baml
-D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Login.baml
-D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Register.baml
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Dashboard.baml
-D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Homepage.baml
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.g.resources
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.GeneratedMSBuildEditorConfig.editorconfig
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.AssemblyInfoInputs.cache
@@ -946,3 +938,7 @@ D:\Season 5\PRN212\Project\FinalProject\PRN212-Capybook-WPF\obj\Debug\net8.0-win
 D:\Season 5\PRN212\Project\FinalProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.pdb
 D:\Season 5\PRN212\Project\FinalProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.genruntimeconfig.cache
 D:\Season 5\PRN212\Project\FinalProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\ref\Capybook.dll
+D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Login.g.cs
+D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Register.g.cs
+D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Login.baml
+D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Register.baml
