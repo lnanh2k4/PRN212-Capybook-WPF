@@ -1,5 +1,4 @@
-﻿using Capybook.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Capybook.Views.Pages.Dashboard
+namespace Capybook.Views.Pages.Homepage
 {
     /// <summary>
-    /// Interaction logic for OrderManagement.xaml
+    /// Interaction logic for Cart.xaml
     /// </summary>
-    public partial class OrderManagement : Page
+    public partial class Cart : Page
     {
-        public OrderManagement()
+        public Cart()
         {
             InitializeComponent();
-            DataContext = new OrderVM();
         }
     }
 }

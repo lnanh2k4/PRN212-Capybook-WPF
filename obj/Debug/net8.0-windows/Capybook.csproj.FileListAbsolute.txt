@@ -122,6 +122,11 @@ D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\
 D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.pdb
 D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.genruntimeconfig.cache
 D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\ref\Capybook.dll
+<<<<<<< HEAD
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Cart.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Cart.baml
+=======
+>>>>>>> 72f4f7157c704422b5f29cb790383b5369296ec1
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.csproj.AssemblyReference.cache
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\AccountManagement.g.cs
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\CategoryManagement.g.cs
@@ -129,7 +134,11 @@ D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\OrderManagement.g.cs
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\SupplierManagement.g.cs
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\VoucherManagement.g.cs
+D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Booklist.g.cs
+D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Login.g.cs
+D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Register.g.cs
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Dashboard.g.cs
+D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Homepage.g.cs
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\App.g.cs
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook_MarkupCompile.cache
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook_MarkupCompile.lref
@@ -269,7 +278,11 @@ D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\OrderManagement.baml
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\SupplierManagement.baml
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\VoucherManagement.baml
+D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Booklist.baml
+D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Login.baml
+D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Register.baml
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Dashboard.baml
+D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Homepage.baml
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.g.resources
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.GeneratedMSBuildEditorConfig.editorconfig
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.AssemblyInfoInputs.cache
@@ -413,7 +426,11 @@ D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-wi
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\Profile.g.cs
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\SupplierManagement.g.cs
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\VoucherManagement.g.cs
+D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Booklist.g.cs
+D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Login.g.cs
+D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Register.g.cs
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Dashboard.g.cs
+D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Homepage.g.cs
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\App.g.cs
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook_MarkupCompile.cache
@@ -427,7 +444,11 @@ D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-wi
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\Profile.baml
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\SupplierManagement.baml
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\VoucherManagement.baml
+D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Booklist.baml
+D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Login.baml
+D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Homepage\Register.baml
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Dashboard.baml
+D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Homepage.baml
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.g.resources
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.GeneratedMSBuildEditorConfig.editorconfig
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.AssemblyInfoInputs.cache
@@ -442,6 +463,141 @@ D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-wi
 D:\1. FPT\PRN212\Capybook Project PRN212\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\ref\Capybook.dll
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\Profile.g.cs
 D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\Profile.baml
+>>>>>>> bd9b53886d81f295f0c3324613aa75fcc5d82d49
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\appsettings.json
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Azure.Core.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Azure.Identity.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Humanizer.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.CSharp.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.CodeAnalysis.Workspaces.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Design.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyModel.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Identity.Client.NativeInterop.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Mono.TextTemplating.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\System.Composition.AttributedModel.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\System.Composition.Convention.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\System.Composition.Hosting.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\System.Composition.Runtime.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\System.Composition.TypedParts.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\System.Memory.Data.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msalruntime_arm64.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\runtimes\win-x64\native\msalruntime.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\runtimes\win-x86\native\msalruntime_x86.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.csproj.AssemblyReference.cache
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\Profile.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\Profile.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.csproj.Up2Date
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\OrderDetailWindow.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\OrderDetailWindow.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Cart.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Login.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Register.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Cart.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Login.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Register.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\AddOrder.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\AddOrder.g.cs
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Capybook.exe
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\appsettings.json
 D:\Season 5\PRN212\Project\PRN212-Capybook-WPF\bin\Debug\net8.0-windows\Capybook.deps.json

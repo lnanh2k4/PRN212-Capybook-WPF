@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Capybook")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+539132d27181888ce6661521d62b5c84dd994a02")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74e5142101ada8dcd0838775c7206dd8a1b3e5bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("Capybook")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Capybook")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

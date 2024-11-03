@@ -1,14 +1,16 @@
-﻿D:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
-FD:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\App.xaml;;
-FD:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\Views\Pages\Dashboard\AccountManagement.xaml;;
-FD:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\Views\Pages\Dashboard\BookManagement.xaml;;
-FD:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\Views\Pages\Dashboard\CategoryManagement.xaml;;
-FD:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\Views\Pages\Dashboard\OrderDetailManagement.xaml;;
-FD:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\Views\Pages\Dashboard\OrderManagement.xaml;;
-FD:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\Views\Pages\Dashboard\Profile.xaml;;
-FD:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\Views\Pages\Dashboard\SupplierManagement.xaml;;
-FD:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\Views\Pages\Dashboard\VoucherManagement.xaml;;
-FD:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\Views\Windows\Dashboard.xaml;;
-FD:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\Views\Windows\Login.xaml;;
-FD:\FPT\Ky5\PRN211\LastProject\PRN212-Capybook-WPF\Views\Windows\Register.xaml;;
+﻿
+FD:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\App.xaml;;
+FD:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\Views\Pages\Dashboard\AccountManagement.xaml;;
+FD:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\Views\Pages\Dashboard\AddOrder.xaml;;
+FD:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\Views\Pages\Dashboard\BookManagement.xaml;;
+FD:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\Views\Pages\Dashboard\CategoryManagement.xaml;;
+FD:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\Views\Pages\Dashboard\OrderDetailWindow.xaml;;
+FD:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\Views\Pages\Dashboard\OrderManagement.xaml;;
+FD:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\Views\Pages\Dashboard\Profile.xaml;;
+FD:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\Views\Pages\Dashboard\SupplierManagement.xaml;;
+FD:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\Views\Pages\Dashboard\VoucherManagement.xaml;;
+FD:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\Views\Windows\Cart.xaml;;
+FD:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\Views\Windows\Dashboard.xaml;;
+FD:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\Views\Windows\Login.xaml;;
+FD:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\Views\Windows\Register.xaml;;
 
