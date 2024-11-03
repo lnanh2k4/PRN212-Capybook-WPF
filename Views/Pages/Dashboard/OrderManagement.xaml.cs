@@ -26,26 +26,5 @@ namespace Capybook.Views.Pages.Dashboard
             InitializeComponent();
             DataContext = new OrderVM();
         }
-
-        private int _previousStatusIndex = -1;
-        private void StatusComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var comboBox = sender as ComboBox;
-            if (comboBox == null) return;
-
-            int selectedIndex = comboBox.SelectedIndex;
-
-            // If the new index is lower than the previous one, reset it to the previous index
-            if (_previousStatusIndex != -1 && selectedIndex < _previousStatusIndex)
-            {
-                comboBox.SelectedIndex = _previousStatusIndex;
-                MessageBox.Show("You can only change the status in next state.", "Selection Restricted", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else
-            {
-                // Update the previous index to the newly selected one
-                _previousStatusIndex = selectedIndex;
-            }
-        }
     }
 }

@@ -2,6 +2,7 @@
 using Capybook.Utilities;
 using Capybook.Views.Pages.Dashboard;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -23,6 +24,8 @@ namespace Capybook.ViewModels
         public ICommand UpdateCommand { get; }
         public ICommand ClearCommand { get; }
         public ICommand ViewDetailCommand { get; }
+        public ICommand SearchCommand { get; }
+
         private int _orderId;
         private decimal _totalPrice;
         public decimal TotalPrice
@@ -35,7 +38,14 @@ namespace Capybook.ViewModels
             }
         }
 
-        public Order NewItem { get; set; }
+        public Order NewItem { get 
+            { 
+              return  _newItem;
+            } set
+            {
+                _newItem = value;
+                OnPropertyChanged(nameof(NewItem));
+            } }
 
         public OrderVM()
         {
@@ -52,6 +62,7 @@ namespace Capybook.ViewModels
             UpdateCommand = new RelayCommand(UPDATE);
             ClearCommand = new RelayCommand(CLEAR);
             ViewDetailCommand = new RelayCommand(ViewDetail);
+            SearchCommand = new RelayCommand(SearchOrders);
         }
 
         private void LoadOrders()
@@ -60,15 +71,55 @@ namespace Capybook.ViewModels
             {
                 var sortedOrders = context.Orders
                     .Include(o => o.UsernameNavigation)
+                    .Include(o => o.Vou)  
                     .OrderByDescending(o => o.OrderDate)
                     .ToList();
 
                 Orders = new ObservableCollection<Order>(sortedOrders);
-                OnPropertyChanged(nameof(Orders)); // Notify UI of change
+                OnPropertyChanged(nameof(Orders));
             }
         }
 
+        private void SearchOrders(object obj)
+        {
+            int cnt = 0;
+            using (var context = new Prn212ProjectCapybookContext())
+            {
+                var query = context.Orders
+                    .Include(o => o.Vou) 
+                    .AsQueryable();
 
+                if (NewItem.OrderId > 0)
+                {
+                    query = query.Where(o => o.OrderId == NewItem.OrderId);
+                    cnt++;
+                }
+                if (!string.IsNullOrEmpty(NewItem.Username))
+                {
+                    query = query.Where(o => o.Username.Contains(NewItem.Username));
+                    cnt++;
+                }
+                if (NewItem.OrderStatus.HasValue)
+                {
+                    query = query.Where(o => o.OrderStatus == NewItem.OrderStatus);
+                    cnt++;
+                }
+
+                if (cnt == 0)
+                {
+                    LoadOrders();
+                }
+                else
+                {
+                    var results = query.ToList();
+                    Orders.Clear();
+                    foreach (var order in results)
+                    {
+                        Orders.Add(order);
+                    }
+                }
+            }
+        }
 
         private void LoadBooks()
         {
@@ -138,6 +189,7 @@ namespace Capybook.ViewModels
             }
         }
 
+
         private void OpenOrderDetail(int orderId)
         {
             var orderDetailWindow = new OrderDetailWindow(orderId);
@@ -161,7 +213,6 @@ namespace Capybook.ViewModels
                         OrderStatus = _selectedItem.OrderStatus,
                         OrderDetails = _selectedItem.OrderDetails,
                         OrderId = _selectedItem.OrderId,
-                        StaffId = _selectedItem.StaffId,
                         VouId = _selectedItem.VouId,
                         Username = _selectedItem.Username,
                         UsernameNavigation = _selectedItem.UsernameNavigation
@@ -170,6 +221,9 @@ namespace Capybook.ViewModels
                 }
             }
         }
+
+        private Order _newItem;
+       
 
         private string _username;
         public string Username

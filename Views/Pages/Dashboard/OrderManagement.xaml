@@ -18,12 +18,11 @@
         <TextBlock Style="{StaticResource title}" VerticalAlignment="Center">Order Management</TextBlock>
 
         <ListView Grid.Row="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Orders}" SelectedItem="{Binding SelectedItem}">
-            <ListView.View >
+            <ListView.View>
                 <GridView>
                     <GridViewColumn Header="No." Width="100" DisplayMemberBinding="{Binding OrderId}"/>
                     <GridViewColumn Header="UserName" Width="150" DisplayMemberBinding="{Binding Username}"/>
-                    <GridViewColumn Header="Voucher" Width="200" DisplayMemberBinding="{Binding VouId}"/>
-                    <GridViewColumn Header="Phone number" Width="150" DisplayMemberBinding="{Binding UsernameNavigation.Phone}"/>
+                    <GridViewColumn Header="Voucher" Width="200" DisplayMemberBinding="{Binding Vou.VouName}"/>
                     <GridViewColumn Header="Order date" Width="100">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
@@ -31,7 +30,7 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header=" Status" Width="100" DisplayMemberBinding="{Binding OrderStatus}"/>
+                    <GridViewColumn Header="Status" Width="100" DisplayMemberBinding="{Binding OrderStatus}"/>
                     <GridViewColumn Header="Action" Width="100">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
@@ -42,8 +41,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
-
-
 
         <Grid Grid.Row="2" Background="DeepSkyBlue">
             <Grid>
@@ -66,40 +63,35 @@
                     <RowDefinition Height="1*"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <StackPanel Grid.Row="0" Grid.Column="1">
-                    <Label Style="{StaticResource lable}">Order ID</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding NewItem.OrderId}"></TextBox>
-                </StackPanel>
+                 <StackPanel Grid.Row="0" Grid.Column="1">
+                <Label Style="{StaticResource lable}">Order ID</Label>
+                <TextBox Style="{StaticResource textbox}" Text="{Binding NewItem.OrderId, Mode=TwoWay}"/>
+            </StackPanel>
 
                 <StackPanel Grid.Row="0" Grid.Column="3">
                     <Label Style="{StaticResource lable}" >User name</Label>
-                        <TextBox Style="{StaticResource textbox}" Text="{Binding NewItem.Username}"></TextBox>
+                        <TextBox Style="{StaticResource textbox}" Text="{Binding NewItem.Username, Mode=TwoWay}"></TextBox>
                     </StackPanel>
 
                 <StackPanel Grid.Row="0" Grid.Column="5">
                     <Label Style="{StaticResource lable}">Voucher</Label>
-                        <TextBox Style="{StaticResource textbox}" Text="{Binding NewItem.VouId}"></TextBox>
+                        <TextBox Style="{StaticResource textbox}" Text="{Binding NewItem.VouId, Mode=TwoWay}"></TextBox>
                 </StackPanel>
 
-                    <StackPanel Grid.Row="1" Grid.Column="1">
-                        <Label Style="{StaticResource lable}">Phone number</Label>
-                        <TextBox Style="{StaticResource textbox}" Text="{Binding NewItem.UsernameNavigation.Phone}" IsReadOnly="True"></TextBox>
-                    </StackPanel>
 
                     <StackPanel Grid.Row="1" Grid.Column="3">
                     <Label Style="{StaticResource lable}">Order date</Label>
-                        <TextBox Style="{StaticResource textbox}" Text="{Binding NewItem.OrderDate}"></TextBox>
+                        <TextBox Style="{StaticResource textbox}" Text="{Binding NewItem.OrderDate, Mode=TwoWay}"></TextBox>
                 </StackPanel>
 
                     <StackPanel Grid.Row="1" Grid.Column="5">
                         <Label Style="{StaticResource lable}">Status</Label>
-                        <ComboBox SelectedValue="{Binding NewItem.OrderStatus, Mode=TwoWay}" SelectedValuePath="Tag" SelectionChanged="StatusComboBox_SelectionChanged">
+                        <ComboBox SelectedValue="{Binding NewItem.OrderStatus, Mode=TwoWay}" SelectedValuePath="Tag">
                             <ComboBoxItem Content="Proccesing" Tag="0"/>
                             <ComboBoxItem Content="Delivering" Tag="1"/>
                             <ComboBoxItem Content="Delivered" Tag="2"/>
                             <ComboBoxItem Content="Canceled" Tag="3"/>
                         </ComboBox>
-
                     </StackPanel>
                 </Grid>
 
@@ -108,9 +100,11 @@
                         <RowDefinition Height="1*"></RowDefinition>
                         <RowDefinition Height="1*"></RowDefinition>
                         <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Button Style="{StaticResource btn}" Grid.Row="0" Background="#28a745" Foreground="White" Command="{Binding AddCommand}">Add</Button>
                     <Button Style="{StaticResource btn}" Grid.Row="1" Background="#ffc107" Foreground="Black" Command="{Binding UpdateCommand}">Modify</Button>
+                    <Button Style="{StaticResource btn}" Grid.Row="2" Background="Gray" Foreground="White" Command="{Binding SearchCommand}">Search</Button>
                     <Button Style="{StaticResource btn}" Grid.Row="3" Background="#dc3545" Foreground="White" Command="{Binding ClearCommand}">Clear</Button>
                 </Grid>
         </Grid>

@@ -203,7 +203,6 @@ namespace Capybook.ViewModels
                 {
                     VouId = SelectedVoucher?.VouId,
                     Username = SelectedAccount.Username,
-                    StaffId = null,
                     OrderDate = DateOnly.FromDateTime(DateTime.Now),
                     OrderStatus = 0
                 };

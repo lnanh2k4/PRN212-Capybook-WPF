@@ -11,8 +11,6 @@ public partial class Order
 
     public string?  Username{ get; set; }
 
-    public int? StaffId { get; set; }
-
     public DateOnly? OrderDate { get; set; }
 
     public int? OrderStatus { get; set; }

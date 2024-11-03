@@ -4,22 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Capybook.Views.Windows"
+        xmlns:utilities="clr-namespace:Capybook.Utilities"
         mc:Ignorable="d"
-        Title="Login" Height="750" Width="1200" Background="DeepSkyBlue" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-<Grid>
+        Title="Login" Height="500" Width="1000" Background="DeepSkyBlue" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="250">
             <TextBlock Style="{StaticResource title}" Foreground="White">Login</TextBlock>
             <Label Style="{StaticResource lable}" HorizontalAlignment="Left" >Username</Label>
-            <TextBox/>
+            <TextBox x:Name="usernameTxt" Text="{Binding NewItem.Username, Mode=TwoWay}"/>
             <Label Style="{StaticResource lable}" HorizontalAlignment="Left" >Password</Label>
-            <TextBox></TextBox>
+            <PasswordBox x:Name="passwordTxt" utilities:PasswordBoxHelper.BoundPassword="{Binding NewItem.Password, Mode=TwoWay}"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="btnLogin" Style="{StaticResource btn}" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,10,0,0" VerticalAlignment="Stretch" Click="btnLogin_Click" HorizontalAlignment="Left">Login</Button>
+                <Button x:Name="btnLogin" Style="{StaticResource btn}" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,10,0,0" VerticalAlignment="Stretch" Command="{Binding LoginCommand}" HorizontalAlignment="Left">Login</Button>
                 <Button Grid.Column="2" x:Name="btnRegister" Style="{StaticResource btn}" Content="Register" Margin="0,10,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Right" Click="btnRegister_Click"/>
             </Grid>
 

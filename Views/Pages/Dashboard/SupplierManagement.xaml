@@ -4,38 +4,48 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Capybook.Views.Pages.Dashboard"
+      xmlns:utilities="clr-namespace:Capybook.Utilities"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SupplierManagement" Background="White">
-
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="5*"></RowDefinition>
-            <RowDefinition Height="5*"></RowDefinition>
-        </Grid.RowDefinitions>
-        <TextBlock Style="{StaticResource title}" VerticalAlignment="Center">Supplier Management</TextBlock>
-        <ListView  Grid.Row="1" HorizontalAlignment="Stretch">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="supName"></GridViewColumn>
-                    <GridViewColumn Header="supEmail"></GridViewColumn>
-                    <GridViewColumn Header="supPhone"></GridViewColumn>
-                    <GridViewColumn Header="supAddress"></GridViewColumn>
-                    <GridViewColumn Header="supStatus"></GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Grid Grid.Row="2" Background="DodgerBlue" >
+    <Page.Resources>
+        <utilities:StatusConverter x:Key="statusConverter"/>
+    </Page.Resources>
+   <Grid>
+    <Grid.RowDefinitions>
+        
+        <RowDefinition Height="5*"></RowDefinition>
+        <RowDefinition Height="5*"></RowDefinition>
+    </Grid.RowDefinitions>
+    
+       
+        <DataGrid ItemsSource="{Binding Suppliers}" SelectedItem="{Binding SelectedItem}"
+                  Grid.Row="0" AutoGenerateColumns="False" CanUserAddRows="False" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible"
+                  IsReadOnly="True">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Supplier Name" Width="*" Binding="{Binding SupName}"/>
+                <DataGridTextColumn Header="Email" Width="*" Binding="{Binding SupEmail}"/>
+                <DataGridTextColumn Header="Phone" Width="*" Binding="{Binding SupPhone}"/>
+                <DataGridTextColumn Header="Address" Width="*" Binding="{Binding SupAddress}"/>
+                <DataGridTextColumn Header="Status" Width="*" Binding="{Binding SupStatus, Converter={StaticResource statusConverter}}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="2" Background="DeepSkyBlue">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="8.5*"></ColumnDefinition>
-                <ColumnDefinition Width="1.5*"></ColumnDefinition>
-
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Row="0">
+            <Grid Grid.Column="0">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -43,41 +53,55 @@
                     <RowDefinition Height="1*"></RowDefinition>
                     <RowDefinition Height="1*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0" Grid.Column="0">
-                    <Label Style="{StaticResource lable}">supName</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                <StackPanel Grid.Row="0" Grid.Column="1">
+                    <Label Style="{StaticResource lable}">Supplier Name</Label  >
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding NewItem.SupName}" FontSize="12" Width="200" HorizontalAlignment="Left" />
+                    <TextBlock Text="{Binding SupNameError}" Foreground="Red" FontSize="10" Margin="5,10,0,0" />
                 </StackPanel>
 
-                <StackPanel Grid.Row="1" Grid.Column="2">
-                    <Label Style="{StaticResource lable}">supEmail</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                <StackPanel Grid.Row="0" Grid.Column="3">
+                    <Label Style="{StaticResource lable}">Email</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding NewItem.SupEmail}" FontSize="12" Width="200" HorizontalAlignment="Left"/>
+                    <TextBlock Text="{Binding SupEmailError}" Foreground="Red" FontSize="10" Margin="5,10,0,0" />
                 </StackPanel>
 
-                <StackPanel Grid.Row="1" Grid.Column="0">
-                    <Label Style="{StaticResource lable}">supPhone</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                <StackPanel Grid.Row="1" Grid.Column="1">
+                    <Label Style="{StaticResource lable}">Phone</Label>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding NewItem.SupPhone}" FontSize="12" Width="200" HorizontalAlignment="Left"/>
+                    <TextBlock Text="{Binding SupPhoneError}" Foreground="Red" FontSize="10" Margin="5,10,0,0" />
                 </StackPanel>
-                <StackPanel Grid.Row="0" Grid.Column="2">
-                    <Label Style="{StaticResource lable}">supStatus</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+               
+                <StackPanel Grid.Row="1" Grid.Column="3">
+                    <Label Style="{StaticResource lable}">Status</Label>
+                    <ComboBox Width="200" HorizontalAlignment="Left" SelectedValue="{Binding NewItem.SupStatus}" SelectedValuePath="Tag">
+                        <ComboBoxItem Content="Active" Tag="1"/>
+                        <ComboBoxItem Content="Inactive" Tag="0"/>
+                    </ComboBox>
                 </StackPanel>
-                <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
-                    <Label Style="{StaticResource lable}">supAddress</Label>
-                    <TextBox Style="{StaticResource textbox}" ></TextBox>
+                <StackPanel Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3">
+                    <Label Style="{StaticResource lable}">Address</Label>
+                    <TextBox Style="{StaticResource textbox}" TextWrapping="Wrap"
+             VerticalScrollBarVisibility="Visible"  Width="200" HorizontalAlignment="Left"
+             Text="{Binding NewItem.SupAddress}" Height="20"
+             AcceptsReturn="True" FontSize="12"/>
+                    <TextBlock Text="{Binding SupAddressError}" Foreground="Red" FontSize="10" Margin="5,10,0,0" />
                 </StackPanel>
-
             </Grid>
+            <!--Button CRUD-->
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"></RowDefinition>
                     <RowDefinition Height="1*"></RowDefinition>
                     <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Button Style="{StaticResource btn}" Grid.Row="0" Background="GreenYellow">Add</Button>
-                <Button Style="{StaticResource btn}" Grid.Row="1" Background="GhostWhite">Modify</Button>
-                <Button Style="{StaticResource btn}" Grid.Row="2" Background="red" Foreground="White">Delete</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="0" Background="GreenYellow" Command="{Binding AddCommand}">Add</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="1" Background="GhostWhite" Command="{Binding UpdateCommand}">Modify</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="2" Background="red" Foreground="White" Command="{Binding DeleteCommand}">Delete</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="3" Background="Azure" Command="{Binding ClearCommand}">Clear</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="4" Content="Search" Command="{Binding SearchCommand}" Background="LightBlue" />
             </Grid>
-
         </Grid>
     </Grid>
 </Page>
