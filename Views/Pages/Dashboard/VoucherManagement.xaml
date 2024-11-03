@@ -4,11 +4,134 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Capybook.Views.Pages.Dashboard"
+      xmlns:utils="clr-namespace:Capybook.Utilities"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="VoucherManagement">
 
+    <Page.Resources>
+        <utils:StatusConverter x:Key="statusConverter"/>
+    </Page.Resources>
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="5*" />
+            <RowDefinition Height="3*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="0.5*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource title}" VerticalAlignment="Center">
+            Voucher Management
+        </TextBlock>
+
+        <ListView Grid.ColumnSpan="3"
+                  ItemsSource="{Binding Vouchers}" 
+                  SelectedItem="{Binding SelectedVoucher, Mode=TwoWay}" Margin="0,2,0,0" Grid.RowSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding VouID}" />
+                    <GridViewColumn Header="Voucher Name" Width="150" DisplayMemberBinding="{Binding VouName}" />
+                    <GridViewColumn Header="Voucher Code" Width="150" DisplayMemberBinding="{Binding VouCode}" />
+                    <GridViewColumn Header="Discount" Width="50" DisplayMemberBinding="{Binding Discount}" />
+                    <GridViewColumn Header="Start Date" Width="100" DisplayMemberBinding="{Binding StartDate}" />
+                    <GridViewColumn Header="End Date" Width="100" DisplayMemberBinding="{Binding EndDate}" />
+                    <GridViewColumn Header="Quantity" Width="100" DisplayMemberBinding="{Binding Quantity}" />
+                    <GridViewColumn Header="Status" Width="50" DisplayMemberBinding="{Binding VouStatus, Converter={StaticResource statusConverter}}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Background="DeepSkyBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.Column="1">
+                    <Label>ID</Label>
+                    <TextBox Style="{StaticResource textbox}" 
+                             Text="{Binding TemporaryVoucher.VouID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                             Background="Gray" 
+                             IsReadOnly="True"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="3">
+                    <Label>Voucher Name</Label>
+                    <TextBox Style="{StaticResource textbox}" 
+                             Text="{Binding TemporaryVoucher.VouName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="5">
+                    <Label>Voucher Code</Label>
+                    <TextBox Style="{StaticResource textbox}" 
+                             Text="{Binding TemporaryVoucher.VouCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="7">
+                    <Label>Discount (%)</Label>
+                    <TextBox Style="{StaticResource textbox}" 
+                             Text="{Binding TemporaryVoucher.Discount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="1">
+                    <Label>Start Date</Label>
+                    <DatePicker SelectedDate="{Binding TemporaryVoucher.StartDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="3">
+                    <Label>End Date</Label>
+                    <DatePicker SelectedDate="{Binding TemporaryVoucher.EndDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="5">
+                    <Label>Quantity</Label>
+                    <TextBox Style="{StaticResource textbox}" 
+                             Text="{Binding TemporaryVoucher.Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="1" Grid.Column="7">
+                    <Label>Status</Label>
+                    <TextBox Style="{StaticResource textbox}" 
+                             Text="{Binding TemporaryVoucher.VouStatus, Converter={StaticResource statusConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                             Background="Gray" IsReadOnly="True"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <Button Style="{StaticResource btn}" Grid.Row="0" Command="{Binding AddCommand}" Background="GreenYellow">Add</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="1" Command="{Binding ModifyCommand}" Background="Yellow">Modify</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="2" Command="{Binding DeleteCommand}" Background="Red">Delete</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="3" Command="{Binding SearchCommand}" Background="AliceBlue">Search</Button>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>
