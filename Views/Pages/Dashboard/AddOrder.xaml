@@ -1,0 +1,119 @@
+﻿<Window x:Class="Capybook.Views.Pages.Dashboard.AddOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Capybook.Utilities"
+        Title="Add Order" Height="600" Width="800">
+
+    <Window.Resources>
+        <local:PercentageConverter x:Key="PercentageConverter" />
+    </Window.Resources>
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Add Order" FontSize="24" FontWeight="Bold" Margin="0,0,0,20" />
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel VerticalAlignment="Top">
+
+                <!-- Username ComboBox -->
+                <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                    <TextBlock Text="Username" />
+                    <ComboBox x:Name="UsernameComboBox" 
+                              Width="300" 
+                              Height="30" 
+                              HorizontalAlignment="Left"
+                              Margin="0,5,0,0" 
+                              ItemsSource="{Binding Accounts}"
+                              DisplayMemberPath="Username"
+                              SelectedItem="{Binding SelectedAccount}" />
+                </StackPanel>
+
+                <!-- Select Book ComboBox -->
+                <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                    <TextBlock Text="Select Book" />
+                    <ComboBox x:Name="BookComboBox" 
+                              Width="300" 
+                              Height="30" 
+                              HorizontalAlignment="Left"
+                              Margin="0,5,0,0"
+                              ItemsSource="{Binding FilteredBooks}"
+                              DisplayMemberPath="BookTitle"
+                              SelectedItem="{Binding SelectedBook}" />
+                    <Button Content="Add Book" Command="{Binding AddBookCommand}" Margin="0,5,0,0"/>
+                </StackPanel>
+
+                <!-- Select Promotion ComboBox -->
+                <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                    <TextBlock Text="Select Promotion (optional)" />
+                    <ComboBox x:Name="PromotionComboBox" 
+                              Width="300"
+                              Height="30"
+                              HorizontalAlignment="Left"
+                              Margin="0,5,0,0"
+                              ItemsSource="{Binding Vouchers}"
+                              DisplayMemberPath="VouName"
+                              SelectedItem="{Binding SelectedVoucher}" />
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                    <TextBlock Text="Discount" />
+                    <TextBox x:Name="DiscountTextBox" 
+                     Width="300" 
+                     Height="30" 
+                     IsReadOnly="True"
+                     HorizontalAlignment="Left"
+                     Text="{Binding Discount, Converter={StaticResource PercentageConverter}}" />   
+                </StackPanel>
+
+
+                <!-- Total Price TextBox (Read-only) -->
+                <StackPanel Orientation="Vertical" Margin="0,10,0,0">
+                    <TextBlock Text="Total Price" />
+                    <TextBox x:Name="TotalPriceTextBox" 
+                             Width="300" 
+                             Height="30" 
+                             IsReadOnly="True"
+                             HorizontalAlignment="Left"
+                             Text="{Binding TotalPrice}" />
+                </StackPanel>
+
+                <!-- Submit and Reset Buttons -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
+                    <Button Content="Submit" Width="100" Height="30" Command="{Binding AddOrderCommand}" />
+                    <Button Content="Reset" Width="100" Height="30" Margin="20,0,0,0" Command="{Binding ClearCommand}" />
+                </StackPanel>
+            </StackPanel>
+
+            <!-- Orders ListView -->
+            <ListView Grid.Column="1" ItemsSource="{Binding SelectedBooks}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Book Title" DisplayMemberBinding="{Binding Book.BookTitle}"/>
+                        <GridViewColumn Header="Quantity">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBox Width="60" Text="{Binding Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Book.BookPrice}"/>
+                        <GridViewColumn Header="Subtotal" DisplayMemberBinding="{Binding Subtotal}"/>
+                        <GridViewColumn Header="Action">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Remove" Command="{Binding DataContext.RemoveBookCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+    </Grid>
+</Window>

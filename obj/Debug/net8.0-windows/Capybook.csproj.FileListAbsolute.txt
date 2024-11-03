@@ -589,3 +589,11 @@ D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\
 D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Capybook.csproj.Up2Date
 D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\OrderDetailWindow.g.cs
 D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\OrderDetailWindow.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Cart.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Login.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Register.g.cs
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Cart.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Login.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Windows\Register.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\AddOrder.baml
+D:\FPT University\PROJECT-Cabybook\PRN212-Capybook-WPF\obj\Debug\net8.0-windows\Views\Pages\Dashboard\AddOrder.g.cs

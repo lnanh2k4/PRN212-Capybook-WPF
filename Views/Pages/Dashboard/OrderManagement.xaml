@@ -5,15 +5,15 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Capybook.Views.Pages.Dashboard"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="800"
       Title="OrderManagement"
       Background="White">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="10*"></RowDefinition>
-            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Style="{StaticResource title}" VerticalAlignment="Center">Order Management</TextBlock>
 
@@ -24,7 +24,13 @@
                     <GridViewColumn Header="UserName" Width="150" DisplayMemberBinding="{Binding Username}"/>
                     <GridViewColumn Header="Voucher" Width="200" DisplayMemberBinding="{Binding VouId}"/>
                     <GridViewColumn Header="Phone number" Width="150" DisplayMemberBinding="{Binding UsernameNavigation.Phone}"/>
-                    <GridViewColumn Header="Order date" Width="100" DisplayMemberBinding="{Binding OrderDate}"/>
+                    <GridViewColumn Header="Order date" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding OrderDate, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                     <GridViewColumn Header=" Status" Width="100" DisplayMemberBinding="{Binding OrderStatus}"/>
                     <GridViewColumn Header="Action" Width="100">
                         <GridViewColumn.CellTemplate>
@@ -40,20 +46,7 @@
 
 
         <Grid Grid.Row="2" Background="DeepSkyBlue">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="5*"/>
-            </Grid.RowDefinitions>
-
-            
-
-            <!-- Hộp tìm kiếm và nút "Search" căn phải trong cột thứ hai -->
-            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBox Width="200" Height="30" Text="{Binding SearchOrderId, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,10,0"/>
-                <Button Content="Search" Width="100" Height="30" Command="{Binding SearchCommand}" />
-            </StackPanel>
-
-            <Grid Grid.Row="1">
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="9*"/>
                     <ColumnDefinition Width="1*"/>
@@ -98,23 +91,27 @@
                         <TextBox Style="{StaticResource textbox}" Text="{Binding NewItem.OrderDate}"></TextBox>
                 </StackPanel>
 
-                <StackPanel Grid.Row="1" Grid.Column="5">
-                    <Label Style="{StaticResource lable}">Status</Label>
-                        <TextBox Style="{StaticResource textbox}"  Text="{Binding NewItem.OrderStatus}"></TextBox>
-                </StackPanel>
-            </Grid>
+                    <StackPanel Grid.Row="1" Grid.Column="5">
+                        <Label Style="{StaticResource lable}">Status</Label>
+                        <ComboBox SelectedValue="{Binding NewItem.OrderStatus, Mode=TwoWay}" SelectedValuePath="Tag" SelectionChanged="StatusComboBox_SelectionChanged">
+                            <ComboBoxItem Content="Proccesing" Tag="0"/>
+                            <ComboBoxItem Content="Delivering" Tag="1"/>
+                            <ComboBoxItem Content="Delivered" Tag="2"/>
+                            <ComboBoxItem Content="Canceled" Tag="3"/>
+                        </ComboBox>
+
+                    </StackPanel>
+                </Grid>
 
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"></RowDefinition>
                         <RowDefinition Height="1*"></RowDefinition>
                         <RowDefinition Height="1*"></RowDefinition>
-                        <RowDefinition Height="1*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Button Style="{StaticResource btn}" Grid.Row="0" Background="GreenYellow" Command="{Binding AddCommand}">Add</Button>
-                    <Button Style="{StaticResource btn}" Grid.Row="1" Background="GhostWhite" Command="{Binding UpdateCommand}">Modify</Button>
-                    <Button Style="{StaticResource btn}" Grid.Row="2" Background="red" Foreground="White" Command="{Binding DeleteCommand}">Delete</Button>
-                    <Button Style="{StaticResource btn}" Grid.Row="3" Background="Azure" Command="{Binding ClearCommand}">Clear</Button>
+                    <Button Style="{StaticResource btn}" Grid.Row="0" Background="#28a745" Foreground="White" Command="{Binding AddCommand}">Add</Button>
+                    <Button Style="{StaticResource btn}" Grid.Row="1" Background="#ffc107" Foreground="Black" Command="{Binding UpdateCommand}">Modify</Button>
+                    <Button Style="{StaticResource btn}" Grid.Row="3" Background="#dc3545" Foreground="White" Command="{Binding ClearCommand}">Clear</Button>
                 </Grid>
         </Grid>
     </Grid>

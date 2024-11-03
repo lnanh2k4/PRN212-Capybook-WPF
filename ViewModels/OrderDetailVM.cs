@@ -45,24 +45,21 @@ namespace Capybook.ViewModels
             using (var context = new Prn212ProjectCapybookContext())
             {
                 var order = context.Orders
-                    .Include(o => o.Vou)              // Include Voucher
+                    .Include(o => o.Vou)
                     .Include(o => o.OrderDetails)
                     .ThenInclude(od => od.Book)
                     .FirstOrDefault(o => o.OrderId == orderId);
 
                 if (order != null)
                 {
-                    // Lấy discount từ Voucher nếu có
                     _voucherDiscount = order.Vou?.Discount;
 
-                    // Thêm các OrderDetail vào danh sách
                     OrderDetails.Clear();
                     foreach (var item in order.OrderDetails)
                     {
                         OrderDetails.Add(item);
                     }
 
-                    // Tính toán tổng giá và tổng chiết khấu
                     CalculateTotals();
                 }
             }
@@ -70,15 +67,11 @@ namespace Capybook.ViewModels
 
         private void CalculateTotals()
         {
-            // Tính tổng giá sách trước khi áp dụng voucher
             decimal totalBeforeDiscount = OrderDetails.Sum(od => od.Book != null && od.Book.BookPrice.HasValue
                                                     ? od.Quantity.GetValueOrDefault() * od.Book.BookPrice.GetValueOrDefault()
                                                     : 0);
-
-            // Tính tổng giá giảm giá dựa trên voucher
             TotalDiscount = _voucherDiscount.HasValue ? totalBeforeDiscount * (decimal)_voucherDiscount.Value / 100 : 0;
 
-            // Tổng giá sau khi áp dụng chiết khấu từ voucher
             TotalPrice = totalBeforeDiscount - TotalDiscount;
         }
     }
