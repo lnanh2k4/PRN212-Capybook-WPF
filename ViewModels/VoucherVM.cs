@@ -1,6 +1,7 @@
 ﻿using Capybook.Models;
 using Capybook.Utilities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -98,7 +99,7 @@ namespace Capybook.ViewModels
         {
             using (var context = new Prn212ProjectCapybookContext())
             {
-                if (NewItem != null)
+                if (NewItem != null && ValidateVoucher(NewItem))
                 {
                     NewItem.VouStatus = 1;
                     context.Vouchers.Add(NewItem);
@@ -114,7 +115,7 @@ namespace Capybook.ViewModels
         {
             using (var context = new Prn212ProjectCapybookContext())
             {
-                if (SelectedItem != null)
+                if (SelectedItem != null && ValidateVoucher(NewItem))
                 {
                     var item = context.Vouchers.FirstOrDefault(v => v.VouId == SelectedItem.VouId);
                     if (item != null)
@@ -143,7 +144,7 @@ namespace Capybook.ViewModels
         {
             using (var context = new Prn212ProjectCapybookContext())
             {
-                if (_selectedItem != null)
+                if (_selectedItem != null && ValidateVoucher(NewItem))
                 {
                     var item = context.Vouchers.FirstOrDefault(v => v.VouId == SelectedItem.VouId);
                     item.VouStatus = 0;
@@ -199,6 +200,40 @@ namespace Capybook.ViewModels
             NewItem = new Voucher();
         }
 
+        private bool ValidateVoucher(Voucher voucher)
+        {
+            if (string.IsNullOrWhiteSpace(voucher.VouName))
+            {
+                MessageBox.Show("Voucher Name cannot be empty.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(voucher.VouCode))
+            {
+                MessageBox.Show("Voucher Code cannot be empty.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+
+            if (voucher.Discount < 0)
+            {
+                MessageBox.Show("Discount cannot be negative.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+
+            if (voucher.StartDate > voucher.EndDate)
+            {
+                MessageBox.Show("Start Date cannot be after End Date.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+
+            if (voucher.Quantity < 0)
+            {
+                MessageBox.Show("Quantity cannot be negative.", "Validation Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+
+            return true;
+        }
     }
 }
 
