@@ -123,16 +123,40 @@ namespace Capybook.ViewModels
         private void ModifyCategory(object parameter)
         {
             ClearErrorMessages();
+
+            // Check if a category is selected
             if (SelectedCategory == null)
             {
                 MessageBox.Show("Please select a category to modify.", "Modify Category", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            if (!IsValidCategory(TemporaryCategory)) return;
+            // Perform validation on the TemporaryCategory object
+            if (!IsValidCategory(TemporaryCategory))
+            {
+                // If there's a validation error, show a message and return
+                if (!string.IsNullOrEmpty(CatNameError))
+                {
+                    MessageBox.Show(CatNameError, "Validation Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                return;
+            }
 
             using (var context = new Prn212ProjectCapybookContext())
             {
+                // Check for duplicate category name and parent category combination
+                bool categoryExists = context.Categories.Any(c =>
+                    c.CatName == TemporaryCategory.CatName &&
+                    c.ParentCatId == TemporaryCategory.ParentCatId &&
+                    c.CatId != TemporaryCategory.CatId && // Exclude the current category from the check
+                    c.CatStatus != 0);
+
+                if (categoryExists)
+                {
+                    MessageBox.Show("A category with the same name and parent category already exists.", "Duplicate Category", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
                 var categoryToUpdate = context.Categories.FirstOrDefault(c => c.CatId == SelectedCategory.CatId);
                 if (categoryToUpdate != null)
                 {
@@ -143,9 +167,11 @@ namespace Capybook.ViewModels
                     context.SaveChanges();
                 }
             }
+
             LoadCategories();
             MessageBox.Show("Category modified successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
         }
+
 
         private void DeleteCategory(object parameter)
         {
