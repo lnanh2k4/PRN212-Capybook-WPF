@@ -35,6 +35,14 @@ namespace Capybook.ViewModels
         public ICommand DeleteCommand { get; set; }
 
         public ICommand SearchCommand { get; set; }
+
+        public string BookTitleError { get; set; }
+        public string AuthorError { get; set; }
+        public string IsbnError { get; set; }
+        public string PublisherError { get; set; }
+        public string PriceError { get; set; }
+        public string QuantityError { get; set; }
+        public string CategoryError { get; set; }
         public BookVM()
         {
             Books = new ObservableCollection<Book>();
@@ -108,8 +116,21 @@ namespace Capybook.ViewModels
 
         private void AddBook(object parameter)
         {
+            ClearErrorMessages();
+
+            // Check if the book is valid (excluding the unique ISBN check)
+            if (!IsValidBook(TemporaryBook)) return;
+
+            // Check if the ISBN already exists in the database
             using (var context = new Prn212ProjectCapybookContext())
             {
+                bool isbnExists = context.Books.Any(b => b.Isbn == TemporaryBook.Isbn && b.BookStatus != 0);
+                if (isbnExists)
+                {
+                    MessageBox.Show("ISBN already exists in the database.", "Duplicate ISBN", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
                 var newBook = new Book
                 {
                     BookTitle = TemporaryBook.BookTitle,
@@ -136,40 +157,115 @@ namespace Capybook.ViewModels
             }
         }
 
+        private bool IsValidBook(Book book)
+        {
+            bool isValid = true;
+            BookTitleError = AuthorError = IsbnError = PublisherError = PriceError = QuantityError = CategoryError = string.Empty;
+
+            if (string.IsNullOrWhiteSpace(book.BookTitle))
+            {
+                BookTitleError = "Book title cannot be empty.";
+                isValid = false;
+            }
+            if (string.IsNullOrWhiteSpace(book.Author))
+            {
+                AuthorError = "Author cannot be empty.";
+                isValid = false;
+            }
+            if (string.IsNullOrWhiteSpace(book.Isbn))
+            {
+                IsbnError = "ISBN cannot be empty.";
+                isValid = false;
+            }
+            if (string.IsNullOrWhiteSpace(book.Publisher))
+            {
+                PublisherError = "Publisher cannot be empty.";
+                isValid = false;
+            }
+            if (book.BookPrice == null || book.BookPrice <= 0)
+            {
+                PriceError = string.IsNullOrWhiteSpace(book.BookPrice.ToString())
+                             ? "Price is required."
+                             : "Price must be a positive number.";
+                isValid = false;
+            }
+            if (book.BookQuantity == null || book.BookQuantity < 0)
+            {
+                QuantityError = string.IsNullOrWhiteSpace(book.BookQuantity.ToString())
+                                ? "Quantity is required."
+                                : "Quantity cannot be negative.";
+                isValid = false;
+            }
+            if (book.Cat == null)
+            {
+                CategoryError = "Please select a category.";
+                isValid = false;
+            }
+
+            // Notify UI about error messages
+            OnPropertyChanged(nameof(BookTitleError));
+            OnPropertyChanged(nameof(AuthorError));
+            OnPropertyChanged(nameof(IsbnError));
+            OnPropertyChanged(nameof(PublisherError));
+            OnPropertyChanged(nameof(PriceError));
+            OnPropertyChanged(nameof(QuantityError));
+            OnPropertyChanged(nameof(CategoryError));
+
+            return isValid;
+        }
+
+        private void ClearErrorMessages()
+        {
+            BookTitleError = AuthorError = IsbnError = PublisherError = PriceError = QuantityError = CategoryError = string.Empty;
+            OnPropertyChanged(nameof(BookTitleError));
+            OnPropertyChanged(nameof(AuthorError));
+            OnPropertyChanged(nameof(IsbnError));
+            OnPropertyChanged(nameof(PublisherError));
+            OnPropertyChanged(nameof(PriceError));
+            OnPropertyChanged(nameof(QuantityError));
+            OnPropertyChanged(nameof(CategoryError));
+        }
+
         private void ModifyBook(object parameter)
         {
-            if (SelectedBook != null)
+            ClearErrorMessages();
+            if (SelectedBook == null)
             {
-                using (var context = new Prn212ProjectCapybookContext())
+                MessageBox.Show("Please select a book to modify.", "Modify Book", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            // Perform validation on the TemporaryBook object
+            if (!IsValidBook(TemporaryBook)) return;
+
+            using (var context = new Prn212ProjectCapybookContext())
+            {
+                var bookToUpdate = context.Books.FirstOrDefault(b => b.BookId == SelectedBook.BookId);
+                if (bookToUpdate != null)
                 {
-                    var bookToUpdate = context.Books.FirstOrDefault(b => b.BookId == SelectedBook.BookId);
-                    if (bookToUpdate != null)
-                    {
-                        bookToUpdate.BookTitle = TemporaryBook.BookTitle;
-                        bookToUpdate.Translator = TemporaryBook.Translator;
-                        bookToUpdate.Author = TemporaryBook.Author;
-                        bookToUpdate.Publisher = TemporaryBook.Publisher;
-                        bookToUpdate.PublicationYear = TemporaryBook.PublicationYear;
-                        bookToUpdate.Isbn = TemporaryBook.Isbn;
-                        bookToUpdate.Dimension = TemporaryBook.Dimension;
-                        bookToUpdate.Hardcover = TemporaryBook.Hardcover;
-                        bookToUpdate.Weight = TemporaryBook.Weight;
-                        bookToUpdate.BookStatus = TemporaryBook.BookStatus;
-                        bookToUpdate.BookDescription = TemporaryBook.BookDescription;
-                        bookToUpdate.Image = TemporaryBook.Image;
-                        bookToUpdate.BookPrice = TemporaryBook.BookPrice;
-                        bookToUpdate.BookQuantity = TemporaryBook.BookQuantity;
-                        bookToUpdate.CatId = TemporaryBook.Cat.CatId; // Update the category ID
-                        context.Entry(bookToUpdate).State = EntityState.Modified;
-                        context.SaveChanges();
-                    }
+                    bookToUpdate.BookTitle = TemporaryBook.BookTitle;
+                    bookToUpdate.Translator = TemporaryBook.Translator;
+                    bookToUpdate.Author = TemporaryBook.Author;
+                    bookToUpdate.Publisher = TemporaryBook.Publisher;
+                    bookToUpdate.PublicationYear = TemporaryBook.PublicationYear;
+                    bookToUpdate.Isbn = TemporaryBook.Isbn;
+                    bookToUpdate.Dimension = TemporaryBook.Dimension;
+                    bookToUpdate.Hardcover = TemporaryBook.Hardcover;
+                    bookToUpdate.Weight = TemporaryBook.Weight;
+                    bookToUpdate.BookStatus = TemporaryBook.BookStatus;
+                    bookToUpdate.BookDescription = TemporaryBook.BookDescription;
+                    bookToUpdate.Image = TemporaryBook.Image;
+                    bookToUpdate.BookPrice = TemporaryBook.BookPrice;
+                    bookToUpdate.BookQuantity = TemporaryBook.BookQuantity;
+                    bookToUpdate.CatId = TemporaryBook.Cat?.CatId; // Update the category ID
+
+                    context.Entry(bookToUpdate).State = EntityState.Modified;
+                    context.SaveChanges();
                 }
-                LoadBooks();
-                MessageBox.Show("Book modified successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            else {
-                MessageBox.Show("Please select any data row before doing this function!", "Fail", MessageBoxButton.OK, MessageBoxImage.Stop);
-            }
+
+            LoadBooks();
+            MessageBox.Show("Book modified successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void DeleteBook(object parameter)

@@ -18,7 +18,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
-            <RowDefinition Height="5*" />
+            <RowDefinition Height="3*" />
             <RowDefinition Height="5*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -63,13 +63,13 @@
 
             <Grid Grid.Column="0" VerticalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.1*" />
                     <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.1*" />
                     <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.1*" />
                     <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.1*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
 
@@ -85,6 +85,7 @@
                 <StackPanel Grid.Row="0" Grid.Column="1">
                     <Label>Title</Label>
                     <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookTitle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock Foreground="Red" Text="{Binding BookTitleError}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="0" Grid.Column="3">
@@ -95,11 +96,13 @@
                 <StackPanel Grid.Row="0" Grid.Column="5">
                     <Label>Author</Label>
                     <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.Author, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock Foreground="Red" Text="{Binding AuthorError}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="0" Grid.Column="7">
                     <Label>Publisher</Label>
                     <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.Publisher, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock Foreground="Red" Text="{Binding PublisherError}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="1">
@@ -110,6 +113,7 @@
                 <StackPanel Grid.Row="1" Grid.Column="3">
                     <Label>ISBN</Label>
                     <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.Isbn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock Foreground="Red" Text="{Binding IsbnError}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="5">
@@ -139,18 +143,21 @@
 
                 <StackPanel Grid.Row="3" Grid.Column="1">
                     <Label>Price</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" />
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock Foreground="Red" Text="{Binding PriceError}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="3" Grid.Column="3">
                     <Label>Quantity</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookQuantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" />
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookQuantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock Foreground="Red" Text="{Binding QuantityError}" />
                 </StackPanel>
                 <StackPanel Grid.Row="4" Grid.Column="5">
                     <Label>Category</Label>
                     <ComboBox ItemsSource="{Binding Categories}"
-              SelectedItem="{Binding TemporaryBook.Cat, Mode=TwoWay}"
-              DisplayMemberPath="CatName" />
+                              SelectedItem="{Binding TemporaryBook.Cat, Mode=TwoWay}"
+                              DisplayMemberPath="CatName" />
+                    <TextBlock Foreground="Red" Text="{Binding CategoryError}" />
                 </StackPanel>
             </Grid>
 
@@ -172,11 +179,11 @@
             </Grid>
         </Grid>
 
-        <StackPanel Grid.Row="1" Grid.Column="2">
+        <StackPanel Grid.Row="0" Grid.RowSpan="2" Grid.Column="2">
             
             <Image Name="CoverImage" Width="150" Height="170" Stretch="Uniform" Margin="2"
                 Source="{Binding TemporaryBook.Image}" />
-            <Button Style="{StaticResource btn}" Content="Attach Image" Click="AttachImage_Click" />
+            <Button Style="{StaticResource btn}" Content="Attach Image" Click="AttachImage_Click" Margin="2"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -10,8 +10,8 @@ namespace Capybook.ViewModels
 {
     public class CategoryVM : BaseVM
     {
-        public ObservableCollection<Category> Categories { get; set; } // Used for ListView
-        public ObservableCollection<Category> AllCategories { get; set; } // Used for ComboBox
+        public ObservableCollection<Category> Categories { get; set; }
+        public ObservableCollection<Category> AllCategories { get; set; }
         private Category _selectedCategory;
 
         public Category SelectedCategory
@@ -36,10 +36,14 @@ namespace Capybook.ViewModels
         public ICommand DeleteCommand { get; set; }
         public ICommand SearchCommand { get; set; }
 
+        // Error properties for validation
+        public string CatNameError { get; set; }
+        public string ParentCatIdError { get; set; }
+
         public CategoryVM()
         {
             Categories = new ObservableCollection<Category>();
-            AllCategories = new ObservableCollection<Category>(); // Initialize AllCategories
+            AllCategories = new ObservableCollection<Category>();
             TemporaryCategory = new Category();
 
             // Initialize commands
@@ -63,8 +67,8 @@ namespace Capybook.ViewModels
                     .ToList();
                 foreach (var category in categoriesFromDb)
                 {
-                    Categories.Add(category); // Used for ListView
-                    AllCategories.Add(category); // Used for ComboBox
+                    Categories.Add(category);
+                    AllCategories.Add(category);
                 }
             }
         }
@@ -83,13 +87,30 @@ namespace Capybook.ViewModels
 
         private void AddCategory(object parameter)
         {
+            ClearErrorMessages();
+
+            // Perform validation on the TemporaryCategory object
+            if (!IsValidCategory(TemporaryCategory)) return;
+
             using (var context = new Prn212ProjectCapybookContext())
             {
+                // Check if a category with the same CatName and ParentCatId already exists
+                bool categoryExists = context.Categories.Any(c =>
+                    c.CatName == TemporaryCategory.CatName &&
+                    c.ParentCatId == TemporaryCategory.ParentCatId &&
+                    c.CatStatus != 0);
+
+                if (categoryExists)
+                {
+                    MessageBox.Show("A category with the same name and parent category already exists.", "Duplicate Category", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
                 var newCategory = new Category
                 {
                     CatName = TemporaryCategory.CatName,
                     ParentCatId = TemporaryCategory.ParentCatId,
-                    CatStatus = 1
+                    CatStatus = 1 // Active status
                 };
 
                 context.Categories.Add(newCategory);
@@ -101,23 +122,29 @@ namespace Capybook.ViewModels
 
         private void ModifyCategory(object parameter)
         {
-            if (SelectedCategory != null)
+            ClearErrorMessages();
+            if (SelectedCategory == null)
             {
-                using (var context = new Prn212ProjectCapybookContext())
-                {
-                    var categoryToUpdate = context.Categories.FirstOrDefault(c => c.CatId == SelectedCategory.CatId);
-                    if (categoryToUpdate != null)
-                    {
-                        categoryToUpdate.CatName = TemporaryCategory.CatName;
-                        categoryToUpdate.ParentCatId = TemporaryCategory.ParentCatId;
-                        categoryToUpdate.CatStatus = TemporaryCategory.CatStatus;
-                        context.Entry(categoryToUpdate).State = EntityState.Modified;
-                        context.SaveChanges();
-                    }
-                }
-                LoadCategories();
-                MessageBox.Show("Category modified successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Please select a category to modify.", "Modify Category", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
             }
+
+            if (!IsValidCategory(TemporaryCategory)) return;
+
+            using (var context = new Prn212ProjectCapybookContext())
+            {
+                var categoryToUpdate = context.Categories.FirstOrDefault(c => c.CatId == SelectedCategory.CatId);
+                if (categoryToUpdate != null)
+                {
+                    categoryToUpdate.CatName = TemporaryCategory.CatName;
+                    categoryToUpdate.ParentCatId = TemporaryCategory.ParentCatId;
+                    categoryToUpdate.CatStatus = TemporaryCategory.CatStatus;
+                    context.Entry(categoryToUpdate).State = EntityState.Modified;
+                    context.SaveChanges();
+                }
+            }
+            LoadCategories();
+            MessageBox.Show("Category modified successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void DeleteCategory(object parameter)
@@ -178,6 +205,49 @@ namespace Capybook.ViewModels
             }
         }
 
+        private bool IsValidCategory(Category category)
+        {
+            bool isValid = true;
+            CatNameError = string.Empty;
 
+            if (string.IsNullOrWhiteSpace(category.CatName))
+            {
+                CatNameError = "Category name cannot be empty.";
+                isValid = false;
+            }
+            else
+            {
+                // Check if the Category Name already exists in the database
+                using (var context = new Prn212ProjectCapybookContext())
+                {
+                    bool nameExists = context.Categories.Any(c =>
+                        c.CatName == category.CatName && c.CatId != category.CatId && c.CatStatus != 0);
+                    if (nameExists)
+                    {
+                        CatNameError = "Category name already exists.";
+                        isValid = false;
+                    }
+                }
+            }
+
+            // Check if the category is trying to set itself as its parent
+            if (category.ParentCatId == category.CatId)
+            {
+                CatNameError = "A category cannot be its own parent.";
+                isValid = false;
+            }
+
+            OnPropertyChanged(nameof(CatNameError));
+            return isValid;
+        }
+
+
+
+        private void ClearErrorMessages()
+        {
+            CatNameError = ParentCatIdError = string.Empty;
+            OnPropertyChanged(nameof(CatNameError));
+            OnPropertyChanged(nameof(ParentCatIdError));
+        }
     }
 }

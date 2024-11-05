@@ -52,13 +52,13 @@
 
             <Grid Grid.Column="0" VerticalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.2*" />
                     <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.2*" />
                     <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.2*" />
                     <ColumnDefinition Width="1*" />
-                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.2*" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
 
@@ -76,8 +76,10 @@
                 </StackPanel>
 
                 <StackPanel Grid.Row="0" Grid.Column="5">
-                    <Label>Category name</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryCategory.CatName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <Label>Category Name</Label>
+                    <TextBox Style="{StaticResource textbox}" 
+             Text="{Binding TemporaryCategory.CatName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <TextBlock Foreground="Red" Text="{Binding CatNameError}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="0" Grid.Column="7">
