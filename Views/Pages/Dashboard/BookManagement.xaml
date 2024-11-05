@@ -180,7 +180,6 @@
         </Grid>
 
         <StackPanel Grid.Row="0" Grid.RowSpan="2" Grid.Column="2">
-            
             <Image Name="CoverImage" Width="150" Height="170" Stretch="Uniform" Margin="2"
                 Source="{Binding TemporaryBook.Image}" />
             <Button Style="{StaticResource btn}" Content="Attach Image" Click="AttachImage_Click" Margin="2"/>

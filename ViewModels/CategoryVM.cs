@@ -179,6 +179,28 @@ namespace Capybook.ViewModels
             {
                 using (var context = new Prn212ProjectCapybookContext())
                 {
+                    // Check if the selected category has active child categories
+                    bool hasActiveChildCategories = context.Categories.Any(c =>
+                        c.ParentCatId == SelectedCategory.CatId && c.CatStatus != 0);
+
+                    if (hasActiveChildCategories)
+                    {
+                        MessageBox.Show("Cannot delete this category because it has active child categories.",
+                                        "Delete Category", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
+
+                    // Check if the selected category is associated with any books
+                    bool isCategoryInUse = context.Books.Any(b => b.CatId == SelectedCategory.CatId && b.BookStatus != 0) ;
+
+                    if (isCategoryInUse)
+                    {
+                        MessageBox.Show("Cannot delete this category because it is associated with existing books.",
+                                        "Delete Category", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
+
+                    // Proceed to mark the category as deleted
                     var categoryToDelete = context.Categories.FirstOrDefault(c => c.CatId == SelectedCategory.CatId);
                     if (categoryToDelete != null)
                     {
@@ -187,10 +209,13 @@ namespace Capybook.ViewModels
                         context.SaveChanges();
                     }
                 }
+
                 LoadCategories();
                 MessageBox.Show("Category deleted successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
+        //password1
 
         private void SearchCategories(object parameter)
         {
@@ -298,7 +323,7 @@ namespace Capybook.ViewModels
 
 
 
-
+      
 
         private void ClearErrorMessages()
         {

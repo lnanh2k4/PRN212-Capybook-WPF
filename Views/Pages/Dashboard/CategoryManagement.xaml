@@ -23,12 +23,8 @@
             <ColumnDefinition Width="0.5*" />
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Style="{StaticResource title}" VerticalAlignment="Center">
-        Category Management
-        </TextBlock>
-
         <!-- ListView for displaying books -->
-        <ListView Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Stretch"
+        <ListView Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="3" HorizontalAlignment="Stretch"
           ItemsSource="{Binding Categories}" 
           SelectedItem="{Binding SelectedCategory, Mode=TwoWay}">
             <ListView.View>
