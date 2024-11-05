@@ -16,159 +16,172 @@ namespace Capybook.ViewModels
     public class VoucherVM : BaseVM
     {
         public ObservableCollection<Voucher> Vouchers { get; set; } 
-        private Voucher _selectedVoucher;
+        public ICommand AddCommand { get; }
+        public ICommand UpdateCommand { get; }
+        public ICommand DeleteCommand { get; }
+        public ICommand SearchCommand { get; }
+        public ICommand ClearCommand { get; }
 
-        public Voucher SelectedVoucher
+        private Voucher _newItem;
+        public Voucher NewItem
         {
-            get => _selectedVoucher;
+            get
+            {
+                return _newItem;
+            }
             set
             {
-                _selectedVoucher = value;
-                OnPropertyChanged();
-                if (_selectedVoucher != null)
+                _newItem = value;
+                OnPropertyChanged(nameof(NewItem));
+
+            }
+        }
+
+        private Voucher _selectedItem;
+        public Voucher SelectedItem
+        {
+            get { return _selectedItem; }
+            set
+            {
+                _selectedItem = value;
+                OnPropertyChanged(nameof(SelectedItem));
+                if (_selectedItem != null)
                 {
-                    UpdateTemporaryVoucher(_selectedVoucher);
+                    NewItem = new Voucher
+                    {
+                      VouId = _selectedItem.VouId,
+                      VouName = _selectedItem.VouName,
+                      EndDate = _selectedItem.EndDate,
+                      StartDate = _selectedItem.StartDate,
+                      Discount = _selectedItem.Discount,
+                      Orders = _selectedItem.Orders,
+                      Quantity = _selectedItem.Quantity,
+                      VouCode = _selectedItem.VouCode,
+                      VouStatus = _selectedItem.VouStatus,
+                    };
+                    OnPropertyChanged(nameof(NewItem));
                 }
             }
         }
-        public Voucher TemporaryVoucher { get; set; }
-
-        public ICommand AddCommand { get; set; }
-        public ICommand ModifyCommand { get; set; }
-        public ICommand DeleteCommand { get; set; }
-        public ICommand SearchCommand { get; set; }
 
         public VoucherVM()
         {
             Vouchers = new ObservableCollection<Voucher>();
-            TemporaryVoucher = new Voucher();
-
-            AddCommand = new RelayCommand(AddVoucher);
-            ModifyCommand = new RelayCommand(ModifyVoucher);
-            DeleteCommand = new RelayCommand(DeleteVoucher);
-            SearchCommand = new RelayCommand(SearchVouchers);
-
-            LoadVouchers();
+            Load();
+            NewItem = new Voucher();
+            AddCommand = new RelayCommand(Add);
+            UpdateCommand = new RelayCommand(Update);
+            DeleteCommand = new RelayCommand(Delete);
+            SearchCommand = new RelayCommand(Search);
+            ClearCommand = new RelayCommand(Clear);
         }
 
-        private void LoadVouchers()
-        {
-            Vouchers.Clear();
+       
 
-            using (var context = new Prn212ProjectCapybookContext())
-            {
-                var vouchersFromDb = context.Vouchers
-                    .Where(voucher => voucher.VouStatus != 0)
-                    .ToList();
-                foreach (var voucher in vouchersFromDb)
-                {
-                    Vouchers.Add(voucher);
-                }
-            }
-        }
-        private void UpdateTemporaryVoucher(Voucher selectedVoucher)
-        {
-            TemporaryVoucher = new Voucher
-            {
-                VouId = selectedVoucher.VouId,
-                VouName = selectedVoucher.VouName,
-                VouCode = selectedVoucher.VouCode,
-                Discount = selectedVoucher.Discount,
-                StartDate = selectedVoucher.StartDate,
-                EndDate = selectedVoucher.EndDate,
-                Quantity = selectedVoucher.Quantity,
-                VouStatus = selectedVoucher.VouStatus
-            };
-            OnPropertyChanged(nameof(TemporaryVoucher));
-        }
-        private void AddVoucher(object parameter)
+        private void Load()
         {
             using (var context = new Prn212ProjectCapybookContext())
             {
-                var newVoucher = new Voucher
+                var items = context.Vouchers.ToList();
+                Vouchers.Clear();
+                foreach (var item in items)
                 {
-                    VouName = TemporaryVoucher.VouName,
-                    VouCode = TemporaryVoucher.VouCode,
-                    Discount = TemporaryVoucher.Discount,
-                    StartDate = TemporaryVoucher.StartDate,
-                    EndDate = TemporaryVoucher.EndDate,
-                    Quantity = TemporaryVoucher.Quantity,
-                    VouStatus = 1
-                };
-
-                context.Vouchers.Add(newVoucher);
-                context.SaveChanges();
-                LoadVouchers();
-                MessageBox.Show("Voucher added successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-        }
-
-        private void ModifyVoucher(object parameter)
-        {
-            if (SelectedVoucher != null)
-            {
-                using (var context = new Prn212ProjectCapybookContext())
-                {
-                    var voucherToUpdate = context.Vouchers.FirstOrDefault(v => v.VouId == SelectedVoucher.VouId);
-                    if (voucherToUpdate != null)
+                    if (item.VouStatus != 0)
                     {
-                        voucherToUpdate.VouName = TemporaryVoucher.VouName;
-                        voucherToUpdate.VouCode = TemporaryVoucher.VouCode;
-                        voucherToUpdate.Discount = TemporaryVoucher.Discount;
-                        voucherToUpdate.StartDate = TemporaryVoucher.StartDate;
-                        voucherToUpdate.EndDate = TemporaryVoucher.EndDate;
-                        voucherToUpdate.Quantity = TemporaryVoucher.Quantity;
-                        voucherToUpdate.VouStatus = TemporaryVoucher.VouStatus;
-                        context.Entry(voucherToUpdate).State = EntityState.Modified;
-                        context.SaveChanges();
+                        Vouchers.Add(item);
                     }
                 }
-                LoadVouchers();
-                MessageBox.Show("Voucher modified successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
-        private void DeleteVoucher(object parameter)
+        private void Add(object parameter)
         {
-            if (SelectedVoucher != null)
+            using (var context = new Prn212ProjectCapybookContext())
             {
-                using (var context = new Prn212ProjectCapybookContext())
+                if (NewItem != null)
                 {
-                    var voucherToDelete = context.Vouchers.FirstOrDefault(v => v.VouId == SelectedVoucher.VouId);
-                    if (voucherToDelete != null)
+                    NewItem.VouStatus = 1;
+                    context.Vouchers.Add(NewItem);
+                    context.SaveChanges();
+                    Vouchers.Add(NewItem);
+                    NewItem = new Voucher();
+                    MessageBox.Show("Voucher is added successfully!", "Successful", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+        }
+
+        private void Update(object parameter)
+        {
+            using (var context = new Prn212ProjectCapybookContext())
+            {
+                if (SelectedItem != null)
+                {
+                    var item = context.Vouchers.FirstOrDefault(v => v.VouId == SelectedItem.VouId);
+                    if (item != null)
                     {
-                        voucherToDelete.VouStatus = 0;
-                        context.Entry(voucherToDelete).State = EntityState.Modified;
+                        item.VouName = NewItem.VouName;
+                        item.VouCode = NewItem.VouCode;
+                        item.Discount = NewItem.Discount;
+                        item.StartDate = NewItem.StartDate;
+                        item.EndDate = NewItem.EndDate;
+                        item.Quantity = NewItem.Quantity;
+                        item.VouStatus = NewItem.VouStatus;
                         context.SaveChanges();
+                        Load();
+                        NewItem = new Voucher();
+                        MessageBox.Show("Voucher is updated successfully!", "Successful", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                 }
-                LoadVouchers();
-                MessageBox.Show("Voucher deleted successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                else
+                {
+                    MessageBox.Show("Please select any data row before doing this function!", "No Data", MessageBoxButton.OK, MessageBoxImage.Stop);
+                }
             }
         }
 
-        private void SearchVouchers(object parameter)
+        private void Delete(object parameter)
+        {
+            using (var context = new Prn212ProjectCapybookContext())
+            {
+                if (_selectedItem != null)
+                {
+                    var item = context.Vouchers.FirstOrDefault(v => v.VouId == SelectedItem.VouId);
+                    item.VouStatus = 0;
+                    context.SaveChanges();
+                    Vouchers.Remove(_selectedItem);
+                    SelectedItem = null;
+                    NewItem = new Voucher();
+                    MessageBox.Show("Voucher is deleted successfully!", "Successful", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Data is not found! Please select any data row before doing this function!", "No Data", MessageBoxButton.OK, MessageBoxImage.Stop);
+                }
+            }
+        }
+
+        private void Search(object parameter)
         {
             int cnt = 0;
             using (var context = new Prn212ProjectCapybookContext())
             {
                 var query = context.Vouchers.Where(voucher => voucher.VouStatus != 0).AsQueryable();
 
-                if (!string.IsNullOrEmpty(TemporaryVoucher.VouName))
+                if (!string.IsNullOrEmpty(NewItem.VouName))
                 {
-                    query = query.Where(v => v.VouName.Contains(TemporaryVoucher.VouName));
+                    query = query.Where(v => v.VouName.Contains(NewItem.VouName));
                     cnt++;
                 }
 
-                if (!string.IsNullOrEmpty(TemporaryVoucher.VouCode))
+                if (!string.IsNullOrEmpty(NewItem.VouCode))
                 {
-                    query = query.Where(v => v.VouCode.Contains(TemporaryVoucher.VouCode));
+                    query = query.Where(v => v.VouCode.Contains(NewItem.VouCode));
                     cnt++;
                 }
 
                 if (cnt == 0)
                 {
-                    LoadVouchers(); 
+                    Load(); 
                 }
                 else
                 {
@@ -181,6 +194,11 @@ namespace Capybook.ViewModels
                 }
             }
         }
+        private void Clear(object parameter)
+        {
+            NewItem = new Voucher();
+        }
+
     }
 }
 
