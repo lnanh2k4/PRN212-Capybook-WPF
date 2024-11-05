@@ -17,6 +17,7 @@ namespace Capybook.ViewModels
         public ObservableCollection<Book> FilteredBooks { get; set; }
         public ObservableCollection<Voucher> Vouchers { get; set; }
 
+
         private Account _selectedAccount;
         public Account SelectedAccount
         {
@@ -102,7 +103,7 @@ namespace Capybook.ViewModels
         public ICommand AddBookCommand { get; set; }
         public ICommand RemoveBookCommand { get; set; }
         public ICommand ClearCommand { get; set; }
-        public ICommand AddOrderCommand { get; set; } // Command to add an order
+        public ICommand AddOrderCommand { get; set; }
 
         private Window _currentWindow;
         public AddOrderVM(Window currentWindow)
@@ -112,7 +113,7 @@ namespace Capybook.ViewModels
             AddBookCommand = new RelayCommand(_ => AddBook());
             RemoveBookCommand = new RelayCommand(param => RemoveBook((SelectedBookItem)param));
             ClearCommand = new RelayCommand(_ => Clear());
-            AddOrderCommand = new RelayCommand(_ => AddOrder()); // Initialize AddOrderCommand
+            AddOrderCommand = new RelayCommand(_ => AddOrder()); 
             UpdateFilteredBooks();
         }
 
@@ -120,12 +121,13 @@ namespace Capybook.ViewModels
         {
             using (var context = new Prn212ProjectCapybookContext())
             {
-                Accounts = new ObservableCollection<Account>(context.Accounts.ToList());
+                Accounts = new ObservableCollection<Account>(context.Accounts.Where(a => a.AccStatus == 1).ToList()); 
                 Books = new ObservableCollection<Book>(context.Books.Where(b => b.BookStatus == 1).ToList());
                 Vouchers = new ObservableCollection<Voucher>(context.Vouchers.Where(v => v.VouStatus == 1).ToList());
             }
             UpdateFilteredBooks();
         }
+
 
         private void AddBook()
         {
@@ -226,9 +228,8 @@ namespace Capybook.ViewModels
                 context.SaveChanges();
             }
 
-            // Clear data and close the window after adding order
             Clear();
-            OrderAdded?.Invoke(); // Trigger the event
+            OrderAdded?.Invoke(); 
             _currentWindow.Close();
         }
 
