@@ -94,15 +94,14 @@ namespace Capybook.ViewModels
 
             using (var context = new Prn212ProjectCapybookContext())
             {
-                // Check if a category with the same CatName and ParentCatId already exists
-                bool categoryExists = context.Categories.Any(c =>
+                // Check if a category with the same CatName already exists, ignoring the ParentCatId
+                bool nameExists = context.Categories.Any(c =>
                     c.CatName == TemporaryCategory.CatName &&
-                    c.ParentCatId == TemporaryCategory.ParentCatId &&
                     c.CatStatus != 0);
 
-                if (categoryExists)
+                if (nameExists)
                 {
-                    MessageBox.Show("A category with the same name and parent category already exists.", "Duplicate Category", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    MessageBox.Show("A category with the same name already exists.", "Duplicate Category", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
 
@@ -119,6 +118,7 @@ namespace Capybook.ViewModels
                 MessageBox.Show("Category added successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
 
         private void ModifyCategory(object parameter)
         {
@@ -236,6 +236,7 @@ namespace Capybook.ViewModels
             bool isValid = true;
             CatNameError = string.Empty;
 
+            // Check if Category Name is empty
             if (string.IsNullOrWhiteSpace(category.CatName))
             {
                 CatNameError = "Category name cannot be empty.";
@@ -262,10 +263,40 @@ namespace Capybook.ViewModels
                 CatNameError = "A category cannot be its own parent.";
                 isValid = false;
             }
+            else
+            {
+                // Check for circular parent-child relationship
+                using (var context = new Prn212ProjectCapybookContext())
+                {
+                    // Check for direct circular reference
+                    var parentCategory = context.Categories.FirstOrDefault(c => c.CatId == category.ParentCatId);
+                    if (parentCategory != null && parentCategory.ParentCatId == category.CatId)
+                    {
+                        CatNameError = "Circular parent-child relationship detected.";
+                        isValid = false;
+                    }
+
+                    // Extended check for indirect circular references
+                    var currentCategory = parentCategory;
+                    while (currentCategory != null)
+                    {
+                        if (currentCategory.ParentCatId == category.CatId)
+                        {
+                            CatNameError = "Extended circular reference detected in the category hierarchy.";
+                            isValid = false;
+                            break;
+                        }
+                        currentCategory = context.Categories.FirstOrDefault(c => c.CatId == currentCategory.ParentCatId);
+                    }
+                }
+            }
 
             OnPropertyChanged(nameof(CatNameError));
             return isValid;
         }
+
+
+
 
 
 
