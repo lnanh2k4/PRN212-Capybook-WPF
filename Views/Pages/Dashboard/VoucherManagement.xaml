@@ -31,10 +31,10 @@
 
         <ListView Grid.ColumnSpan="3"
                   ItemsSource="{Binding Vouchers}" 
-                  SelectedItem="{Binding SelectedVoucher, Mode=TwoWay}" Margin="0,2,0,0" Grid.RowSpan="2">
+                  SelectedItem="{Binding SelectedItem, Mode=TwoWay}" Margin="0,2,0,0" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding VouID}" />
+                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding VouId}" />
                     <GridViewColumn Header="Voucher Name" Width="150" DisplayMemberBinding="{Binding VouName}" />
                     <GridViewColumn Header="Voucher Code" Width="150" DisplayMemberBinding="{Binding VouCode}" />
                     <GridViewColumn Header="Discount" Width="50" DisplayMemberBinding="{Binding Discount}" />
@@ -72,7 +72,7 @@
                 <StackPanel Grid.Row="0" Grid.Column="1">
                     <Label>ID</Label>
                     <TextBox Style="{StaticResource textbox}" 
-                             Text="{Binding TemporaryVoucher.VouID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                             Text="{Binding NewItem.VouId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                              Background="Gray" 
                              IsReadOnly="True"/>
                 </StackPanel>
@@ -80,41 +80,41 @@
                 <StackPanel Grid.Row="0" Grid.Column="3">
                     <Label>Voucher Name</Label>
                     <TextBox Style="{StaticResource textbox}" 
-                             Text="{Binding TemporaryVoucher.VouName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                             Text="{Binding NewItem.VouName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="0" Grid.Column="5">
                     <Label>Voucher Code</Label>
                     <TextBox Style="{StaticResource textbox}" 
-                             Text="{Binding TemporaryVoucher.VouCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                             Text="{Binding NewItem.VouCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="0" Grid.Column="7">
                     <Label>Discount (%)</Label>
                     <TextBox Style="{StaticResource textbox}" 
-                             Text="{Binding TemporaryVoucher.Discount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                             Text="{Binding NewItem.Discount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="1">
                     <Label>Start Date</Label>
-                    <DatePicker SelectedDate="{Binding TemporaryVoucher.StartDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DatePicker SelectedDate="{Binding NewItem.StartDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="3">
                     <Label>End Date</Label>
-                    <DatePicker SelectedDate="{Binding TemporaryVoucher.EndDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DatePicker SelectedDate="{Binding NewItem.EndDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="5">
                     <Label>Quantity</Label>
                     <TextBox Style="{StaticResource textbox}" 
-                             Text="{Binding TemporaryVoucher.Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                             Text="{Binding NewItem.Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="7">
                     <Label>Status</Label>
                     <TextBox Style="{StaticResource textbox}" 
-                             Text="{Binding TemporaryVoucher.VouStatus, Converter={StaticResource statusConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                             Text="{Binding NewItem.VouStatus, Converter={StaticResource statusConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                              Background="Gray" IsReadOnly="True"/>
                 </StackPanel>
             </Grid>
@@ -125,12 +125,14 @@
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
                 </Grid.RowDefinitions>
 
                 <Button Style="{StaticResource btn}" Grid.Row="0" Command="{Binding AddCommand}" Background="GreenYellow">Add</Button>
-                <Button Style="{StaticResource btn}" Grid.Row="1" Command="{Binding ModifyCommand}" Background="Yellow">Modify</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="1" Command="{Binding UpdateCommand}" Background="Yellow">Update</Button>
                 <Button Style="{StaticResource btn}" Grid.Row="2" Command="{Binding DeleteCommand}" Background="Red">Delete</Button>
                 <Button Style="{StaticResource btn}" Grid.Row="3" Command="{Binding SearchCommand}" Background="AliceBlue">Search</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="4" Command="{Binding ClearCommand}" Background="Chocolate">Clear</Button>
             </Grid>
         </Grid>
     </Grid>

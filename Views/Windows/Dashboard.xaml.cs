@@ -108,6 +108,7 @@ namespace Capybook.Views.Windows
             if (accountVM.NewItem.Role == ADMIN_ROLE || accountVM.NewItem.Role == SELLER_STAFF_ROLE)
             {
                 dashboardFrame.Content = new Views.Pages.Dashboard.VoucherManagement();
+                styleBtn(btnVoucher);
             }
             else
             {
