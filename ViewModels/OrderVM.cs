@@ -27,25 +27,40 @@ namespace Capybook.ViewModels
         public ICommand SearchCommand { get; }
 
         private int _orderId;
-        private decimal _totalPrice;
-        public decimal TotalPrice
+
+
+        private string _vouName;
+        public string VouName
         {
-            get => _totalPrice;
+            get => _vouName;
             set
             {
-                _totalPrice = value;
-                OnPropertyChanged(nameof(TotalPrice));
+                _vouName = value;
+                OnPropertyChanged(nameof(VouName));
             }
         }
 
-        public Order NewItem { get 
-            { 
-              return  _newItem;
-            } set
+
+        public Order NewItem
+        {
+            get { return _newItem; }
+            set
             {
                 _newItem = value;
                 OnPropertyChanged(nameof(NewItem));
-            } }
+
+                if (_newItem != null && _newItem.VouId.HasValue)
+                {
+                    var voucher = Vouchers.FirstOrDefault(v => v.VouId == _newItem.VouId.Value);
+                    VouName = voucher?.VouName;
+                }
+                else
+                {
+                    VouName = null;
+                }
+            }
+        }
+
 
         public OrderVM()
         {
@@ -54,7 +69,7 @@ namespace Capybook.ViewModels
             Vouchers = new ObservableCollection<Voucher>();
 
             LoadOrders();
-            LoadBooks();
+
             LoadVouchers();
 
             NewItem = new Order();
@@ -71,7 +86,7 @@ namespace Capybook.ViewModels
             {
                 var sortedOrders = context.Orders
                     .Include(o => o.UsernameNavigation)
-                    .Include(o => o.Vou)  
+                    .Include(o => o.Vou)
                     .OrderByDescending(o => o.OrderDate)
                     .ToList();
 
@@ -86,7 +101,7 @@ namespace Capybook.ViewModels
             using (var context = new Prn212ProjectCapybookContext())
             {
                 var query = context.Orders
-                    .Include(o => o.Vou) 
+                    .Include(o => o.Vou)
                     .AsQueryable();
 
                 if (NewItem.OrderId > 0)
@@ -120,19 +135,6 @@ namespace Capybook.ViewModels
                 }
             }
         }
-        //load
-        private void LoadBooks()
-        {
-            using (var context = new Prn212ProjectCapybookContext())
-            {
-                Books.Clear();
-                var books = context.Books.ToList();
-                foreach (var book in books)
-                {
-                    Books.Add(book);
-                }
-            }
-        }
 
         private void LoadVouchers()
         {
@@ -149,6 +151,7 @@ namespace Capybook.ViewModels
 
         private void ADD(object obj)
         {
+            CLEAR(obj);
             var addOrderWindow = new AddOrder();
             var addOrderVM = new AddOrderVM(addOrderWindow);
             addOrderVM.OrderAdded += LoadOrders;
@@ -223,7 +226,7 @@ namespace Capybook.ViewModels
         }
 
         private Order _newItem;
-       
+
 
         private string _username;
         public string Username
