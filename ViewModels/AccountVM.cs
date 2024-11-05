@@ -24,6 +24,10 @@ namespace Capybook.ViewModels
         public ICommand LoginCommand { get; }
         public event Action RequestClose;
         public event Action RequestLogin;
+        public const int ADMIN_ROLE = 0;
+        public const int CUSTOMER_ROLE = 1;
+        public const int SELLER_STAFF_ROLE = 2;
+        public const int WAREHOUSE_STAFF_ROLE = 3;
 
         private string _username;
         public AccountVM()
@@ -57,11 +61,15 @@ namespace Capybook.ViewModels
                 else
                 {
                     var item = context.Accounts.Where(x => x.Username == NewItem.Username && x.Password == NewItem.Password).FirstOrDefault();
-                    if (item != null)
+                    if (item != null && item.AccStatus == 1)
                     {
                         NewItem = item;
                         MessageBox.Show("Login successfully!", "Successful", MessageBoxButton.OK, MessageBoxImage.Information);
                         RequestLogin?.Invoke();
+                    }
+                    else if (item != null && item.AccStatus == 0)
+                    {
+                        MessageBox.Show("Unavailable account!", "Unavailable", MessageBoxButton.OK, MessageBoxImage.Stop);
                     }
                     else
                     {
@@ -108,7 +116,7 @@ namespace Capybook.ViewModels
                     query = query.Where(x => x.Phone.Contains(NewItem.Phone));
                     cnt++;
                 }
-                if(NewItem.Role is int role) 
+                if (NewItem.Role is int role)
                 {
                     query = query.Where(x => x.Role == role);
                     cnt++;
@@ -165,12 +173,34 @@ namespace Capybook.ViewModels
                 if (_selectedItem != null)
                 {
                     var item = context.Accounts.Where(x => x.Username == _selectedItem.Username).FirstOrDefault();
-                    item.AccStatus = 0;
-                    context.SaveChanges();
-                    Accounts.Remove(_selectedItem);
-                    SelectedItem = null;
-                    NewItem = new Account();
-                    MessageBox.Show("Account is deleted successfully!", "Successful", MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (item != null && item.Role != ADMIN_ROLE)
+                    {
+                        int cnt = 0;
+                        foreach (var account in Accounts)
+                        {
+                            cnt++;
+                        }
+                        if (cnt > 1)
+                        {
+                            item.AccStatus = 0;
+                            context.SaveChanges();
+                            Accounts.Remove(_selectedItem);
+                            SelectedItem = null;
+                            NewItem = new Account();
+                            MessageBox.Show("Account is deleted successfully!", "Successful", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("There is at least 1 account in manage accounts!", "Deleted failed", MessageBoxButton.OK, MessageBoxImage.Stop);
+                        }
+
+                    }
+                    else if (item != null && item.Role == ADMIN_ROLE)
+                    {
+                        MessageBox.Show("Cannot deleted account with Admin role!", "Deleted failed", MessageBoxButton.OK, MessageBoxImage.Stop);
+                    }
+
+
                 }
                 else
                 {
@@ -188,20 +218,37 @@ namespace Capybook.ViewModels
                     var item = context.Accounts.Where(x => x.Username == _username).FirstOrDefault();
                     if (item != null && isValidate())
                     {
-                        item.Address = NewItem.Address;
-                        item.Password = NewItem.Password;
-                        item.Email = NewItem.Email;
-                        item.FirstName = NewItem.FirstName;
-                        item.LastName = NewItem.LastName;
-                        item.Address = NewItem.Address;
-                        item.Dob = NewItem.Dob;
-                        item.Phone = NewItem.Phone;
-                        item.Role = NewItem.Role;
-                        item.Sex = NewItem.Sex;
-                        context.SaveChanges();
-                        Load();
-                        NewItem = new Account();
-                        MessageBox.Show("Account is updated successfully!", "Successful", MessageBoxButton.OK, MessageBoxImage.Information);
+                        int cntAdmin = 0;
+                        foreach (var account in Accounts)
+                        {
+                            
+                            if (account.Role == ADMIN_ROLE && account.AccStatus==1)
+                            {
+                                cntAdmin++;
+                            }
+                        }
+                        if (cntAdmin > 1)
+                        {
+                            item.Address = NewItem.Address;
+                            item.Password = NewItem.Password;
+                            item.Email = NewItem.Email;
+                            item.FirstName = NewItem.FirstName;
+                            item.LastName = NewItem.LastName;
+                            item.Address = NewItem.Address;
+                            item.Dob = NewItem.Dob;
+                            item.Phone = NewItem.Phone;
+                            item.Role = NewItem.Role;
+                            item.Sex = NewItem.Sex;
+                            context.SaveChanges();
+                            Load();
+                            NewItem = new Account();
+                            MessageBox.Show("Account is updated successfully!", "Successful", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("There is at least 1 account with admin role in manage accounts!", "Deleted failed", MessageBoxButton.OK, MessageBoxImage.Stop);
+                        }
+
                     }
                 }
                 else
