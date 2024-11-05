@@ -3,17 +3,17 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using Capybook.Models;
-using Capybook.Utilities; // Assuming you have a RelayCommand or similar utility
+using Capybook.Utilities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Capybook.ViewModels
 {
     public class CategoryVM : BaseVM
     {
-        public ObservableCollection<Category> Categories { get; set; }
+        public ObservableCollection<Category> Categories { get; set; } // Used for ListView
+        public ObservableCollection<Category> AllCategories { get; set; } // Used for ComboBox
         private Category _selectedCategory;
 
-        // SelectedCategory is used for the ListView selection
         public Category SelectedCategory
         {
             get => _selectedCategory;
@@ -28,50 +28,54 @@ namespace Capybook.ViewModels
             }
         }
 
-        // TemporaryCategory is used for editing details in the UI
         public Category TemporaryCategory { get; set; }
 
-        // Commands for Add, Edit, and Delete
+        // Commands
         public ICommand AddCommand { get; set; }
         public ICommand ModifyCommand { get; set; }
         public ICommand DeleteCommand { get; set; }
+        public ICommand SearchCommand { get; set; }
 
         public CategoryVM()
         {
             Categories = new ObservableCollection<Category>();
+            AllCategories = new ObservableCollection<Category>(); // Initialize AllCategories
             TemporaryCategory = new Category();
 
             // Initialize commands
             AddCommand = new RelayCommand(AddCategory);
             ModifyCommand = new RelayCommand(ModifyCategory);
             DeleteCommand = new RelayCommand(DeleteCategory);
+            SearchCommand = new RelayCommand(SearchCategories);
 
-            LoadCategories(); // Load categories from the database
+            LoadCategories();
         }
 
         private void LoadCategories()
         {
             Categories.Clear();
+            AllCategories.Clear();
+
             using (var context = new Prn212ProjectCapybookContext())
             {
                 var categoriesFromDb = context.Categories
-                    .Where(category => category.CatStatus != 0) // Only include categories with CategoryStatus != 0
+                    .Where(category => category.CatStatus != 0)
                     .ToList();
                 foreach (var category in categoriesFromDb)
                 {
-                    Categories.Add(category);
+                    Categories.Add(category); // Used for ListView
+                    AllCategories.Add(category); // Used for ComboBox
                 }
             }
         }
 
         private void UpdateTemporaryCategory(Category selectedCategory)
         {
-            // Create a copy of SelectedCategory for editing in TemporaryCategory
             TemporaryCategory = new Category
             {
                 CatId = selectedCategory.CatId,
                 CatName = selectedCategory.CatName,
-                ParentCatId= selectedCategory.ParentCatId,
+                ParentCatId = selectedCategory.ParentCatId,
                 CatStatus = selectedCategory.CatStatus,
             };
             OnPropertyChanged(nameof(TemporaryCategory));
@@ -83,7 +87,6 @@ namespace Capybook.ViewModels
             {
                 var newCategory = new Category
                 {
-                    CatId = TemporaryCategory.CatId,
                     CatName = TemporaryCategory.CatName,
                     ParentCatId = TemporaryCategory.ParentCatId,
                     CatStatus = 1
@@ -105,7 +108,6 @@ namespace Capybook.ViewModels
                     var categoryToUpdate = context.Categories.FirstOrDefault(c => c.CatId == SelectedCategory.CatId);
                     if (categoryToUpdate != null)
                     {
-                        categoryToUpdate.CatId = TemporaryCategory.CatId;
                         categoryToUpdate.CatName = TemporaryCategory.CatName;
                         categoryToUpdate.ParentCatId = TemporaryCategory.ParentCatId;
                         categoryToUpdate.CatStatus = TemporaryCategory.CatStatus;
@@ -127,7 +129,7 @@ namespace Capybook.ViewModels
                     var categoryToDelete = context.Categories.FirstOrDefault(c => c.CatId == SelectedCategory.CatId);
                     if (categoryToDelete != null)
                     {
-                        categoryToDelete.CatStatus = 0; // Mark as inactive
+                        categoryToDelete.CatStatus = 0;
                         context.Entry(categoryToDelete).State = EntityState.Modified;
                         context.SaveChanges();
                     }
@@ -136,6 +138,46 @@ namespace Capybook.ViewModels
                 MessageBox.Show("Category deleted successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+
+        private void SearchCategories(object parameter)
+        {
+            int cnt = 0;
+            using (var context = new Prn212ProjectCapybookContext())
+            {
+                var query = context.Categories.Where(category => category.CatStatus != 0).AsQueryable();
+
+                if (!string.IsNullOrEmpty(TemporaryCategory.CatName))
+                {
+                    query = query.Where(c => c.CatName.Contains(TemporaryCategory.CatName));
+                    cnt++;
+                }
+
+                if (TemporaryCategory.ParentCatId != null)
+                {
+                    query = query.Where(c => c.ParentCatId == TemporaryCategory.ParentCatId);
+                    cnt++;
+                }
+
+                if (cnt == 0)
+                {
+                    Categories.Clear();
+                    foreach (var category in AllCategories)
+                    {
+                        Categories.Add(category);
+                    }
+                }
+                else
+                {
+                    var results = query.ToList();
+                    Categories.Clear();
+                    foreach (var category in results)
+                    {
+                        Categories.Add(category);
+                    }
+                }
+            }
+        }
+
 
     }
 }

@@ -9,7 +9,6 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="BookManagement" Background="AliceBlue">
-
     <Page.DataContext>
         <vm:BookVM />
     </Page.DataContext>
@@ -28,18 +27,16 @@
             <ColumnDefinition Width="0.5*" />
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource title}" VerticalAlignment="Center">
-            Book Management
-        </TextBlock>
 
         <!-- ListView for displaying books -->
-        <ListView Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"
+        <ListView Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Stretch"
                   ItemsSource="{Binding Books}" 
                   SelectedItem="{Binding SelectedBook, Mode=TwoWay}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding BookId}" />
                     <GridViewColumn Header="Title" Width="100" DisplayMemberBinding="{Binding BookTitle}" />
+                    <GridViewColumn Header="Category" Width="150" DisplayMemberBinding="{Binding Cat.CatName}" />
                     <GridViewColumn Header="Translator" Width="100" DisplayMemberBinding="{Binding Translator}" />
                     <GridViewColumn Header="Author" Width="100" DisplayMemberBinding="{Binding Author}" />
                     <GridViewColumn Header="Publisher" Width="100" DisplayMemberBinding="{Binding Publisher}" />
@@ -52,6 +49,7 @@
                     <GridViewColumn Header="Status" Width="100" DisplayMemberBinding="{Binding BookStatus, Converter={StaticResource statusConverter}}" />
                     <GridViewColumn Header="Price" Width="100" DisplayMemberBinding="{Binding BookPrice}" />
                     <GridViewColumn Header="Quantity" Width="100" DisplayMemberBinding="{Binding BookQuantity}" />
+
                 </GridView>
             </ListView.View>
         </ListView>
@@ -131,7 +129,7 @@
 
                 <StackPanel Grid.Row="2" Grid.Column="3">
                     <Label>Status</Label>
-                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookStatus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="Gray"  IsReadOnly="True"/>
+                    <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookStatus, Converter={StaticResource statusConverter},Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Background="Gray"  IsReadOnly="True"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Grid.Column="5" Grid.ColumnSpan="7">
@@ -143,10 +141,16 @@
                     <Label>Price</Label>
                     <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" />
                 </StackPanel>
-                
+
                 <StackPanel Grid.Row="3" Grid.Column="3">
                     <Label>Quantity</Label>
                     <TextBox Style="{StaticResource textbox}" Text="{Binding TemporaryBook.BookQuantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" />
+                </StackPanel>
+                <StackPanel Grid.Row="4" Grid.Column="5">
+                    <Label>Category</Label>
+                    <ComboBox ItemsSource="{Binding Categories}"
+              SelectedItem="{Binding TemporaryBook.Cat, Mode=TwoWay}"
+              DisplayMemberPath="CatName" />
                 </StackPanel>
             </Grid>
 
@@ -162,13 +166,17 @@
                 <Button Style="{StaticResource btn}" Grid.Row="0" Command="{Binding AddCommand}" Background="GreenYellow">Add</Button>
                 <Button Style="{StaticResource btn}" Grid.Row="1" Command="{Binding ModifyCommand}" Background="GhostWhite" >Modify</Button>
                 <Button Style="{StaticResource btn}" Grid.Row="2" Command="{Binding DeleteCommand}" Background="Red">Delete</Button>
+                <Button Style="{StaticResource btn}" Grid.Row="3" Content="Search" Command="{Binding SearchCommand}" Background="LightBlue" />
+
+
             </Grid>
         </Grid>
 
         <StackPanel Grid.Row="1" Grid.Column="2">
-            <Button Style="{StaticResource btn}" Content="Attach Image" Click="AttachImage_Click" />
+            
             <Image Name="CoverImage" Width="150" Height="170" Stretch="Uniform" Margin="2"
                 Source="{Binding TemporaryBook.Image}" />
+            <Button Style="{StaticResource btn}" Content="Attach Image" Click="AttachImage_Click" />
         </StackPanel>
     </Grid>
 </Page>

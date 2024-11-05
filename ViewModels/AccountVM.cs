@@ -108,6 +108,16 @@ namespace Capybook.ViewModels
                     query = query.Where(x => x.Phone.Contains(NewItem.Phone));
                     cnt++;
                 }
+                if(NewItem.Role is int role) 
+                {
+                    query = query.Where(x => x.Role == role);
+                    cnt++;
+                }
+                if (NewItem.Sex is int sex)
+                {
+                    query = query.Where(x => x.Sex == sex);
+                    cnt++;
+                }
                 if (cnt == 0)
                 {
                     Load();
@@ -196,7 +206,7 @@ namespace Capybook.ViewModels
                 }
                 else
                 {
-                    MessageBox.Show("Data is not found! Please select any data row before doing this function!", "No Data", MessageBoxButton.OK, MessageBoxImage.Stop);
+                    MessageBox.Show("Please select any data row before doing this function!", "No Data", MessageBoxButton.OK, MessageBoxImage.Stop);
                 }
             }
         }

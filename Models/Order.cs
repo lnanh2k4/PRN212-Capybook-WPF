@@ -9,9 +9,7 @@ public partial class Order
 
     public int? VouId { get; set; }
 
-    public string? Username { get; set; }
-
-    public int? StaffId { get; set; }
+    public string?  Username{ get; set; }
 
     public DateOnly? OrderDate { get; set; }
 

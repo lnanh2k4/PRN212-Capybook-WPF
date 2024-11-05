@@ -155,7 +155,6 @@ public partial class Prn212ProjectCapybookContext : DbContext
             entity.Property(e => e.OrderId).HasColumnName("orderID");
             entity.Property(e => e.OrderDate).HasColumnName("orderDate");
             entity.Property(e => e.OrderStatus).HasColumnName("orderStatus");
-            entity.Property(e => e.StaffId).HasColumnName("staffID");
             entity.Property(e => e.Username)
                 .HasMaxLength(255)
                 .IsUnicode(false)
